@@ -77,7 +77,6 @@ function AuthenticateHandler(req, res, next) {
 		
 		//if authToken exists 
 		if (authToken){ 
-			
 			logger.info("IN inside if");
 			var ua = req.body.userAgent, device = ua.device.family;
 			
@@ -188,9 +187,10 @@ function AuthenticateHandler(req, res, next) {
 					});
 
         } else {
-            req.ErrorMessage = req.method + ':' + req.url + ' - Un Authorized';
+			return next();
+            /*req.ErrorMessage = req.method + ':' + req.url + ' - Un Authorized';
             logger.error(req.ErrorMessage);
-            return throwError.Unauthorized(req, res, next);
+            return throwError.Unauthorized(req, res, next);*/
         }
     } else {
         logger.info(req.method + ':' + req.url +

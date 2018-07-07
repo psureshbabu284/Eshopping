@@ -5,8 +5,8 @@
  * @author gopal.atla@appshark.com>
  * @copyright 2016 Appshark Ltd. All rights reserved.
  */
-ofkapp.controller("mainController", ["$scope", "$http","$location","$timeout","localStorage","GettingStartedService","CommonDataService","ageValidationMessages", "userRoleValidationMessages","menuConstants","createAccountValidationMessages",
-	function($scope,$http,$location,$timeout,localStorage,GettingStartedService,CommonDataService,ageValidationMessages,userRoleValidationMessages,menuConstants,createAccountValidationMessages) {
+ofkapp.controller("productController", ["$scope", "$http","$location","$timeout","localStorage","GettingStartedService","ProductService", "CommonDataService","ageValidationMessages", "userRoleValidationMessages","menuConstants","createAccountValidationMessages",
+	function($scope,$http,$location,$timeout,localStorage,GettingStartedService,ProductService,CommonDataService,ageValidationMessages,userRoleValidationMessages,menuConstants,createAccountValidationMessages) {
 	//NavigationMenu.init();
 	$scope.ageValidationMessages = ageValidationMessages;
 	$scope.userRoleValidationMessages = userRoleValidationMessages;
@@ -18,6 +18,7 @@ ofkapp.controller("mainController", ["$scope", "$http","$location","$timeout","l
 	
 	//common angular service to fetch common data like userId,session and so on
 	var commonDataServiceInit = new CommonDataService();
+	var productService = new ProductService();
 	var staticURL;
 	var hdLoginURL;
 	
@@ -307,10 +308,23 @@ ofkapp.controller("mainController", ["$scope", "$http","$location","$timeout","l
 	  * @description Initialize user model
 	  */
 	$scope.initialize = function(){
-	
+		 var userId = localStorage.getData("userId");
+		 if(!userId) return;
+		 productService.getProduceDetails(userId).then(function(response) {
+			$scope.productobjectmodel = response.data;
+			console.log($scope.productobjectmodel)
+		})
+
+		
 	};
 	
 	
+	$scope.saveProduct = function(productobjectmodel){
+		console.log("Product Object Model", JSON.stringify(productobjectmodel));
+		productService.saveProduct(commonDataServiceInit.userId,commonDataServiceInit.authToken, productobjectmodel).then(function(response) {
+			console.log(response.data)
+		})
+	}
 	
 	
 	/**

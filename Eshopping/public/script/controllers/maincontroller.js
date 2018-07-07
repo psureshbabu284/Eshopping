@@ -488,8 +488,7 @@ ofkapp.controller("mainController", ["$scope", "$http","$location","$timeout","l
 		// fetch data and publish on scope
 		userService.validateProfile(commonDataServiceInit.userId,commonDataServiceInit.authToken,auth,isMasterDataRequired).then(function(response) {
 			
-			var userData = response.data.user; 
-			var historyModel = response.data.historyModel; 
+			var userData = response.data; 
 			
 			console.log('Main COntroller response ', response.data);
 
@@ -500,60 +499,8 @@ ofkapp.controller("mainController", ["$scope", "$http","$location","$timeout","l
 			}
 			
 			
-			if(userData.isSuccess){
-					
-				if(userData.representerType && userData.representerType == 5){ //if selected spouse
-					$scope.$parent.userAccountType = "spouse";
-				}else if(userData.representerType && userData.representerType == 6){ //if selected parent
-					$scope.$parent.userAccountType = "child";
-				}else if(userData.representerType && userData.representerType == 7){ //if selected friend or loved one
-					$scope.$parent.userAccountType = "friend or loved one";
-				}else if(userData.representerType && userData.representerType == 8){ //if selected Hair Stylist
-					$scope.$parent.userAccountType = "customer";
-				} 
-								
-				$scope.$parent.isAtStep = userData.isAtStep;
-				$scope.$parent.progressStep = userData.progressStep;
-				
-				var hdURL = BuildURL.getHDURL();
-				hdURL = hdURL + "?id=" + userData.accountId + "&f=" + userData.firstName + "&l=" + userData.lastName;
-				
-				$scope.$parent.hdLoginURL = hdURL;
-				$scope.$parent.enableProgressBar = true;
-				$scope.isLogin = userData.IsLogin;
-				$scope.$parent.accountModel = userData;
-					
-				if(historyModel && historyModel.isSuccess)
-					$scope.$parent.historyModel = historyModel;
-				
-												
-				if(!angular.isUndefinedOrNull(userData.dob))
-				  dob = userData.dob;
-							
-				if(!angular.isUndefinedOrNull(dob)){
-					var dateArray = dob.split('-');
-					$scope.$parent.accountModel.dobChanged = false;
-					$scope.$parent.accountModel.genderChanged = false;
-					
-					$scope.$parent.accountModel.DD = dateArray[2];
-					$scope.$parent.accountModel.MM = dateArray[1];
-					$scope.$parent.accountModel.YYYY = dateArray[0];
-
-					$scope.$parent.isAgeNotValid = isDateOfBirthValid(dob);
-					
-				}else{
-					$scope.$parent.isAgeNotValid = -1;
-				}
-				
-				setUsertype(userData); //set user type
-				
-				nextOrPreviousView($scope.$parent.accountModel);
-
-				loadMasterData(userData.country);
-				
-				
-
-				
+			if(userData.Success){
+				$scope.accountModel = userData;
 				//initialize menu items to show/hide
 				//initializeMenu(userData,historyModel,response.data,userData.isAtStep);
 				

@@ -17,6 +17,8 @@ var dbConfig = {
         'UserDetailsBySFID' : 'call usp_UserDetailsBySFID_Users_Select(?)',
         'ValidateAuthToken' : 'call usp_authtokens_Select(?)',
         'UserDetails' : 'call usp_accounts_Details(?)',
+        'productsDetails' : 'call usp_products_select(?)',
+        'productInsert' : 'call usp_products_insert(?)'
     }
 };
 

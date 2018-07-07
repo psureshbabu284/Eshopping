@@ -135,21 +135,13 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 			$scope.$parent.disableSiginInButton = false;
 
 			console.log("requested data is ::: ",  $location.search());
-		/*	if(!isFromOtherSource){
-				//testsfdclogin12@test.com
-				userId = "buoVyo3dt049Z69LGHG7DQ%3D%3D";
-				authToken = "nRU%2BM60SD6g%2FjqBu7o2%2BZ6kCr5fUXyEyxJ6sI5pz4Wcqsb8Zn496MVK1BZS6Slzd";
-				
-				localStorage.setData("userId", userId);
-				localStorage.setData("authToken", authToken);
+		
 
-			}
-			*/
-
-			$scope.$parent.accountModel.loginId = localStorage.getData("loginId");		
+			$scope.$parent.userId = localStorage.getData("userId");
+			$scope.$parent.accountModel.userId = localStorage.getData("userId");		
 			$scope.$parent.accountModel.password = localStorage.getData("password");		
 					
-			if($scope.$parent.accountModel.loginId && $scope.$parent.accountModel.password)		
+			if($scope.$parent.accountModel.userId && $scope.$parent.accountModel.password)		
 				$scope.$parent.accountModel.rememberMe = true;
 	
 			console.log("Login Model ::::::: ", $scope.$parent.accountModel);
@@ -562,7 +554,7 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 			userService.registerProfile(commonDataServiceInit.userId,commonDataServiceInit.authToken).then(function(response) {
 					var responseData = response.data;
 					var headers = response.headers();
-					$scope.$parent.disableCreateAccButton = false;
+					$scope.$parent.accountModel = responseData;
 					if(responseData.isSuccess){
 							
 							localStorage.setData("authToken", headers['authtoken']);

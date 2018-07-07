@@ -1,21 +1,18 @@
-<div class="container-fluid" ng-init="initGettingStartedView();">
+<div class="container-fluid" ng-init="initialize();" ng-controller="productController">
 	<div class="container internal">
 		
-
-
 		<div class="form-group col-sm-12 has-feedback" 
-			ng-class="{ 'has-success' : createaccountModelform.accountModelType.$valid, 
-			'has-error' : (onCreateaccountModelFormSubmit && !createaccountModelform.accountModelType.$valid)}">
+			ng-class="{ 'has-success' : createProductModelform.ProductModelType.$valid, 
+			'has-error' : (onCreateProductModelFormSubmit && !createProductModelform.ProductModelType.$valid)}">
 		<div class="col-sm-6 col-sm-offset-3">
 		<label class="control-label">Product categeory</label>
 		
-		<select ng-model="accountModel.accountType" name="accountModeltype" 
+		<select ng-model="ProductModel.prodCatId" name="ProductModeltype" 
 				ng-required="true" 
-				placeholder="Select accountModel type"
-				class="form-control" id="accountType">
-					 <option value="">Select account</option>
-					 <option value="Vendor">Vendor</option>
-					 <option value="Customer">Customer</option>
+				placeholder="Select Product type"
+				class="form-control" id="accountType" 
+				ng-options="value.id as value.categeory for value in productobjectmodel.productCategories" >
+				<option value="">please choose  categeory</option>
 			</select>
 				
 			
@@ -30,7 +27,7 @@
 <div class="form-group col-sm-12 has-feedback">
 	<div class="col-sm-6 col-sm-offset-3">
 		<label class="control-label" for="firstName">Product Price</label>
-		<input type="text" class="form-control" ng-model="accountModel.produc"  
+		<input type="text" class="form-control" ng-model="ProductModel.price"  
 		ng-required="true"
 		name="firstName" placeholder="Product price" />
 	</div>
@@ -41,7 +38,7 @@
 <div class="form-group col-sm-12 has-feedback">
 	<div class="col-sm-6 col-sm-offset-3">
 		<label class="control-label" for="firstName">Product Quantity</label>
-		<input type="text" class="form-control" ng-model="accountModel.produc"  
+		<input type="text" class="form-control" ng-model="ProductModel.productQuantiry"  
 		ng-required="true"
 		name="firstName" placeholder="Product price" />
 	</div>
@@ -51,7 +48,7 @@
 <div class="form-group col-sm-12 has-feedback">
 	<div class="col-sm-6 col-sm-offset-3">
 		<label class="control-label" for="firstName">Product Model</label>
-		<input type="text" class="form-control" ng-model="accountModel.produc"  
+		<input type="text" class="form-control" ng-model="ProductModel.productVersion"  
 		ng-required="true"
 		name="firstName" placeholder="Product price" />
 	</div>
@@ -68,7 +65,7 @@
 <!-- Dob -->
 <div class="col-sm-6 col-sm-offset-3">
 	<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
-	<button id="signinbtn" name="signinbtn" type="submit"  ng-click="userLoginValidation(loginModel);" class="">Submit</button>
+	<button id="signinbtn" name="signinbtn" type="submit"  ng-click="saveProduct(ProductModel);" class="">Submit</button>
 </div>
 
 
