@@ -403,14 +403,6 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 	  */
 		$scope.userLoginValidation = function(accountModel){
 			staticURL = BuildURL.getStaticURL();
-			var isFormValid = $scope.signinForm.$valid;
-			
-			if(!isFormValid) {//please exit if form is not valid
-				$scope.$parent.onFormSubmit = true;
-				return false;
-			}
-			
-			$scope.$parent.disableSiginInButton = true;
 			
 			// instantiate LoginService
 			var loginService = new LoginService(accountModel.loginId,accountModel.password);

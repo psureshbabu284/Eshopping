@@ -10,15 +10,15 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
 	};
    
     
-	// instantiate our initial UserService object
-    var User = function(userModel) {
+	// instantiate our initial ProductService object
+    var Product = function(ProductModel) {
 	
-		if(!(angular.isUndefined(userModel) || userModel === null)){
+		if(!(angular.isUndefined(ProductModel) || ProductModel === null)){
 		
 			requestObj = {}; //to clear previous input object
 			
-			if(!(angular.isUndefined(userModel.firstName) || userModel.userId === null))
-					requestObj.userId = userModel.userId;
+			if(!(angular.isUndefined(ProductModel.firstName) || ProductModel.ProductId === null))
+					requestObj.ProductId = ProductModel.ProductId;
 				
 			
 
@@ -31,7 +31,7 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
 	
 
     // define the getProfile method which will fetch data
-    User.prototype.getProduceDetails = function(userId) {
+    Product.prototype.getProduceDetails = function(ProductId) {
 
 		// We make use of Angular's $q library to create the deferred instance
         var deferred = $q.defer();
@@ -39,7 +39,7 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
         $http({
 		  method: 'GET',
           url: ServiceURLs.getProductsURL,
-          params: {'userId':userId},
+          params: {'ProductId':ProductId},
 		}).then(function successCallback(response) {
 			 // The promise is resolved once the HTTP call is successful.
               deferred.resolve(response);
@@ -53,8 +53,8 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
 	
 
 	
-	// register the user
-    User.prototype.saveProduct = function(userId,authToken, productObjectModel) {
+	// register the Product
+    Product.prototype.saveProduct = function(ProductId,authToken, productObjectModel) {
 
 		// We make use of Angular's $q library to create the deferred instance
         var deferred = $q.defer();
@@ -64,7 +64,7 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
 		  data: JSON.stringify(productObjectModel),
 		  headers: {
 			'authtoken': authToken,
-			'userId':userId
+			'ProductId':ProductId
 		  },
 		  url: ServiceURLs.getProductsURL, 
 		  dataType:"json",
@@ -80,24 +80,20 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
             return deferred.promise;
 	};
 	
-	// update the user
-    User.prototype.updateProfile = function(userId,authToken, viewToBeRedirected) {
+	// update the Product
+    Product.prototype.deleteProduct  = function(ProductId,authToken, productModel) {
 
-		if(viewToBeRedirected){
-			requestObj.SFUpdateSkip = true;
-		}
-		requestObj.nextView = viewToBeRedirected;
 		// We make use of Angular's $q library to create the deferred instance
         var deferred = $q.defer();
-		console.log("requestObj - "+JSON.stringify(requestObj));
+		console.log("requestObj - "+JSON.stringify(productModel));
         $http({
 		  method: 'PUT',
-		  data: JSON.stringify(requestObj),
+		  data: JSON.stringify(productModel),
 		  headers: {
 			'authtoken': authToken,
-			'userId':userId
+			'ProductId':ProductId
 		  },
-		  url: ServiceURLs.updateUserProfileServiceURL, 
+		  url: ServiceURLs.getProductsURL, 
 		  dataType:"json",
 		  contentType: 'application/json'
 		}).then(function successCallback(response) {
@@ -113,62 +109,7 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
             return deferred.promise;
 	};
 
-	// register the user
-    User.prototype.createRepresentativeContact = function(userId,authToken) {
-
-		// We make use of Angular's $q library to create the deferred instance
-        var deferred = $q.defer();
-		console.log("requestObj - "+JSON.stringify(requestObj));
-        $http({
-		  method: 'POST',
-		  data: JSON.stringify(requestObj),
-		  headers: {
-			'authtoken': authToken,
-			'userId':userId
-		  },
-		  url: ServiceURLs.representativeContactServiceURL, 
-		  dataType:"json",
-		  contentType: 'application/json'
-		}).then(function successCallback(response) {
-			 // The promise is resolved once the HTTP call is successful.
-              deferred.resolve(response);
-		}, function errorCallback(error) {
-			 // The promise is rejected if there is an error with the HTTP call.
-                    deferred.reject(error);
-		});
-		 // The promise is returned to the caller
-            return deferred.promise;
-	};
-
-	
-	// update the user
-    User.prototype.updateRepresentativeContact = function(userId,authToken) {
-
-		// We make use of Angular's $q library to create the deferred instance
-        var deferred = $q.defer();
-		console.log("requestObj - "+JSON.stringify(requestObj));
-        $http({
-		  method: 'PUT',
-		  data: JSON.stringify(requestObj),
-		  headers: {
-			'authtoken': authToken,
-			'userId':userId
-		  },
-		  url: ServiceURLs.representativeContactServiceURL, 
-		  dataType:"json",
-		  contentType: 'application/json'
-		}).then(function successCallback(response) {
-			 // The promise is resolved once the HTTP call is successful.
-              deferred.resolve(response);
-		}, function errorCallback(error) {
-			 // The promise is rejected if there is an error with the HTTP call.
-                    deferred.reject(error);
-		});
-		
-		 // The promise is returned to the caller
-            return deferred.promise;
-	};
 	
 
-    return User;
+    return Product;
 }]);

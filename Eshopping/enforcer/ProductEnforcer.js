@@ -42,4 +42,22 @@ ProductEnforcer.prototype.CREATE =
     //return next();
 };
 
+ProductEnforcer.prototype.UPDATE =
+    function ProductEnforcerUpdate(req, res, next) {
+    logger.debug('ProductEnforcer - done...');
+
+        return next();
+		
+    //return next();
+};
+
+ProductEnforcer.prototype.DELETE =
+    function ProductEnforcerDelete(req, res, next) {
+    logger.debug('ProductEnforcer delete - done...');
+
+        return next();
+		
+    //return next();
+};
+
 module.exports = ProductEnforcer;

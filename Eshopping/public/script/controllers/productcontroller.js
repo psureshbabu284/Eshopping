@@ -323,9 +323,15 @@ ofkapp.controller("productController", ["$scope", "$http","$location","$timeout"
 		console.log("Product Object Model", JSON.stringify(productobjectmodel));
 		productService.saveProduct(commonDataServiceInit.userId,commonDataServiceInit.authToken, productobjectmodel).then(function(response) {
 			console.log(response.data)
-		})
+		});
 	}
 	
+	$scope.deleteProduct = function(productobject){
+		console.log("Product Delete Model", JSON.stringify(productobject));
+		productService.deleteProduct(commonDataServiceInit.userId,commonDataServiceInit.authToken, productobject).then(function(response) {
+			console.log(response.data)
+		})
+	}
 	
 	/**
 	  * @function fadeOut

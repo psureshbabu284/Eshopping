@@ -22,6 +22,14 @@ var mandatoryToRead = {
     userId : true
 }
 
+var mandatoryToDelete = {
+    Id : true
+}
+
+var mandatoryToUpdate = {
+    Id : true
+}
+
 /**
  * @method ProductTransactor
  * @description: is a class that can handle all the http verb operations under
@@ -44,7 +52,7 @@ ProductTransactor.prototype.CREATE = function ProductTransactorCreate(
     var productModel = req.body;
 	var dbResponse = {};
     var objUser = new Dal.Users();
-	var accountId = req.query.userId;
+	var accountId = req.headers.productid;
     
 	var	input = {
 		quantity : productModel.productQuantiry,
@@ -58,8 +66,8 @@ ProductTransactor.prototype.CREATE = function ProductTransactorCreate(
             //Customer is not exists create customer in Gather
             function(callback){
                 logger.info('input ProductTransactor READ- ' + JSON.stringify(input));
+                logger.info('input req.headers READ- ' + JSON.stringify(req.headers));
 				//get db instance
-				
 				//execute procedure
 				objUser.ExecuteProcedure(sps.productInsert, mandatoryToCreate,
                         [ input ], function(err, response) {
@@ -110,21 +118,20 @@ ProductTransactor.prototype.UPDATE = function ProductTransactorUpdate(
 	var sfInput = req.body.sfInput;
 	logger.info('user - ' +JSON.stringify(user));
 
-	//req.headers.userid = req.headers.userid ;
-	user.userId = req.headers.userid;
 	
-	logger.info('req.headers.userId - ' +req.headers.userid);
+    var input = {
+        Id : req.body.id
+    }
+	logger.info('req.headers.userId - ' +JSON.stringify(input));
 	
-	var recordId; 
     var objUser = new Dal.Users();
 	
     async.waterfall([
            
             function(callback) { 
-				var dbConnection = objUser.getInstance;
 				
-				 objUser.ExecuteProcedure(sps.UpdateUser, mandatoryToUpdate,
-                        [ user ], function(err, dbResponse) {
+				 objUser.ExecuteProcedure(sps.DeleteProduct, mandatoryToUpdate,
+                        [ input ], function(err, dbResponse) {
 						logger.info('err - ' + JSON.stringify(err));
 						logger.info('dbResponse - ' + JSON.stringify(dbResponse));
                     if (err) {
@@ -145,10 +152,7 @@ ProductTransactor.prototype.UPDATE = function ProductTransactorUpdate(
 				
 				
             }], function(err, info, responseObj) {
-				logger.info('sfInput ProductTransactor------- ' + JSON.stringify(sfInput));
-				logger.info('sfInput ProductTransactor------- ' +  Object.keys(sfInput).length);
-				
-					return res.end(JSON.stringify(responseObj));
+				return res.end(JSON.stringify(responseObj));
 				
 				
 			});
@@ -167,19 +171,36 @@ ProductTransactor.prototype.READ = function ProductTransactorRead(req,
         res, next) {
     var objUser = new Dal.Users();
     var input = {
-        userId : req.query.userId
+        userId : req.query.ProductId
     };
-	logger.info(' ProductTransactor userId------- ' + JSON.stringify(input));
+	logger.info(' ProductTransactor READ ----####------- ' + JSON.stringify(req.query));
 	//Executing procedure 
-    objUser.ExecuteProcedure(sps.productsDetails, mandatoryToRead, input,
+    objUser.ExecuteProcedure(sps.productsDetails, mandatoryToRead, [input],
             function(err, responseObj) {
         var responseData = {};
         logger.info(' ProductTransactor------- ' + JSON.stringify(err));
                 logger.info(' ProductTransactor Response Object------- ' +   JSON.stringify(responseObj));
         responseData.productCategories = responseObj.Tables[0];
         responseData.isSuccess = 1;
-        responseData.products = responseObj.Records;
+        responseData.products = responseObj.Tables[1];
 
+        return res.end(JSON.stringify(responseData));
+    });
+};
+
+ProductTransactor.prototype.DELETE = function ProductTransactorRead(req,
+    res, next) {
+    var objUser = new Dal.Users();
+    var input = {
+        id : req.body.id
+    };
+    logger.info(' ProductTransactor Delete------- ' + JSON.stringify(req.body));
+    //Executing procedure 
+    objUser.ExecuteProcedure(sps.productDelete, mandatoryToDelete, [input],
+            function(err, responseObj) {
+        var responseData = {};
+        logger.info(' ProductTransactor------- ' + JSON.stringify(err));
+        logger.info(' ProductTransactor Response Object------- ' +   JSON.stringify(responseObj));
         return res.end(JSON.stringify(responseData));
     });
 };

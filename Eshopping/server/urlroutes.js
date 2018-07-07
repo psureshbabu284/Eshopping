@@ -163,7 +163,8 @@ var apis = {
         methods: {
             UPDATE: true,
             READ:true,
-            CREATE : true
+            CREATE : true,
+            DELETE : true
         },
         description: {
             UPDATE: 'is a HTTP UPDATE route, to change the user password or user email'
@@ -172,9 +173,6 @@ var apis = {
         Enforcer: enforcer.ProductEnforcer,
         Transactor: transacter.ProductTransactor
     }
-    
-
-
 };
 
 exports.APIs = apis;

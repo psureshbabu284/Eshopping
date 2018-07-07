@@ -1,74 +1,98 @@
 <div class="container-fluid" ng-init="initialize();" ng-controller="productController">
-	<div class="container internal">
-		
-		<div class="form-group col-sm-12 has-feedback" 
-			ng-class="{ 'has-success' : createProductModelform.ProductModelType.$valid, 
-			'has-error' : (onCreateProductModelFormSubmit && !createProductModelform.ProductModelType.$valid)}">
-		<div class="col-sm-6 col-sm-offset-3">
-		<label class="control-label">Product categeory</label>
-		
-		<select ng-model="ProductModel.prodCatId" name="ProductModeltype" 
-				ng-required="true" 
-				placeholder="Select Product type"
-				class="form-control" id="accountType" 
-				ng-options="value.id as value.categeory for value in productobjectmodel.productCategories" >
-				<option value="">please choose  categeory</option>
-			</select>
-				
+		<div class="container internal">
 			
-</div>
-</div>
-<!-- End -->
-
-
-
-
-<!-- first name -->
-<div class="form-group col-sm-12 has-feedback">
-	<div class="col-sm-6 col-sm-offset-3">
-		<label class="control-label" for="firstName">Product Price</label>
-		<input type="text" class="form-control" ng-model="ProductModel.price"  
-		ng-required="true"
-		name="firstName" placeholder="Product price" />
+			
+			<h1>Your Products</h1>
+				<table border="1" width="80%">
+						<tr>
+							<th>Id</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Product Categeory</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+						<tr ng-repeat="item in productobjectmodel.products">
+							<td>{{item.id}}</td>
+							<td>{{item.price}}</td>
+							<td>{{item.quantity}}</td>
+							<td>{{item.prodCategeory}}</td>
+							<td><button ng-click="editProduct(item);">Edit</button></td>
+							<td><button ng-click="deleteProduct(item);">Delete</button></td>
+						</tr>
+					</table>
+					<h1>Enter Product Details to Sell</h1>
+				<div class="col-sm-6 col-sm-offset-3">
+	
+	
+					
+								
+	
+			
+			<label class="control-label">Product categeory</label>
+			
+			<select ng-model="ProductModel.prodCatId" name="ProductModeltype" 
+					ng-required="true" 
+					placeholder="Select Product type"
+					class="form-control" id="accountType" 
+					ng-options="value.id as value.categeory for value in productobjectmodel.productCategories" >
+					<option value="">please choose  categeory</option>
+				</select>
+					
+				
 	</div>
-</div>	
-<!-- first name -->
-
-<!-- last name -->
-<div class="form-group col-sm-12 has-feedback">
-	<div class="col-sm-6 col-sm-offset-3">
-		<label class="control-label" for="firstName">Product Quantity</label>
-		<input type="text" class="form-control" ng-model="ProductModel.productQuantiry"  
-		ng-required="true"
-		name="firstName" placeholder="Product price" />
+	
+	<!-- End -->
+	
+	
+	
+	
+	<!-- first name -->
+	<div class="form-group col-sm-12 has-feedback">
+		<div class="col-sm-6 col-sm-offset-3">
+			<label class="control-label" for="firstName">Product Price</label>
+			<input type="text" class="form-control" ng-model="ProductModel.price"  
+			ng-required="true"
+			name="firstName" placeholder="Product price" />
+		</div>
+	</div>	
+	<!-- first name -->
+	
+	<!-- last name -->
+	<div class="form-group col-sm-12 has-feedback">
+		<div class="col-sm-6 col-sm-offset-3">
+			<label class="control-label" for="firstName">Product Quantity</label>
+			<input type="text" class="form-control" ng-model="ProductModel.productQuantiry"  
+			ng-required="true"
+			name="firstName" placeholder="Product price" />
+		</div>
 	</div>
-</div>
-<!-- last name -->
-<!-- email -->
-<div class="form-group col-sm-12 has-feedback">
+	<!-- last name -->
+	<!-- email -->
+	<div class="form-group col-sm-12 has-feedback">
+		<div class="col-sm-6 col-sm-offset-3">
+			<label class="control-label" for="firstName">Product Model</label>
+			<input type="text" class="form-control" ng-model="ProductModel.productVersion"  
+			ng-required="true"
+			name="firstName" placeholder="Product price" />
+		</div>
+	</div>	
+	<!-- email -->
+	
+	
+	
+	
+	
+	<!-- End -->
+	
+	
+	<!-- Dob -->
 	<div class="col-sm-6 col-sm-offset-3">
-		<label class="control-label" for="firstName">Product Model</label>
-		<input type="text" class="form-control" ng-model="ProductModel.productVersion"  
-		ng-required="true"
-		name="firstName" placeholder="Product price" />
+		<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
+		<button id="signinbtn" name="signinbtn" type="submit"  ng-click="saveProduct(ProductModel);" class="">Submit</button>
 	</div>
-</div>	
-<!-- email -->
-
-
-
-
-
-<!-- End -->
-
-
-<!-- Dob -->
-<div class="col-sm-6 col-sm-offset-3">
-	<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
-	<button id="signinbtn" name="signinbtn" type="submit"  ng-click="saveProduct(ProductModel);" class="">Submit</button>
-</div>
-
-
-		</div><!-- row 1 -->
-	</div><!-- container -->
-</div><!-- container-fluid --> 
+	
+	
+			</div><!-- row 1 -->
+		</div><!-- container -->
+	</div><!-- container-fluid --> 

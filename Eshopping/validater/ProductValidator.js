@@ -42,4 +42,18 @@ ProductValidator.prototype.CREATE =
     return next();
 };
 
+ProductValidator.prototype.UPDATE =
+    function ProductValidatorUpdate(req, res, next) {
+    
+    logger.debug('ProductValidatorRead - done...');
+    return next();
+};
+
+ProductValidator.prototype.DELETE =
+    function ProductValidatorDelete(req, res, next) {
+    
+    logger.debug('ProductValidatorDelete - done...');
+    return next();
+};
+
 module.exports = ProductValidator;

@@ -18,7 +18,10 @@ var dbConfig = {
         'ValidateAuthToken' : 'call usp_authtokens_Select(?)',
         'UserDetails' : 'call usp_accounts_Details(?)',
         'productsDetails' : 'call usp_products_select(?)',
-        'productInsert' : 'call usp_products_insert(?)'
+        'productInsert' : 'call usp_products_insert(?)',
+        'productDelete' : 'call usp_products_delete(?)',
+        'DeleteProduct' : 'call usp_products_delete(?)',
+        'Login' : 'call usp_authtokens_insert(?)'
     }
 };
 
