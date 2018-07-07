@@ -1,0 +1,183 @@
+//**-BUTTONS-**
+button { 
+	border: 1px solid $green; 
+	background-color: $green; 
+	border-radius: none !important;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px;
+	width: 275px;
+	text-transform: uppercase;
+	margin: 20px 0px 20px 0px !important;
+	position: relative;
+}
+button#signinbtn { 
+	width: 100%;
+}
+button.btn-wide {
+	width: 100%;
+}
+button.white-button {
+	background-color: white;
+	color: $green;
+	border: solid 1px $gray;
+}
+button.white-button.wide {
+	width: 100% !important;
+}
+button.large-button, button.large-button-green{
+	padding: 15px 30px;
+	font-size: 18px;
+	background-color: white;
+	color: $green;
+	border: 1px solid $gray;
+}
+button.large-button-green{
+	background-color: $green;
+	color: white;
+	border: 1px solid $green;
+}
+button.large-button:hover, button.large-button-green:hover{
+	padding: 15px 30px;
+	font-size: 18px;
+	background-color: $green-hover;
+	color: white;
+}
+button:hover { 
+	border: 1px solid $green-hover; 
+	background-color: $green-hover;
+	color: white;
+}
+button.disabled { 
+	border: solid 1px #c3d6d0;
+	background-color: rgba($green,0.3); 
+}
+
+button.btn-video { 
+	background-color: white;
+	border: 1px solid $gray;
+	text-transform: uppercase;
+	color: $green;
+}
+button.btn-video:hover { 
+	background-color: $green-hover;
+	border: $green-hover;
+	color: white;
+}
+button.banner-btn, button.banner-secondary-btn{ 
+		background: white; 
+		border: none; 
+		color: $darkgray; 
+		width: 150px;
+	
+	&:hover{ 
+		background: $green-hover; 
+		border: none;; 
+		color: white
+	}
+}
+button.banner-secondary-btn{ 
+	background: none;
+	border: solid 3px white;
+	color: white;
+		&:hover{ 
+			background: $green-hover; 
+			border: solid 3px $green-hover;; 
+			color: white
+		}
+}
+
+button.accept, button.browse, button.browse-video{ width: 150px; padding-left: 25px;}
+.accept { width: 150px; }
+
+button.upload-image{ width: 200px; padding-left: 25px;}
+
+button.direction:before, button.direction.green:before {
+	content: '';
+	background :url('../../images_/direction-icon-green.svg') no-repeat;
+	position: absolute;
+	width: 19px;
+	height: 19px;
+	left: 35px;
+	top: 12px;
+	}
+button.accept:before, button.accept.green:before {
+	content: '';
+	background :url('../../images_/accept-icon-green.svg') no-repeat;
+	position: absolute;
+	width: 17px;
+	height: 13px;
+	left: 25px;
+	top: 13px;
+	}
+button.completed:after, button.completed.green:after {
+	content: '';
+	background :url('../../images_/completed-icon-green.svg') no-repeat;
+	position: absolute;
+	width: 20px;
+	height: 15px;
+	right: 20%;
+	top: 13px;
+	}
+button.browse:before, button.browse.green:before, button.upload-image:before, button.upload-image.green:before{
+	content: '';
+	background :url('../../images_/camera-icon-green.svg') no-repeat;
+	position: absolute;
+	width: 20px;
+	height: 16px;
+	left: 20px;
+	top: 13px;
+	}
+button.browse-video:before, button.browse-video.green:before{
+	content: '';
+	background :url('../../images_/video-icon-green.svg') no-repeat;
+	position: absolute;
+	width: 25px;
+	height: 13px;
+	left: 15px;
+	top: 15px;
+}
+button .left-10{margin-left: 10px;}
+button.accept.green:before {background :url('../../images_/accept-icon.svg') no-repeat;}
+button.direction.green:before {background :url('../../images_/direction-icon.svg') no-repeat;}
+button.completed.green:after {background :url('../../images_/completed-icon.svg') no-repeat;}
+button.browse.green:before,button.upload-image.green:before {background :url('../../images_/camera-icon.svg') no-repeat;}
+button.browse-video.green:before{background :url('../../images_/video-icon.svg') no-repeat;}
+
+button.direction:hover:before{background :url('../../images_/direction-icon.svg') no-repeat;}
+button.completed:hover:after{background :url('../../images_/completed-icon.svg') no-repeat;}
+button.accept:hover:before{background :url('../../images_/accept-icon.svg') no-repeat;}
+button.browse:hover:before, button.upload-image:hover:before{background :url('../../images_/camera-icon.svg') no-repeat;}
+button.browse-video:hover:before{background :url('../../images_/video-icon.svg') no-repeat;}
+
+//Consultation-addreses
+button.contact-edit { 
+	width: 122px; 
+	display: inline; 
+	margin-top: -10px !important; 
+	padding: 5px !important;
+} 
+button.contact-change { 
+     @include white-button;
+	 width: 100%;
+	 margin-top: 0px !important;
+} 
+
+button.contact-change.disabled {
+	border: solid 1px rgba($gray,0.3);
+	color: rgba($green,0.3);	
+}
+
+.white-button.disabled {  
+	border: solid 1px rgba($gray,0.3);
+	color: rgba($green,0.3);
+	background-color: white !important;
+}
+
+//shrink button for very small mobile
+button.btn-mobile { width: 160px !important; }
+
+@include tablet {
+	button.btn-mobile { width: 275px !important; }
+}

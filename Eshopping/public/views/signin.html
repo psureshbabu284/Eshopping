@@ -1,0 +1,123 @@
+<div class="container-fluid" ng-init="validateSession();">
+	<div class="container">
+
+<div class="row">
+		<div class="row title-bar">
+			
+			 </div>
+			 <div class="row">
+			 <div class="col-sm-6 col-sm-offset-3"><h2>Sign in to your account</h2>
+			   <hr>
+			  </div>
+        </div>
+<div class="row">
+<div class="col-sm-12">		
+
+<form id="signinForm" name="signinForm" class="form-horizontal">
+<div class="form-group col-sm-12 has-feedback"
+	ng-class="{ 'has-success' : !isPwdfocused || signinForm.loginId.$valid, 
+				'has-error' : onFormSubmit || signinForm.loginId.$dirty && !signinForm.loginId.$valid}">
+				
+	<div class="col-sm-6 col-sm-offset-3">
+		<label class="control-label" for="loginId">Email</label>
+		<input type="email" class="form-control" 
+			ng-model="loginModel.loginId" 
+			autofocus
+			ng-focus="isLoginIdfocused = true"
+			ng-blur="isLoginIdfocused = false"
+			id="loginId" name="loginId" 
+			placeholder="Enter your email" 
+			ng-required="true"/>
+		<!-- <span ng-show="onFormSubmit && signinForm.loginId.$error.required" 
+			class="form-control-feedback glyphicon glyphicon-ok"/> 
+		<span ng-show="signinForm.loginId.$error.email" 
+			class="form-control-feedback glyphicon glyphicon-remove" /> -->
+		
+		<span ng-show="signinForm.loginId.$valid" 
+			class="form-control-feedback glyphicon glyphicon-ok"/> 
+			
+		<span ng-show="onFormSubmit || signinForm.loginId.$error.email" 
+			class="form-control-feedback glyphicon glyphicon-remove" />
+			
+		<div class="small-error-holder">
+			<!-- <span ng-show="!signinForm.loginId.$error.required && !ofkForm.loginId.$error.email" 
+				class="form-control-feedback glyphicon glyphicon-ok" /> -->
+			<small ng-show="onFormSubmit && signinForm.loginId.$error.required"  
+				class="help-block-onecol">{{loginValidationMessages.emailRequiredMessageNotEmpty}}</small>
+
+			<!-- <small class="help-block" ng-show="signinForm.loginId.$error.email" >
+				{{loginValidationMessages.invalidEmailMessage}}</small> -->
+
+			<small ng-show="signinForm.loginId.$error.email" class="help-block-onecol">{{loginValidationMessages.emailMessageValid}}
+			</small>
+		</div>	
+			
+
+		
+		
+	</div>
+</div>	
+
+<div class="form-group col-sm-12 has-feedback"
+ng-class="{ 'has-success' : (isPwdfocused || signinForm.password.$valid), 
+			'has-error' : (signinForm.password.$error.minlength || signinForm.password.$error.maxlength) && !signinForm.password.$valid}">
+				<div class="col-sm-6 col-sm-offset-3">
+					<label class="control-label" for="password">Password</label>
+					<input type="password" class="form-control" 
+						ng-model="loginModel.password"  
+						ng-minlength="6"
+						ng-maxlength="30"
+						ng-required="true"
+						id="password" name="password" 
+						ng-focus="isPwdfocused = true"
+						ng-blur="isPwdfocused = false"
+						placeholder="Enter your password"/>
+					<span ng-show="onFormSubmit && signinForm.password.$error.required" 
+					class="form-control-feedback glyphicon glyphicon-ok">
+					</span>
+					<span ng-show="(signinForm.password.$error.minlength || signinForm.password.$error.maxlength) &&  !signinForm.password.$valid" 
+						class="form-control-feedback glyphicon glyphicon-remove" />
+					
+					<span ng-show="signinForm.password.$valid" 
+					class="form-control-feedback glyphicon glyphicon-ok" />
+					<div class="small-error-holder">
+							<small ng-if="onFormSubmit && signinForm.password.$error.required"  
+								class="help-block-onecol">{{loginValidationMessages.pwdlRequiredMessage}}</small>
+							<small class="help-block-onecol" 
+								ng-if="(signinForm.password.$error.minlength || signinForm.password.$error.maxlength) &&  !signinForm.password.$valid">
+								{{loginValidationMessages.passwordMinMaxValidationMessage}}</small>
+					</div>
+				</div>
+			</div>	
+<div class="form-group col-sm-12">
+	<div class="col-sm-6 col-sm-offset-3">
+		<small class="help-block-onecol has-error" ng-show="onError">{{serviceMessage}}</small>
+		<button id="signinbtn" name="signinbtn" type="submit" 
+			ng-class="{ 'disabled' : signinForm.$invalid || disableSiginInButton}"
+			ng-disabled="signinForm.$invalid || disableSiginInButton"
+			ng-click="userLoginValidation(loginModel);">Sign in</button>
+	</div>		
+</div>
+	<div class="form-group col-sm-12">		
+	<div class="col-sm-6 col-sm-offset-3">    
+		<div class="controls form-inline">
+			<input type="checkbox" name="ofk-check" id="check-1" ng-model = "loginModel.rememberMe"  class="standard-check"/>
+			<label for="check-1"></label><span class="checkbox-label">Remember me</span>	
+		</div>				
+	</div>
+	</div>
+	<div class="form-group col-sm-12"> 
+		<div class="col-sm-6 col-sm-offset-3">    
+			<p>Trouble signing in? <a href="#/resetpswd">Reset your password</a></p>
+			<p>Don’t have a Hair Direct account? <br /><a href="#/userrole">Create an account</a></p>
+		</div>
+	</div>
+</form>	
+</div><!-- col-sm-12 -->
+</div><!-- row -->
+</div>
+<!-- row -->
+</div>
+<!-- container -->
+</div>
+<!-- container-fluid -->

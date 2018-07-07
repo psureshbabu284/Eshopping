@@ -1,0 +1,57 @@
+.bkgrd-brandblue { background-color: $darkblue; }
+.bkgrd-darkblue { background-color: $darkblue; border-right: 1px solid $lightgray;}
+.bkgrd-green { background-color: $green; border-right: 1px solid $lightgray;}
+.bkgrd-yellow { background-color: $yellow; border-right: 1px solid $lightgray;}
+.bkgrd-darkgray { background-color: $darkgray; border-right: 1px solid $lightgray;}
+.bkgrd-mdgray { background-color: $mdgray; border-right: 1px solid $lightgray; }
+.bkgrd-gray { background-color: $gray; border-right: 1px solid $lightgray;}
+.bkgrd-lightgray { background-color: $lightgray; border-right: 1px solid $lightgray; }
+.bkgrd-white { background-color: white; border-right: 1px solid $lightgray; }
+
+//**-STYLE GUIDE ONLY-**
+.color-swatch { 
+	padding: 30px 10px;
+	width: 153px;
+	height: 153px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+} 
+.style-guide .row {
+   margin-bottom: 40px;
+}
+.style-guide { 
+	padding-top: 150px;
+	padding-bottom: 0;
+}
+.color-note { 
+	font-size: 8pt;
+	font-weight: 400;
+}
+li.sidebar-brand { 
+	background-color: $gray;
+}
+.nav-header { 
+	background-color: $lightgray; 
+	min-height: 150px;
+    padding: 20px 0 0 30px;
+}
+.navbar-brand { 
+	width: 250px;
+}
+.styleguide-header {
+	padding-top: 200px;	
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 100px;
+}
+.sg-section-title {
+	color: white;
+	font-weight: bold;
+	font-size: 18pt;
+	text-transform: uppercase;
+	height: auto;
+}
+.style-guide .col-sm-2 {
+   margin-bottom: 40px;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Gather - User Role</title>
+    <!-- Bootstrap  v3 -->
+    <link rel="stylesheet" type="text/css" href="../stylesheets/css/bootstrap.min.css">
+    <!-- Font Awesome 4.7.1 -->    
+	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" />	
+	<!-- FormValidation CSS file -->
+	<link rel="stylesheet" href="../stylesheets/css/formValidation.min.css" />
+	<!-- jQuery v1.9.1 or higher -->
+	<script src="../script/vendor/jquery/jquery.js"></script>
+	<!-- Bootstrap JS provided by FormValidation & needed in addition to BS framework above-->
+	<!-- <script src="../public/script/vendor/bootstrap/bootstrap.min.js"></script> -->
+	<!-- jQuery Datepicker-->	
+	<script src="../script/vendor/jquery/jquery-ui.js"></script>
+	<!-- FormValidation plugin and the class supports validating Bootstrap form -->
+	<script src="../script/vendor/formvalidation/formValidation.min.js"></script>
+	<script src="../script/vendor/formvalidation/framework/bootstrap.min.js"></script>
+	<!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	<link href="../stylesheets/css/simple-sidebar.css" rel="stylesheet">
+	<link href="../stylesheets/css/main.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="account" class="internal">
+<!-- login status username -->
+<div class="navbar navbar-fixed-top" role="header">
+<div class="row navbar-dark">
+	<div class="col-sm-12">
+		<div class="container">
+			<div class="pull-right">
+				<div class="login-holder"><span class="login-icon"></span>email@domain.com</div>
+			</div>
+		</div>  
+		</div>
+</div><!--row navbar-dark-->
+
+<!--internal pages header logo progress bar menu -->
+<div class="row navbar-white">
+<div id="navbar-inter-2" class="navbar navbar-white navbar-fixed-top" role="header">
+   <div class="container navbar-inter-2">
+   	<div class="row">
+		<div class="col-md-2 col-xs-3">
+   	<div class="pull-left">
+		 <a class="navbar-brand" href="#"><img src="https://media.hairdirect.com/images/hd-logo.svg" width="95" height="60" alt="Hair Direct Logo"/></a>
+	</div>
+</div>
+		
+<!--col-md-2 col-xs-3-->
+</div><!-- row -->
+</div>  
+<!-- container -->
+</div>
+</div><!-- row navbar-white -->
+</div>
+<!--navbar navbar-fixed-top-->
+<!-- Content -->  
+<div id="content"> 
+<div class="container-fluid">
+	<div class="container">
+
+<div class="row">
+		<div class="row title-bar">
+			<div class="col-sm-12 col-md-6 col-md-push-6">
+				<div class="steps">
+					<a href="#"><span class="steps-previous">Previous</span></a> <a href="#"><span class="steps-next">Next</span></a>
+				</div>
+			</div>
+			 <div class="col-sm-12 col-md-6 col-md-pull-6">
+				 <span class="location-id">[Signin]</span>
+			 </div>
+			 </div>
+			 <div class="row">
+			 <div class="col-sm-12"><h2>Sign in to your account</h2>
+			   <hr>
+			  </div>
+        </div>
+<div class="row">
+<div class="col-sm-12">				
+<form id="signinForm" class="form-horizontal">	
+<div class="form-group col-sm-12 has-feedback has-success">
+	<div class="col-sm-4 col-sm-4 col-sm-offset-4">
+		<label class="control-label" for="email">Email</label>
+		<input type="text" class="form-control" name="email" placeholder="Enter your email address" />
+		<span class="form-control-feedback glyphicon glyphicon-ok"></span>
+	</div>
+</div>	
+<div class="form-group col-sm-12">
+				<div class="col-sm-4 col-sm-4 col-sm-offset-4">
+					<label class="control-label">Password</label>
+					<input type="password" class="form-control" name="password" placeholder="Enter your password" />
+					<i class="form-control-feedback glyphicon" data-fv-icon-for="password" style=""></i>
+				</div>
+			</div>	
+<div class="form-group col-sm-12">
+<!--
+			<div class="col-sm-4 col-sm-offset-4">
+					<button class="disabled" type="submit" name="signup" value="Sign up">Sign In</button>
+				<p><em>Example of disabled class for button until form validation requirements are met. After met, then disabled class is removed and button appears as shown below. * Development - Please remove note.</em></p>
+				</div>
+-->
+		<div class="col-sm-4 col-sm-offset-4">		
+		    <button type="submit">Sign in</button>
+		</div>
+		
+		
+			</div>
+	<div class="form-group col-sm-12">		
+	<div class="col-sm-4 col-sm-offset-4">    
+		<div class="controls form-inline">
+			<input type="checkbox" name="ofk-check" id="check-1" />
+			<label for="check-1"></label><span class="checkbox-label">Remember me</span>	
+		</div>				
+	</div>
+	</div>
+	<div class="form-group col-sm-12"> 
+		<div class="col-sm-6 col-sm-offset-4">    
+			<p>Trouble signing in? <a href="#">Reset your password</a></p>
+			<p>Don’t have a Hair Direct account? <br /><a href="#">Create an account</a></p>
+		</div>
+	</div>
+</form>	
+</div><!-- col-sm-12 -->
+</div><!-- row -->
+</div>
+<!-- row -->
+</div>
+<!-- container -->
+</div>
+<!-- container-fluid -->
+</div>
+<!-- #content -->
+<!--FOOTER-->
+<footer class="footer">
+<div class="container-fluid">
+	<div class="row help">
+		  <div class="container">
+			  <p class="text-center">Need assistance or have questions? <a href="#"> Live Chat</a> | <a href="mailto:talk@hairdirect.com">talk@hairdirect.com</a> <br>800-424-7436 (U.S. &amp; Canada) or 1-717-553-6633 (local &amp; international)</a></p>
+		  </div>
+	</div>
+	<div class="row note">
+		<div class="container">
+			<p class="text-center">Remember, you can start and stop as needed. We’ll save all your information as you go. <br class="hide-mobile">
+You can leave at any time and easily sign in later to complete the process when you’re ready.</p>
+			<p class="text-center">&copy; Hair Direct, Inc. | Your information will never be shared or sold. It is kept private and stored in <br class="hide-mobile">your account for future reference. For more information, see our <a href="http://www.hairdirect.com/privacy.aspx">Privacy Policy.</a></p>
+		</div>
+	</div>
+</div>
+</footer>
+<div id="dimmer"></div>
+	 
+<script>
+$(document).ready(function() {
+    $('#signinForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required'
+                    },
+                    emailAddress: {
+                        message: 'The input is not a valid email address'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required'
+                    },
+					    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The password must be more than 6 and less than 30 characters long'
+                    },
+                }
+            }
+        }
+    });
+});
+</script>	 
+ 	 <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+    <!-- navigation -->
+	<script src="../script/js/navigation.js"></script>
+</body>
+</html>

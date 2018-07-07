@@ -1,0 +1,379 @@
+//**-FORMS-**
+form {
+	// margin-left: -15px; 
+}
+.form-control { 
+	border: 1px solid $gray;
+//	width: 275px;
+	min-height: 45px;
+}
+
+input.input-success {
+	background: url('../../images_/input-success.svg') no-repeat 0 0;
+	background-position: bottom 12px right 10px;
+}
+input.error-x {
+	background: url('../../images_/x-icon.svg') no-repeat 0 0;
+	background-position: bottom 12px right 10px;
+	border: 1px solid $error; 
+}
+label.control-label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 0;
+  margin-right: 15px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+input.standard-check[type=checkbox] {
+	display:none;
+	margin-left: 15px;
+}
+input.standard-check[type=checkbox] + label {
+	background: url('../../images_/check-box-idle.svg') no-repeat 0 0;
+	background-size: 24px;
+	width: 24px;
+	height: 24px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+	vertical-align:middle;
+	margin-left: 15px;
+	font-size: 11px;
+}
+input[type=checkbox]:checked + label {
+	background: url('../../images_/check-box-checked.svg') no-repeat 0 0;	
+}
+
+// Radio Button //
+
+input[type=radio]  {
+	display:none;
+	margin-left: 15px;
+}
+
+input[type=radio] + label {
+	background: url('../../images_/radio-idle.svg') no-repeat 0 0;
+	background-size: 24px;
+	width: 24px;
+	height: 24px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+}
+input[type=radio]:checked + label {
+	background: url('../../images_/radio-checked.svg') no-repeat 0 0;	
+	background-size: 24px;
+	height: 24px;
+	width: 24px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+}
+// Radio Selection //
+.multi-select-box, .multi-select-box-gray{
+	border: solid 1px #dad6d2;
+	padding: 8px 0;
+	margin: 5px 5px;
+	width: 100%;
+	background: white;
+	cursor: pointer;
+ }
+
+//create disabled functionality for Hair Style section
+.multi-select-box.disabled {
+    border: solid 1px rgba(218, 214, 210, 0.3);
+	background-color: $light-gray;
+}
+.multi-select-box.disabled a {
+     cursor: default !important;
+}
+.multi-select-box.disabled label { 
+    color: rgba(46, 46, 46, 0.3);
+}
+ .multi-select-box-gray{
+ 	background: $light-gray;
+ }
+input.multiselect-radio[type=radio] {
+	display:none;
+	margin-left: 15px;
+}
+
+#color-swatch-row .shadow-box.ng-scope.disabled {
+    opacity: 0.3;
+    background-color: $light-gray;
+	pointer-events: none;
+}
+//make adjustments for labels on xsmall more global
+@include xsmall {
+	.multi-select-box, .multi-select-box-gray { font-size: 12px; line-height: 22px; }
+	#historyTreatmentForm .multi-select-box, #historyTreatmentForm .multi-select-box-gray, #historyAttachmentForm .multi-select-box, #historyAttachmentForm .multi-select-box-gray, #historyHairLineForm .multi-select-box, #historyHairLineForm .multi-select-box-gray { line-height: 14px !important; } 
+	
+	#historyHairLineForm input.multiselect-radio[type=radio] + label { height: 40px !important; } 
+}
+@include phone {
+	.multi-select-box, .multi-select-box-gray { font-size: 13px; line-height: 22px; }	
+	
+	#historyHairLineForm input.multiselect-radio[type=radio] + label { height: 24px !important; } 
+}
+@include tablet { 
+	.multi-select-box, .multi-select-box-gray { font-size: 15px; line-height: 22px; }
+	input.multiselect-radio[type=radio] + label, input.multiselect-check[type=checkbox] + label { 
+		padding: 0 5px 0 45px !important; 
+	}
+}
+
+input.multiselect-radio[type=radio] + label, input.multiselect-check[type=checkbox] + label{
+	background: url('../../images_/radio-idle.svg') no-repeat 0 0;
+	cursor: pointer;
+	background-size: 24px;
+	padding: 0 5px 0 35px;
+	width: 95%;
+	display:inline-block;
+	vertical-align:middle;
+	margin: 0 0 0 15px;
+	font-weight: normal !important;
+	height: 24px;
+}
+textarea.radio-comment, textarea.text-box{
+	margin: 0 0 0 5px;
+	width: 100%;
+	resize: none;
+}
+input.multiselect-radio[type=radio]:checked + label{
+	background: url('../../images_/radio-checked.svg') no-repeat 0 0;	
+}
+// Check Selection //
+input.multiselect-check[type=checkbox] {
+	display:none;
+	margin-left: 15px;
+}
+input.multiselect-check[type=checkbox] + label{
+	background: url('../../images_/check-box-idle.svg') no-repeat 0 0;
+
+}
+input.multiselect-check[type=checkbox]:checked + label{
+	background: url('../../images_/check-box-checked.svg') no-repeat 0 0;	
+}
+.form-control { 
+	border-radius: 0px !important; 
+	-webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    height: 40px;
+} 
+.measure { 
+	width: 100% !important;
+	margin-bottom: 40px;
+} 
+
+.form-control:focus{
+	border: solid 1px $darkblue;
+}
+select#select-override{
+	border-radius:0px !important;
+}
+select.form-control {
+	overflow: hidden;
+	border: none;
+	display:inline-block;
+	border: 1px solid #ccc;
+	border-radius: 0px !important;
+}
+select.form-control option {
+	width:100%;
+	height:auto;
+	border:1px solid $mdgray;
+	background-color:$lightgray;
+	display:inline-block;
+    float: left;
+	padding: 10px 0px 10px 30px;
+	margin-bottom: 7px;
+}
+select.form-control span {
+	display: inline-block;
+	margin-left: 10px;
+}
+label{
+	font-weight: bold !important;
+}
+.checkbox-label {
+    display: inline-block;
+    margin-left: 20px;
+	margin-bottom: 10px;
+}
+.form-notes { 
+	padding: 0;
+	margin-top: 10px;
+}
+.controls.form-inline {
+    margin-left: -15px;
+}
+span.form-control-feedback.glyphicon {  
+	position: relative;
+}
+
+.has-feedback .form-control-feedback {
+	position: relative;
+	float: right;
+	top: -40px !important;
+}
+.glyphicon-remove {
+	color: #a94442;
+}
+.glyphicon-ok {
+	color: #3c763d;
+}
+.form-horizontal .has-feedback .form-control-feedback {
+	height: 0;
+}
+.onload-hide { 
+	display: none;
+}
+//Keep glyphicon inside of input boxes
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+textarea.radio-comment, textarea.text-box{
+	 margin: 0 0 0 5px;
+	 width: 100%;
+	 resize: none;
+}
+.form-group-adjust-bottom { margin-bottom: 0; }
+.form-group { margin-right: 20px; }
+@include tablet {
+	.form-group { margin-right: 0px; }
+}
+@include tablet {
+	.col-align-right {
+		padding-right: 0px;
+	}
+	.col-align-right .multi-select-box, .col-align-right .multi-select-box-gray {
+		margin: 5px 15px;
+	}
+	.form-horizontal .control-label {
+		text-align: left;
+	}
+.col-align-right {
+	padding-right: 0px;
+}
+.col-align-right .multi-select-box, .col-align-right .multi-select-box-gray {
+ 	 margin: 5px 15px;
+ }
+}
+//DROPDOWNS
+.selectContainer select{       
+    height: 40px;
+    padding: 5px 5px 5px 15px;
+    font-size: 16px;       
+    width: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance: none; 
+	border: 1px solid $lightgray;
+    overflow: hidden; 
+    position: relative;
+    display: block;
+}
+.selectContainer select::-ms-expand { display: none; }
+.selectContainer i.fa-chevron-down {
+    float: right;
+    margin-top: -35px;
+    margin-right: 6px;
+    pointer-events: none; 
+    background-color: transparent; 
+    color: $gray !important; 
+    padding-right: 5px;
+    z-index: 999;
+    position: relative;
+    font-size: 20px;
+}
+#repContactForm .form-group { margin-right: 40px; }
+
+#repContactForm input, #repContactForm label {
+	width: 100%;	
+}
+.contact-form-wrapper {  
+	@include box-shadow;
+		background-color: white;
+		padding: 20px;
+		margin: 10px auto 20px auto;
+}
+.sm-space-above { 
+	margin-top: 25px;
+}
+.sm-space-below { 
+	margin-bottom: 20px !important;
+}
+/*zero height for glyphicon-ok*/
+span.form-control-feedback.glyphicon.glyphicon-ok {
+    height: 0;
+}
+
+.form-inline input.form-control { 
+	margin-bottom: 15px;
+}
+
+/* Photo uploads styling */
+input.inputfile { 
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+input.inputfile + label {
+	cursor: pointer;
+}
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+}
+input.inputfile + label {
+	background-color: white;
+    color: $green;
+    border: solid 1px #DAD6D2;
+    font-size: 16px;
+    padding: 5px 25px 7px 45px;
+    text-transform: uppercase;
+    margin: 20px 0px !important;
+	position: relative;
+}
+input.inputfile + label:before {
+    content: '';
+    background: url(../../images_/camera-icon-green.svg) no-repeat;
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    left: 10px;
+    top: 8px;
+}
+input.inputfile + label:hover:before {
+    content: '';
+    background: url(../../images_/camera-icon.svg) no-repeat;
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    left: 10px;
+    top: 8px;
+}
+.inputfile:focus + label,
+.inputfile + label:hover {
+	color: white;
+	background-color: $green;
+}
+//Keyboard Navigation
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}

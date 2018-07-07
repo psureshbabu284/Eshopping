@@ -1,0 +1,29 @@
+//**-BUTTONS-**
+button { 
+	border:  $lightgray; 
+	background-color: white; 
+	border-radius: none !important;
+	color: $green;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px;
+	min-width: 210px;
+//	text-transform: uppercase;
+	margin: 20px 10px;
+}
+button:hover { 
+	border: $green; 
+	background-color: $green; 
+}
+
+button.btn-video { 
+	background-color: white; 
+	border: 1px solid $lightgray;
+	text-transform: uppercase;
+	color: $green;
+}
+button.btn-video:hover { 
+	background-color: white; 
+	border: $lightgray;
+	color: $green;
+}

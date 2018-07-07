@@ -1,0 +1,44 @@
+* { 
+	font-family: 'Open Sans', sans-serif; 
+}
+//**-HEADINGS-**
+h1, h2, h3, h4, h5, h6, p { color: $darkgray; }
+
+h1, h2 { margin-bottom: 20px; }
+h3, h4, h5, h6, p { margin-bottom: 10px; }
+
+a { color: $green; text-decoration: none; }
+a:hover { color: $green-hover; text-decoration: underline; }
+
+// sizes based on modern-scale-for-web-typography
+// http://typecast.com/blog/a-more-modern-scale-for-web-typography
+
+//default is phone since we're mobile first
+h1 { font-size: 2em; line-height: 1.25em; font-weight: bold; }
+h2 { font-size: 1.625em; line-height: 1.15em; font-weight: bold; }
+h3 { font-size: 1.375em; line-height: 1.375em; }
+h4 { font-size: 1.125; line-height: 1.11em; }
+h5 { font-size: 1em; line-height: 1.05em; }
+p  { font-size: 1em; line-height: 1.75em; }
+
+@include tablet {
+	h1 { font-size: 2.25em; line-height: 1.25em; font-weight: bold; }
+	h2 { font-size: 2em; line-height: 1.25em; font-weight: bold; }
+	h3 { font-size: 1.5em; line-height: 1.25em; }
+	h4 { font-size: 1.125em; line-height: 1.25em; }
+	h5 { font-size: 1em; line-height: 1.05em; }
+}
+
+@include desktop {
+	h1 { font-size: 2.45em; line-height: 1.05em; font-weight: bold; }
+	h2 { font-size: 2.15em; line-height: 1.25em; font-weight: bold; }
+	h3 { font-size: 1.75em; line-height: 1.25em; }
+	h4 { font-size: 1.5em; line-height: 1.2em; }
+	h5 { font-size: 1em; line-height: 1.05em; }
+}
+
+//p.intro {
+//	font-size: 2em; 
+//	line-height: 1.15em; 
+//	font-weight: normal; 
+//}

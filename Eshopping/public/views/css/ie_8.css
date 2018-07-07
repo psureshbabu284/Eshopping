@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+#topline #topl_lft img {
+	margin-top: 2px;
+}
+
+#menu ul li a {
+	padding-left: 25.26px;
+	padding-right: 25.25px;
+}
+
+#social .phone {
+	background-position: 0 3px;
+}
+
+#slider_bot_bar ul li a {
+	padding-top: 1px;
+}
+
+#order_button {
+	line-height: 33px;
+}
+
+#menu ul {
+	width: 99.5%;
+}
+
+#newslinput {
+	border: solid 1px #CCC;
+}
+
+#talk_div {
+	width: 540px;
+}
+
+#talk_div ul li {
+	margin-left: 4px;
+}
+
+.bottom_menu ul.last_ul {
+	width: 240px;
+}
+
+#studio_right {
+	width: 50%;
+}
+
+#edit_txt_area {
+	height: 50px;
+}

@@ -1,0 +1,19 @@
+/* jshint ignore:start */
+{
+  "asi": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "indent": 4,
+  "latedef": true,
+  "maxlen": 80,
+  "newcap": true,
+  "quotmark": "single",
+  "trailing": true,
+  "undef": true,
+  "node": true,
+  "unused": true,
+  "freeze": true,
+  "-W100": true
+}
+/* jshint ignore:end */

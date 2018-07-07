@@ -1,0 +1,48 @@
+@mixin phone {
+  @media (min-width: #{$phone-width}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+@mixin lg-desktop {
+  @media (min-width: #{$lg-desktop-width}) {
+    @content;
+  }
+}
+
+// x-small rarely used
+@mixin xsmall {
+  @media (min-width: #{$xsmall-width}) {
+    @content;
+  }
+}
+
+@mixin box-shadow {
+  -moz-box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
+}
+
+@mixin shadow-box {
+ 	 position: relative;
+     display: inline-block;
+     margin: 10px 5px;
+     cursor: pointer;
+	 background-color: white;
+     @include box-shadow;
+}
+
+@mixin white-button {
+	background-color: white;
+	color: $green;
+	border: solid 1px $gray;
+}

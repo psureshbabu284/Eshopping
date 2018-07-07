@@ -1,0 +1,38 @@
+// **lg** Large devices Desktops (≥1200px)
+//Container width = 1170px
+
+
+// **md** Medium devices Desktops (≥992px)
+//Container width = 970px
+
+
+// **sm** Small devices Tablets (≥768px)
+//Container width = 750px
+
+
+// **xs** Extra small devices Phones (<768px)
+//Container width = None(auto)
+
+
+//Starting at screen width of 1900px
+$head1:70px;
+$head2:60px;
+$head3:32px;
+$head4:26px;
+$head5:22px;
+$head6:18px;
+
+
+ 
+ 
+ 
+MIN-WIDTH
+@media only screen and (min-width: 320px)  {...}
+Here's what that actually means:
+If [device width] is greater than or equal to 320px, then do {...}
+
+
+MAX-WIDTH
+@media only screen and (max-width: 320px)  {...}
+Translates to:
+If [device width] is less than or equal to 320px, then do {...}

@@ -1,0 +1,1273 @@
+html, body {
+  min-height: 100%;
+  overflow: visible;
+	
+}
+body {
+  background-color: $lightgray;
+}
+#content { 
+	margin-top: 65px;
+	height: auto !important;
+	min-height: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+//#content > div { background-color: $lightgray; }
+.white { color: white; }
+.hide-mobile { display: none; }
+
+//LAYOUT
+//Changing default width of container to match Mockups
+@include desktop {
+	.container {
+		width: 960px;
+	}
+}
+/* HEADER STYLES
+-------------------------------------------------- */
+.navbar-dark { 
+ 	background-color: $darkgray;
+	border-color: $darkgray;
+	height: 30px;
+}
+.navbar-white {
+	background-color: white;
+	height: 35px;
+	-webkit-box-shadow: 0 4px 3px -2px $gray;
+	-moz-box-shadow: 0 4px 3px -2px $gray;
+	box-shadow: 0 4px 3px -2px $gray;
+}
+.login-holder:hover {
+	background-color: $green-hover;
+}
+//FROM TYLER
+.login-holder {
+ background-color: $green;
+ width: 100%;
+ min-width: 200px;
+ height: 30px;
+ color: white;
+ font-size: 12px;
+ text-align: center;
+ line-height: 30px;
+ vertical-align: middle;
+ padding-left: 20px;
+ padding-right: 20px;
+
+  .signout{
+   	  float: right;
+      margin-left: 10px;
+      padding-left: 5px;
+
+      &:before{
+       content: '';
+       border-left: solid 2px white;
+       line-height: 10px;
+       padding-right: 10px
+      }
+  }
+  .username{
+	   float: left;
+	   white-space: nowrap;
+       text-overflow: ellipsis;
+   	   max-width: 250px;
+       overflow: hidden;
+  }
+}
+.login-holder:hover {
+ background-color: $green-hover;
+}
+span.login-icon:before {
+ content: url('../../images_/user-icon.svg');
+ background-repeat: no-repeat;
+ margin-right: 10px;
+ width: 15px;
+ height: 18px;
+ line-height: 30px;
+ vertical-align: middle;
+}
+span.gather-link, span.gather-link-mobile { 
+	font-style: italic;
+	line-height: 35px;
+	font-size: 12px;
+	margin-left: 5px;
+}
+span.gather-link a, span.gather-link-mobile a { 
+	color: white !important;
+}
+@include phone {  
+	span.gather-link-mobile { display: inline-block; }
+	span.gather-link { display: none; }
+}
+
+@include tablet { 
+	span.gather-link-mobile { display: none; }
+	span.gather-link { display: inline-block;
+		line-height: 50px;
+		font-size: 14px;
+		margin-left: 0;
+	}
+}
+#navbar-inter-2 { 
+	top: 30px;
+}
+.navbar-brand {
+	float: left;
+	padding: 5px;
+}
+.container>.navbar-header { 
+	display: inline-block;
+}
+.progress-label { 
+	display: none;
+}
+#progress-bar {
+	width: 100%;
+	height: auto;
+	display: inline;
+	padding-left: 2%;
+	padding-right: 3%;
+}
+.nav-expander .nav-open {
+	color: $green;
+	padding: 10px 0;
+	width: 65px;
+	height: 55px;
+	display: inline;
+}
+
+@include tablet {
+	.nav-expander .nav-open {
+		padding: 30px 0;
+	}		
+}
+.progress {
+	background-color: $gray;
+	margin-top: 1%; 
+}
+.navbar-brand img {
+	width: 36px;
+	height: auto;
+	margin-top: 10px;
+}
+.nav-expander{
+	margin-top: 0;
+}
+@include tablet {
+	#content { 
+		margin-top: 125px;
+		background-color: $lightgray;
+		min-height: 100%;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.navbar-brand {
+		padding: 15px;
+	}
+	.navbar-dark { 
+		height: 48px;
+	}
+	.login-holder {
+		height: 48px;
+		font-size: 14px;
+		line-height: 50px;
+	}
+	span.login-icon:before {
+		line-height: 48px;
+	}
+	.navbar-white {
+		height: 92px;
+		-webkit-box-shadow: 0 8px 6px -3px $gray;
+		-moz-box-shadow: 0 8px 6px -3px $gray;
+		box-shadow: 0 8px 6px -3px $gray;
+	}
+	#navbar-inter-2 { 
+		top: 48px;
+	}
+	.navbar-brand img {
+		width: 92px;
+		height: auto;
+		margin-top: 0;
+	}
+	.progress-label { 
+		text-align: right; 
+		font-weight: bold;
+		width: 100%;
+		display: block;
+	}
+	.progress {
+		margin-top: 1%; 
+	}
+	.nav-expander .nav-open {
+		border: 1px solid $gray;
+		padding: 10px 7px;
+		display: block;	
+	}
+	.nav-expander{
+		margin-top: 10px;
+	}
+	.hide-mobile { display: block; }
+}
+// over-ride bs default to adjust progress bar height
+.progress, .progress-bar {
+	height: 7px;
+}
+.progress-bar {
+	background-color: $lightblue;
+	height: 7px;
+}
+//Updates to header for Landing Page
+#landing-page .navbar-white { box-shadow: none; }
+#nav-close { 
+	color: white;
+	background-color: $green;
+	font-size: 12px;
+	border: 1px solid $green;
+  	font-weight: bold;
+	padding: 10px 7px;
+	width: 65px;
+	height: 55px;
+	display: block;
+	text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+	margin-right: 15px;
+}
+span.nav-close:before {
+	content: url('../../images_/close-icon.svg');
+	background-repeat: no-repeat;
+	margin-right: 10px;
+	width: 15px;
+	height: 18px;
+	vertical-align: middle;		
+}
+a.nav-expander {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 12;
+  padding-top: 0;
+  margin-right: 0;
+}
+
+@include tablet {
+	a.nav-expander {
+		padding-top: 10px;
+		margin-right: 15px;
+	}	
+}
+
+
+a.nav-expander:hover {
+  cursor: pointer;
+}
+.row.navbar-dark .container {
+	padding-right: 0;
+}
+@include tablet {
+	.row.navbar-dark .container {
+		padding-right: 15px;
+	}
+	.navbar-white .container {
+		padding-right: 0px;
+	}
+	a.nav-expander {
+	  padding-top: 14px;
+	}
+}
+
+/* FOOTER STYLES
+-------------------------------------------------- */
+footer p {  
+	font-size: .875em; 
+	line-height: 1.4em; 
+}
+footer .help {
+	background-color: $gray;
+	padding-top: 15px;
+	font-weight: bold;
+}
+footer .note {
+	background-color: $darkgray;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+footer .note p {
+	color: $gray;
+}
+footer .note a {
+	color: $gray;
+}
+footer .note a:hover {
+	color: $gray;
+}
+@include desktop {
+	.note .container {
+		width: 45%;
+	}
+}
+.note .container {
+	width: 80%;
+}
+.internal .note {
+	width: 100%;
+}
+/* LANDING PAGE/GET STARTED STYLES
+-------------------------------------------------- */
+.container-fluid.get-started-bkgrd { 
+	margin-top: -25px;
+}
+.get-started-bkgrd { 
+	background-image: url('../../images_/color-bg-short.jpg');
+	min-height: 500px;
+	background-size: cover;
+	background-position: 50% 50%;
+	position: relative;
+}
+/* MAIN BANNER */
+.main-banner{ 
+	padding-top: 75px;
+	padding-left: 40px;
+	h1{ color: white; font-size: 3.125em; font-weight: 400; }
+	h2{ color: white; font-size: 1.5em; font-weight: 600; }
+	h3#banner{ color: white;}
+	p{color: white; font-size: 1.125em;}
+	.banner-btn{ 
+		background: white; 
+		border: 2px solid white; 
+		color: $darkgray; 
+		width: 150px;
+		margin: 20px 20px 20px 0px;
+	}
+	.banner-btn:hover{ 
+		background: $green-hover; 
+		border: $green-hover; 
+		color: white
+	}
+	.banner-btn2 { 
+		background: none; 
+		color: white; 
+		border: white 2px solid; 
+		width: 150px;
+	}
+	.banner-btn2:hover { 
+		background: $green-hover; 
+		border: $green-hover 2px solid; 
+		color: white
+	}
+}
+.overlay { 
+	background-color: rgba($mdgray, 0.5);
+	padding: 0;
+	margin: 0;
+	min-height: 500px;
+	z-index: 999999; 	
+	margin: 0 -15px;
+}
+
+// UL/OL List Elements
+ 
+// ul.standard-ul, ol.standard-ol, ul.checked, ul.unchecked, ul.numbered-list{
+//	margin: 15px 30px 15px -40px;
+// }
+ul.standard-ul, ol.standard-ol, ul.checked, ul.unchecked, ul.numbered-list{
+	margin: 20px 0px 15px -30px;
+}
+@include tablet {
+	 ul.standard-ul, ol.standard-ol, ul.checked, ul.unchecked, ul.numbered-list{
+		margin: 30px 0px;
+	 }
+}
+
+ul.standard-sub-ul { margin: 10px 0 10px -40px; }
+
+ul.indent{
+    margin: 0 30px 15px 0;
+}
+ 
+ ul.checked li:before, ul.unchecked li:before, ul.standard-ul li:before{
+ 	content:'';
+     background-image: url(../../images_/ul-check-icon.svg);
+     width: 18px;
+     height: 18px;
+     position: absolute;
+     left: 0;
+ }
+
+ul.checked.big-list li {
+	margin-bottom: 40px;
+}
+ul.checked.big-list li ul li{
+	margin-bottom: 0;
+}
+ 
+ ul.standard-ul li:before {
+ 	background-image: url(../../images_/ul-disc-icon.svg);
+ 	width: 7px;
+ 	height: 7px;
+ 	top: 7px;
+ }
+
+ ul.standard-sub-ul li:before {
+ 	background-image: url(../../images_/ul-disc-icon.svg);
+ 	width: 7px;
+ 	height: 7px;
+ 	top: 7px;
+ }
+ul.numcir-ul {
+	margin: 15px 30px 60px 0px;
+}
+
+ul.numcir-ul li {
+	margin-bottom: 20px;
+}
+
+ul.numcir-ul li {
+	list-style: none;
+}
+ul.numcir-ul li:before  {
+ 	 content:'';
+     width: 42px;
+     height: 42px;
+     position: absolute;
+     left: 0;
+	 background-repeat: no-repeat;
+ }
+ul.numcir-ul li.circle1:before  {
+     background-image: url(../../images_/ul-number-1-icon.svg);
+ }
+ul.numcir-ul li.circle2:before {
+     background-image: url(../../images_/ul-number-2-icon.svg);
+}
+ul.numcir-ul li.circle3:before {
+     background-image: url(../../images_/ul-number-3-icon.svg);
+ }
+ul.numcir-ul li.circle4:before {
+     background-image: url(../../images_/ul-number-4-icon.svg);
+ }
+ul.numcir-ul li.circle5:before {
+     background-image: url(../../images_/ul-number-5-icon.svg);
+ }
+ul.numcir-ul li.circle6:before {
+     background-image: url(../../images_/ul-number-6-icon.svg);
+ }
+ul.numcir-ul li.circle7:before {
+     background-image: url(../../images_/ul-number-7-icon.svg);
+ }
+ul.numcir-ul li.circle8:before {
+     background-image: url(../../images_/ul-number-8-icon.svg);
+ }
+ ul.numcir-ul li.circle9:before {
+     background-image: url(../../images_/ul-number-9-icon.svg);
+ }
+ul.numcir-ul li.circle10:before {
+     background-image: url(../../images_/ul-number-10-icon.svg);
+ }
+
+ 
+ ul.unchecked li:before{
+ 	background-image: url(../../images_/ul-unchecked-icon.svg);
+ }
+ 
+ ul.standard-ul li, ol.standard-ol li, ul.checked li, ul.unchecked li{
+ 	position: relative;
+ 	list-style: none;
+ 	padding-left:30px;
+ 	margin: 10px 0;
+ }
+ 
+ ul.standard-ul li{
+ 	padding-left:15px;
+ }
+ 
+ ol.standard-ol li{
+ 	list-style: decimal;
+ 	color:$green;
+ 	font-weight: bold;
+ 	padding-left:5px;
+ 	list-style-position: inside;
+ 
+ 	span{
+ 		color: $mdgray;
+ 		font-weight: normal;
+ 	}
+ }
+ 
+ ul.numbered-list{
+ 	list-style: none;
+ }
+
+ ul.numbered-list li{
+ 	min-height: 100px;
+     background-image: url(../../images_/ul-number-1-icon.svg);
+     background-position: left top;
+     background-repeat: no-repeat;
+     padding-left: 60px;
+     margin-bottom: 20px;
+     list-style: none;
+ }
+ 
+// Get Started Section
+@include tablet {
+	.get-started-bkgrd { 
+		background-image: url('../../images_/gather-hero.jpg'); 
+	}
+}
+.get-started-message h1, .get-started-message h3, .get-started-message p {
+	color: white;
+}
+.get-started-message h1 {
+	margin-bottom: 0;
+}
+.get-started-message p {
+	max-width: 425px;
+}
+.get-started-message p {
+    margin-top: 15px;
+    font-size: 18px;
+	line-height: 22px;
+}
+.get-started-message sup {
+    top: -1.75em;
+	font-size: 30%;
+}
+.get-started-message button { 
+	border: white; 
+	background-color: white; 
+	border-radius: none !important;
+	color: $darkblue;
+	margin: 20px 0;
+}
+.get-started-how {
+	padding-top: 50px;
+	background-color: $lightgray;
+}
+.get-started-how h2 {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: none; 
+   line-height: 1.25em;
+   margin: 0; 
+} 
+.get-started-how h2 span { 
+    background: none; 
+    padding:0; 
+}
+@include tablet {
+	.get-started-how h2 {
+	   width: 100%; 
+	   text-align: center; 
+	   border-bottom: 1px solid $gray; 
+	   line-height: 0.1em;
+	   margin: 10px 0 20px; 
+	} 
+	.get-started-how h2 span { 
+		background: $lightgray; 
+		padding:0 25px; 
+	}
+}
+.get-started-how ul {
+	margin-top: 20px;
+}
+.get-started-how li {
+    min-height: 100px;
+    background-image: url(../../images_/ul-value-icon.svg);
+    background-position: left top;
+    background-repeat: no-repeat;
+    padding-left: 60px;
+    margin-bottom: 20px;
+}
+// to apply black background when menu is open
+#dimmer {
+	position:fixed; 
+	top:138px; 
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba($mdgray,0.9); 
+	width:100%; 
+	height:100%;
+	z-index:999;
+	display:none; 
+    transition: top 0.4s ease-in-out 0s;
+    -webkit-transition: top 0.4s ease-in-out 0s;
+    -moz-transition: top 0.4s ease-in-out 0s;
+    -o-transition: top 0.4s ease-in-out 0s;
+}
+div.container.internal {
+	padding: 0 30px;
+}
+//Internal Pages Title Bar
+.location-id { 
+	font-size: 1em; 
+	font-weight: 700; 
+	color: $mdgray; 
+}
+.steps { 
+	float: none; 
+	margin-bottom: 10px;
+	margin-right: 30px;
+}
+span.steps-next {
+    float: right;
+}
+.steps-previous, .steps-next {
+	color: $green;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 800;
+}
+span.steps-previous.disabled, span.steps-next.disabled {
+	color: rgba($green,0.3);
+}
+.next-inactive {
+   pointer-events: none;
+   cursor: default;
+}
+
+.next-active {
+   pointer-events: inherit;
+   cursor: pointer;
+}
+.steps-previous {
+    padding-right: 20px; 
+}
+.steps-previous, .steps-next, .location-id { 
+	display: inline-block;
+	height: 25px;
+}
+.steps-previous:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 16px;
+  content: '\f104';
+  text-transform: none;
+  margin-right: 5px;
+}
+.steps-next:after {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 16px;
+  content: '\f105';
+  text-transform: none;
+  margin-left: 5px;
+}
+.title-bar { 
+	padding-top: 10px; 
+//	display: none; 
+}
+hr {
+	margin-top: 10px;
+    margin-bottom: 10px;
+	margin-right: 30px;
+	border: 0;
+	border-top: 1px solid $gray; 
+}
+
+
+// Hairloss Pattern Images
+.multi-select-wrapper{
+	position: relative;
+    width: 90%;
+    margin: 0 auto 40px;
+}
+ @include desktop {
+ 	.multi-select-wrapper{
+ 		width: 98%;
+ 	}
+ }
+
+//MOBILE FIRST
+.shadow-box, .hairloss-box {
+		position: relative;
+		 display: inline-block;
+		 margin: 10px 5px;
+		 cursor: pointer;
+		 background-color: white;
+			@include box-shadow;
+
+			.image-upload {
+				float: left;
+			}
+			.image-name{
+				display: none;
+			}
+			.image-upload { 
+				width: 143px;
+				height: 114px; 
+				margin-right: 10px;	
+				overflow: hidden;
+			}
+			img.hairloss-img {
+				display: inline-block;
+				position: relative;
+				width: 100%;
+				height: auto;
+				margin-right: 2px;
+			}
+			.color-swatch-thumb {
+				display: table;
+				position: relative;
+				width: 143px;
+				height: 114px;
+				vertical-align: middle;
+				text-align: center;		 
+			}
+			span.color-swatch-text { 
+				display: table-cell;
+				vertical-align: middle;
+				font-size: 16px;
+				font-weight: bold;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			span.color-swatch-selected {
+				background-image: url(../../images_/corner-check.svg);
+				position: absolute;
+				width: 49px;
+				height: 49px;
+				z-index: 10;
+				top:0;
+				right: 0px;
+			}
+			span.hairloss-selected{
+				background-image: url(../../images_/corner-check.svg);
+				position: absolute;
+				width: 49px;
+				height: 49px;
+				z-index: 10;
+				top:0;
+				right: 0px;
+			}
+			.hairloss-overlay{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 100%;
+				width: 100%;
+				opacity: 1;
+				transition: .5s ease;
+				background-color: rgba(0,0,0,0.6);
+			}
+			.hairloss-overlay:hover {
+				opacity: 0;
+			}
+			span.close-item {
+				background-image: url(../../images_/trash-icon.svg);
+				position: absolute;
+				width: 20px;
+				height: 30px;
+				z-index: 10;
+				top: 5px;
+				right: 5px;
+				background-repeat: no-repeat;
+				background-color: white;
+			} 
+}
+ @include desktop {
+	 .shadow-box, .hairloss-box{
+		position: relative;
+		 display: inline-block;
+		 margin: 10px 5px;
+		 cursor: pointer;
+		 background-color: white;
+			@include box-shadow;
+			.image-upload, .image-name {
+				float: left;
+			}
+			.image-name {
+				margin: 50px 40px 0px 0;
+				display: inline-block;
+			}
+			.image-name p {
+				width: 200px;
+				overflow: hidden;
+				font-size: 16px;
+			}
+			 .image-upload { 
+				width: 143px;
+				height: 114px; 
+				margin-right: 10px;	
+				overflow: hidden;
+			 }
+		img.hairloss-img {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			height: auto;
+			margin-right: 2px;
+		}
+
+		.color-swatch-thumb {
+			display: table;
+			position: relative;
+			width: 143px;
+			height: 114px;
+			vertical-align: middle;
+			text-align: center;		 
+		}
+		span.color-swatch-text { 
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 16px;
+			font-weight: bold;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		span.color-swatch-selected {
+			background-image: url(../../images_/corner-check.svg);
+			position: absolute;
+			width: 49px;
+			height: 49px;
+			z-index: 10;
+			top:0;
+			right: 0px;
+		}
+		span.hairloss-selected {
+			background-image: url(../../images_/corner-check.svg);
+			position: absolute;
+			width: 49px;
+			height: 49px;
+			z-index: 10;
+			top:0;
+			right: 0px;
+		}
+		.hairloss-overlay {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			opacity: 1;
+			transition: .5s ease;
+			background-color: rgba(0,0,0,0.6);
+		}
+		.hairloss-overlay:hover {
+			opacity: 0;
+		}
+		span.close-item {
+			background-image: url(../../images_/trash-icon.svg);
+			position: absolute;
+			width: 20px;
+			height: 30px;
+			z-index: 10;
+			top: 50px;
+			right: 15px;
+			background-repeat: no-repeat;
+		}
+	 }
+}
+
+//searchResults classes are for hairStyle gallery results
+#searchResults .hairloss-box {
+    width: 100%;
+    height: 200px;
+	overflow: hidden;
+}
+@include desktop { 
+	#searchResults .hairloss-box {
+		width: 100%;
+		height: 400px;
+	}
+}
+
+//hairstyle classes are applied to hair style gallery - user selections
+.hairstyle-shadow-box {
+	 position: relative;
+	 display: inline-block;
+	 margin: 10px 5px;
+	 cursor: pointer;
+	 width: 143px;
+ }
+
+// for photo uploads to allow us to make the image thumbnail porportional
+.shadow-box .image-upload .fillwidth { 
+  width: auto; 
+  height: 152px;
+}
+.shadow-box .image-upload .fillheight {
+  width: auto; 
+  height: 152px;
+}
+
+.fillwidth { margin: -10% -25%; }  
+.fillheight { margin: -10% 0%; }
+//.fillheight { top: -25%; }
+//.fillwidth { left: -25%; }  
+
+
+img.hairstyle-img {
+    width: 143px;/* height will follow within image ratio */
+    height:auto;/* to overrride attribute height set in tag */
+}
+.hairstyle-img-holder {
+    display:block;
+    height:143px;/*set an height */
+    line-height:113px;/* set the baseline at 100px from top*/
+    overflow:hidden;/* crops/cut off */
+}
+span.close-item {
+    background-image: url(../../images_/trash-icon.svg);
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    z-index: 10;
+    top: 45px;
+    right: 16px;
+    background-repeat: no-repeat;
+}
+span.hs-close-item {
+    background-image: url(../../images_/trash-icon.svg);
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    z-index: 10;
+    top: 5px;
+    right: 5px;
+    background-color: white;
+    background-repeat: no-repeat;
+}
+.video-shadow-box .video-name {
+	width: 280px;
+	margin: 15px 30px;
+}
+
+.video-shadow-box {
+	 width: 100%;
+ 	 position: relative;
+     display: inline-block;
+     margin: 10px 0;
+     cursor: pointer;
+	 background-color: white;
+     	@include box-shadow;
+}
+.video-shadow-box span.close-item {
+	top: 15px !important;
+}
+.video-name p {
+	width: 280px;
+	overflow: hidden; 
+}
+.video-progress {  
+	background-color: $gray;
+	height: 12px;
+}
+.progress-bar-success {
+    background-color: $green;
+	height: 12px;
+	line-height: 12px;
+	font-size: 10px;
+}
+.progress-holder { 
+	width: 100%;
+	height: 48px;
+	background-color: white;
+	border: solid 1px $gray;
+	padding: 10px 20px 0 20px;
+	margin: 20px 0px 20px 0px !important;
+}
+@include desktop { 
+	.progress-holder { 
+		padding: 5px 20px 0 20px;
+	}
+} 
+.hairloss-box{
+ 	width: 100%;
+ }
+.hairloss-box:nth-child(2n+1){
+ 	margin-left: 0 !important;
+ }
+ @include desktop {
+ 	.hairloss-box{
+ 		width: 453px;
+ 	}
+ }
+
+
+
+.hairstyle-box {
+	height: 450px;
+	
+}
+.color-swatch-box {
+// 	width: 930px;
+	height: auto;
+	margin-top: 25px;
+	margin-left: 5px;
+	line-height: 240px;
+	padding-right: 30px;
+}
+.color-swatch-box img {
+	vertical-align: center;
+ }
+
+
+ // Video Image With Icons
+ 
+ .video-wrapper{
+ 	position: relative;
+     display: inline-block;
+     width: 100%;
+     margin: 0 5px 15px 5px;
+     cursor: pointer;
+ 
+     img.video-img{
+ 		display: inline-block;
+ 		@include box-shadow;
+ 		position: relative;
+ 		width: 100%;
+ 	}
+ 
+     span.video-play-icon-sm{
+ 		background-image: url(../../images_/video-play-icon-sm.svg);
+ 		position: absolute;
+ 		width: 38px;
+ 		height: 38px;
+ 		z-index: 10;
+ 		bottom:0;
+ 		right: 0;
+ 	}
+ 
+ 	div.video-time{
+ 		position: absolute;
+ 		background: rgba(0,0,0,0.6);
+ 		bottom:0;
+ 		left: 0;
+ 		padding: 10px;
+ 		height: 38px;
+ 
+ 		p{
+ 			color: white;
+ 			margin-bottom: 0;
+ 			font-size: .875em;
+ 		}
+ 	}
+ }
+ 
+@include tablet {
+	div.video-time{
+		padding: 5px 25px;
+		height: 38px;
+	}
+	
+	
+	div.video-time p {  
+ 			font-size: 1.125em;
+	}	
+}
+
+ @include desktop {
+ 	.video-wrapper{
+ 		width: 426px;
+ 	}
+ }
+
+@include tablet {
+	.title-bar { 
+		padding-top: 0; 
+	}
+	.steps { 
+		float: right;
+		margin-bottom: 0;
+		margin-right: 30px;
+	}
+	.internal h2 { 
+		margin-bottom: 20px; 
+	}
+	hr {
+	    margin-bottom: 20px; 	
+	}
+	.steps-previous, .steps-next, .location-id { 
+		height: 1px;
+	}
+}
+p.note { font-size: .875em; line-height: 1.5em; }
+p.dev-note { text-align: center; font-weight: bold; color:red; }
+span.varCopy  { font-weight: bold; }
+
+.help-block.has-error { 
+	color: #a94442; 
+	width: 275px; 
+	text-align: right;
+}
+.help-block-onecol.has-error { 
+	color: #a94442; 
+	width: 275px; 
+	text-align: left !important;
+}
+.help-block-2col.has-error {
+	color: #a94442; 
+	width: 100%; 
+	text-align: right; 
+}
+//Frontal guide section
+p.cont-note {
+	margin-top: 20px;
+}
+@include tablet {
+	p.cont-note {
+		width: 90%;
+	}
+}
+@include desktop { 
+	p.cont-note {
+		width: 100%;
+	}
+}
+.row.space {
+	margin-bottom: 50px;
+}
+.space {
+	margin-bottom: 50px;
+}
+figcaption { margin: 0 20px 0 5px;  }
+.caption-right {
+	display: block;
+	float: left;
+	width: 100%;
+}
+@include desktop {
+	.caption-right {
+		float: right;
+		display: inline-block;
+		width: auto;
+	}
+}
+#callout { 
+	background-color: white;
+	padding: 20px;
+	position: relative;
+	margin-bottom: 40px;
+}
+#callout img { 
+	display: block;
+	margin: 0 auto;
+}
+
+#callout span {
+	display: block;
+	//margin-top: 20px;
+}
+
+@include tablet {
+	#callout img { 
+		position: absolute;
+		top: 50%;
+		margin-top: -25px;  /* = image height div 2 */
+	}
+	#callout span {
+		margin-left: 60px;
+		display: inline-block;
+	}
+}
+
+.space-left {
+	margin-left: 10px;
+}
+
+.uploaded-image button.browse { 
+	margin: 0;
+}
+.uploaded-image .shadow-box { 
+	margin: 0;
+}
+.center { text-align: center; }
+
+.uploaded-image {
+	margin-bottom: 40px;
+}
+
+//CONSULTATION
+.cal-date-unavail { color: #DAD6D2; opacity: 1; }
+
+.contact-shadow-box {
+	@include shadow-box;
+	margin-left: -3px;
+	width: 100%;
+	margin: 1px 5px 10px 5px !important;
+}
+.contact-info { 
+	margin: 20px 20px 20px 20px;
+	padding: 10px 0 0 0;
+}
+
+.contact-info p { margin: 0 !important; }
+.half-width { 
+	width: 45%;
+	display: inline-block;
+	float: left;
+}
+.half-width-right { 
+	width: 45%;
+	display: inline-block;
+	float: right;
+}
+.contact-info-name {  
+	font-weight: bold;
+	font-size: 18px;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+span.contact-check-item {
+	background-image: url(../../images_/ul-value-icon.svg);
+	position: absolute;
+	width: 42px;
+	height: 42px;
+	z-index: 10;
+	top: 20px;
+	right: 20px;
+}
+span.contact-check-item.selected {
+	background-image: url(../../images_/ul-value-icon-selected.svg);
+}
+span.contact-edit { 
+	position: absolute;
+	width: 42px;
+	height: 41px;
+	z-index: 10;
+	top: 20px;
+	left: 10px;	
+}
+.consultConfirm { 
+	@include shadow-box;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+div.cal-links { 
+	background-color: $green;
+	margin-top: 15px;
+	padding: 10px; 
+	width: 170px;
+	height: 140px;
+	display: inline-block;
+	float: right;
+	clear: right;
+}
+.cal-links p, .cal-links a { 
+	color: white; 
+}
+.hint { 
+	color: #969696;
+	margin: 10px 0 0 5px;
+	display: inline-block;
+}
+.gallery img.hairloss-img {
+    width: 194px;
+    height: auto;
+}
+
+form#schConsultationContactForm {
+    margin-top: 50px;
+}

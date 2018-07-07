@@ -1,0 +1,55 @@
+//@include xsmall {
+//	#content::before {
+//		content: "Default - xsmall > 270px";
+//		font-size: 36px;
+//		font-weight: bold;
+//		color: rebeccapurple;
+//		padding-top: 50px;
+//		display: block;
+//		background: $mdgray;
+//	}
+//}
+//@include phone {
+//	#content::before {
+//		content: "Default - phone > 320px";
+//		font-size: 36px;
+//		font-weight: bold;
+//		color: yellow;
+//		padding-top: 50px;
+//		display: block;
+//		background: $mdgray;
+//	}
+//}
+//@include tablet {
+//	#content::before {
+//		content: "tablet > 768px";
+//		font-size: 36px;
+//		font-weight: bold;
+//		color: red;
+//		display: block;
+//		background: $mdgray;
+//	}
+//}
+//
+//@include desktop {
+//	#content::before {
+//		content: "desktop > 992px";
+//		font-size: 36px;
+//		font-weight: bold;
+//		color: green;
+//		display: block;
+//		background: $mdgray;
+//		height: 50px;
+//	}
+//}
+//
+//@include lg-desktop {
+//	#content::before {
+//		content: "Large desktop > 1200px";
+//		font-size: 36px;
+//		font-weight: bold;
+//		color: orchid;
+//		display: block;
+//		background: $mdgray;
+//	}
+//}

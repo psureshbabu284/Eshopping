@@ -1,0 +1,192 @@
+//MAIN NAVIGATION -- LEFT SLIDE OUT NAV
+//adapted from http://blog.themearmada.com/off-canvas-slide-menu-for-bootstrap
+.nav-expander span { 
+	color: $green;
+	padding: 7px;
+	border: 1px solid $mdgray;
+}
+.fa-angle-right { 
+	display: none;
+}
+@include desktop {
+	.fa-bars {
+		display: none;
+	}
+	.fa-angle-right { 
+		display: inline-block;
+	}
+}
+a.nav-expander {
+  background: none repeat scroll 0 0 white;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: 52px;
+  margin-left: 0;
+  padding: 1em 1.6em 2em;
+  position: absolute;
+  left: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 10px;
+  transition: left 0.3s ease-in-out 0s;
+  width: 152px;
+  z-index: 12;
+  transition: left 0.3s ease-in-out 0s;
+  -webkit-transition: left 0.3s ease-in-out 0s;
+  -moz-transition: left 0.3s ease-in-out 0s;
+  -o-transition: left 0.3s ease-in-out 0s;
+}
+a.nav-expander:hover {
+  cursor: pointer;
+}
+a.nav-expander.fixed {
+  position: fixed;
+}
+.nav-expanded a.nav-expander.fixed {
+    display: none;
+}
+#nav-close { 
+	color: $green;
+	background-color: white;
+	font-size: 14px;
+  	font-weight: bold;
+	text-transform: uppercase;
+	border: 1px solid $mdgray;
+	padding: 10px 7px;
+	width: 85px;
+}
+li.nav-close {
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+nav {
+  background: $lightgray;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  left: -24em;
+  font-size: 14px;
+  top: 0;
+  width: 24em;
+  z-index: 99999;
+  transition: left 0.3s ease-in-out 0s;
+  -webkit-transition: left 0.3s ease-in-out 0s;
+  -moz-transition: left 0.3s ease-in-out 0s;
+  -o-transition: left 0.3s ease-in-out 0s;
+}
+.nav-expanded nav {
+  left: 0;
+}
+body.nav-expanded {
+  margin-left: 0em;
+  transition: left 0.4s ease-in-out 0s;
+  -webkit-transition: left 0.4s ease-in-out 0s;
+  -moz-transition: left 0.4s ease-in-out 0s;
+  -o-transition: left 0.4s ease-in-out 0s;
+}
+.main-menu {
+  padding-top: 12px;
+}
+.main-menu li {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 15px;
+  border-bottom: 1px solid $mdgray;
+}
+.main-menu li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  padding: 12px 12px 12px 20px;
+}
+.main-menu li:not(.nav-close) a:hover {
+	color: $gray;
+	background-color: white;
+}
+.main-menu li:not(.nav-close):hover {
+	color: $gray;
+	background-color: white;
+}
+.main-menu li:not(.nav-close) a:active {
+	color: $gray;
+	background-color: white;
+}
+.main-menu li:not(.nav-close):active {
+	color: $gray;
+	background-color: white;
+}
+//Over ride hover styles for close li
+.main-menu li.close-nav:hover {
+	background-color: $lightgray;
+}
+.main-menu li .sub-nav {
+  border-bottom: 0px;
+  padding: 4px;
+}
+.main-menu li.sub-nav {
+	font-weight: normal;
+	text-transform: capitalize;
+	font-size: 15px;
+	padding-left: 20px;
+}
+//level 1 arrows
+.icon:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  content: '\f105';
+  line-height: 1;
+  text-transform: none;
+  margin: 0.1em 0.8em -0.1em 0;
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.icon-open:before {
+  content: '\f107';
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.icon-closed:before {
+  content: '\f105';
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+//Progress Indicators
+.sub-nav a::after {
+  float: right;
+  font-family: 'FontAwesome';
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+//  content:'\f1db';
+  content:'\f058';
+  color: $mdgray;
+}
+.sub-nav.complete a::after { 
+  content:'\f058';
+  color: $green;
+  border: 1px solid $lightgray;
+}
+.sub-nav.inprogress a::after {
+  content:'\f058';
+  color: $yellow;
+  border: 1px solid $lightgray;
+}

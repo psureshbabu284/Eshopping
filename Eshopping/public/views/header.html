@@ -1,0 +1,96 @@
+
+<!-- Header -->
+
+<!-- login status username -->
+<div class="navbar navbar-fixed-top" role="header" >
+	<div class="row navbar-dark">
+		<div class="col-sm-12">
+			
+			<div class="container">
+					<div class="pull-left">
+						<span class="gather-link"><a style="cursor:pointer;" href = "" ng-click="initGettingStartedView(1);">Eshop best online shopping site</a></span>
+						<span class="gather-link-mobile"><a href="./gettingstarted.html#/gettingstarted">Eshop</a></span>
+					</div>  
+				<div class="pull-right">
+					<div style="cursor:pointer;"  ng-click="redirectToSignIn('signin');" class="login-holder" ng-show="!accountModel.email">
+						<span ng-show="accountModel.email" class="login-icon"></span>
+						Sign In 
+					</div>
+					
+					<div style="cursor:pointer;" class="login-holder" ng-show="accountModel.email" >
+							<div class="username">
+								<span class="login-icon"></span>{{accountModel.email}}
+						   </div>
+							<div class="signout" ng-click="logout();">Sign Out</div>
+					</div>
+				</div>  
+			</div>
+		</div>
+	</div><!--row navbar-dark-->
+	
+	
+	<!--col-md-2 col-xs-3-->
+	</div><!-- row -->
+	
+	</div>  
+	<!-- container -->
+	</div>
+	</div><!-- row navbar-white -->
+	
+	
+	</div><!--navbar navbar-fixed-top-->
+	
+
+<div id="menuContainer">
+
+<!-- MAIN MENU -->
+<div class="col-md-2 col-xs-3"  ng-show="enableProgressBar" id="menuShowHide"> 
+		<div class="pull-right">
+		<div class="dropdown" >
+		<a href="" ng-click="SlideMenu(navEnabled);" 
+			id="nav-expander" 
+			class="nav-expander dropdown-toggle" 
+			data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			
+			<span class="nav-open" ng-style="!navEnabled ? { 'display':'block'} : { 'display': 'none'}"><i class="fa fa-bars fa-lg"></i><br/>Menu</span>
+		
+		</a>
+
+		<a href="" id="nav-close" ng-style="navEnabled ? { 'display':'block'} : { 'display': 'none' }" 
+			ng-click="SlideMenu(navEnabled);">
+			<span class="nav-close" >Menu</span>
+		</a>
+		<!-- navigation -->
+		
+		</nav>
+		</div>
+		</div>
+		</div>
+
+	<nav id="navmain" class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-expander">
+			<!-- ng repeat -->
+			  <ul class="list-unstyled main-menu">
+				<span id="spanli" ng-repeat="mainMenuItemInfo in listOfMenuItems | filter : {isRequired:true}">
+					<li style="cursor:pointer;" onclick="onMenuClick(this);">
+						<a ><span class="icon"></span> {{mainMenuItemInfo.parentMenuName}}</a>
+					</li>
+				   <ul class="list-unstyled top-nav" 
+						   ng-style="mainMenuItemInfo.isCompleted == 1 || mainMenuItemInfo.isCompleted == -1 ? { 'display':'none'} : { 'display': 'block'}" 
+						   onclick="onSubMenuClick(this);" 
+						   ng-click="SlideMenu(navEnabled)">
+				   
+						<li class="sub-nav" 
+						style="cursor:pointer;"
+						ng-click="subMenuItemInfo.conditionalFucntion == 1 ? redirectToUploadView(subMenuItemInfo) :  checkDisableStateAndRedirect(subMenuItemInfo);"
+						ng-repeat="subMenuItemInfo in mainMenuItemInfo.subMenuItems | filter : {isRequired:true}" 
+						ng-class="{ 'complete' : subMenuItemInfo.isCompleted == 1, 
+									'inprogress' : subMenuItemInfo.isCompleted == 0} ">
+							<a>{{subMenuItemInfo.subMenuItem}}</a>
+						</li>
+					</ul>
+				  </span>
+			  </ul>
+			
+			<!-- ng repeat ends -->
+			</nav>
+</div>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+	
+	 <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+	<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+	
+	
+
+  </head>
+  <body>
+   
+   
+	<div ng-controller="mainController" class="container" ng-init="init()"> 
+	{{progressValue}}
+	 <a href="#/">Home</a>
+	 <a href="#/blog">Blog</a>
+	 <a href="#/about">About</a>
+
+
+		<div class="progress">
+		  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+			aria-valuenow="{{progressValue}}" aria-valuemin="0" aria-valuemax="100" ng-style="{width: progressValue}">
+			{{progressValue}} Complete (success)
+		  </div>
+		</div>
+	 <div ng-view>Home</div>
+	
+	</div>
+   
+
+    <script src="public/script/app.js"></script>
+  </body>
+</html>

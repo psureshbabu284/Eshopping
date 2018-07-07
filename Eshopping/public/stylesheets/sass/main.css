@@ -1,0 +1,2401 @@
+@import url(../css/examples-1.00.min.css);
+@import url(../css/jquery-ui.css);
+/* line 2, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button {
+  border: 1px solid #397664;
+  background-color: #397664;
+  border-radius: none !important;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  width: 275px;
+  text-transform: uppercase;
+  margin: 20px 0px 20px 0px !important;
+  position: relative; }
+
+/* line 15, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button#signinbtn {
+  width: 100%; }
+
+/* line 18, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.btn-wide {
+  width: 100%; }
+
+/* line 21, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.white-button {
+  background-color: white;
+  color: #397664;
+  border: solid 1px #DAD6D2; }
+
+/* line 26, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.white-button.wide {
+  width: 100% !important; }
+
+/* line 29, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.large-button, button.large-button-green {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: white;
+  color: #397664;
+  border: 1px solid #DAD6D2; }
+
+/* line 36, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.large-button-green {
+  background-color: #397664;
+  color: white;
+  border: 1px solid #397664; }
+
+/* line 41, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.large-button:hover, button.large-button-green:hover {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #2B6D5E;
+  color: white; }
+
+/* line 47, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button:hover {
+  border: 1px solid #2B6D5E;
+  background-color: #2B6D5E;
+  color: white; }
+
+/* line 52, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.disabled {
+  border: solid 1px #c3d6d0;
+  background-color: rgba(57, 118, 100, 0.3); }
+
+/* line 57, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.btn-video {
+  background-color: white;
+  border: 1px solid #DAD6D2;
+  text-transform: uppercase;
+  color: #397664; }
+
+/* line 63, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.btn-video:hover {
+  background-color: #2B6D5E;
+  border: #2B6D5E;
+  color: white; }
+
+/* line 68, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.banner-btn, button.banner-secondary-btn {
+  background: white;
+  border: none;
+  color: #1E1E1E;
+  width: 150px; }
+  /* line 74, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+  button.banner-btn:hover, button.banner-secondary-btn:hover {
+    background: #2B6D5E;
+    border: none;
+    color: white; }
+
+/* line 80, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.banner-secondary-btn {
+  background: none;
+  border: solid 3px white;
+  color: white; }
+  /* line 84, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+  button.banner-secondary-btn:hover {
+    background: #2B6D5E;
+    border: solid 3px #2B6D5E;
+    color: white; }
+
+/* line 91, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.accept, button.browse, button.browse-video {
+  width: 150px;
+  padding-left: 25px; }
+
+/* line 92, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+.accept {
+  width: 150px; }
+
+/* line 94, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.upload-image {
+  width: 200px;
+  padding-left: 25px; }
+
+/* line 96, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.direction:before, button.direction.green:before {
+  content: '';
+  background: url("../../images_/direction-icon-green.svg") no-repeat;
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  left: 35px;
+  top: 12px; }
+
+/* line 105, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.accept:before, button.accept.green:before {
+  content: '';
+  background: url("../../images_/accept-icon-green.svg") no-repeat;
+  position: absolute;
+  width: 17px;
+  height: 13px;
+  left: 25px;
+  top: 13px; }
+
+/* line 114, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.completed:after, button.completed.green:after {
+  content: '';
+  background: url("../../images_/completed-icon-green.svg") no-repeat;
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  right: 20%;
+  top: 13px; }
+
+/* line 123, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.browse:before, button.browse.green:before, button.upload-image:before, button.upload-image.green:before {
+  content: '';
+  background: url("../../images_/camera-icon-green.svg") no-repeat;
+  position: absolute;
+  width: 20px;
+  height: 16px;
+  left: 20px;
+  top: 13px; }
+
+/* line 132, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.browse-video:before, button.browse-video.green:before {
+  content: '';
+  background: url("../../images_/video-icon-green.svg") no-repeat;
+  position: absolute;
+  width: 25px;
+  height: 13px;
+  left: 15px;
+  top: 15px; }
+
+/* line 141, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button .left-10 {
+  margin-left: 10px; }
+
+/* line 142, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.accept.green:before {
+  background: url("../../images_/accept-icon.svg") no-repeat; }
+
+/* line 143, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.direction.green:before {
+  background: url("../../images_/direction-icon.svg") no-repeat; }
+
+/* line 144, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.completed.green:after {
+  background: url("../../images_/completed-icon.svg") no-repeat; }
+
+/* line 145, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.browse.green:before, button.upload-image.green:before {
+  background: url("../../images_/camera-icon.svg") no-repeat; }
+
+/* line 146, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.browse-video.green:before {
+  background: url("../../images_/video-icon.svg") no-repeat; }
+
+/* line 148, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.direction:hover:before {
+  background: url("../../images_/direction-icon.svg") no-repeat; }
+
+/* line 149, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.completed:hover:after {
+  background: url("../../images_/completed-icon.svg") no-repeat; }
+
+/* line 150, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.accept:hover:before {
+  background: url("../../images_/accept-icon.svg") no-repeat; }
+
+/* line 151, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.browse:hover:before, button.upload-image:hover:before {
+  background: url("../../images_/camera-icon.svg") no-repeat; }
+
+/* line 152, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.browse-video:hover:before {
+  background: url("../../images_/video-icon.svg") no-repeat; }
+
+/* line 155, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.contact-edit {
+  width: 122px;
+  display: inline;
+  margin-top: -10px !important;
+  padding: 5px !important; }
+
+/* line 161, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.contact-change {
+  background-color: white;
+  color: #397664;
+  border: solid 1px #DAD6D2;
+  width: 100%;
+  margin-top: 0px !important; }
+
+/* line 167, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.contact-change.disabled {
+  border: solid 1px rgba(218, 214, 210, 0.3);
+  color: rgba(57, 118, 100, 0.3); }
+
+/* line 172, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+.white-button.disabled {
+  border: solid 1px rgba(218, 214, 210, 0.3);
+  color: rgba(57, 118, 100, 0.3);
+  background-color: white !important; }
+
+/* line 179, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+button.btn-mobile {
+  width: 160px !important; }
+
+@media (min-width: 768px) {
+  /* line 182, C:/nginx/html/public/stylesheets/sass/_buttons.scss */
+  button.btn-mobile {
+    width: 275px !important; } }
+
+/* line 5, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.form-control {
+  border: 1px solid #DAD6D2;
+  min-height: 45px; }
+
+/* line 11, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.input-success {
+  background: url("../../images_/input-success.svg") no-repeat 0 0;
+  background-position: bottom 12px right 10px; }
+
+/* line 15, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.error-x {
+  background: url("../../images_/x-icon.svg") no-repeat 0 0;
+  background-position: bottom 12px right 10px;
+  border: 1px solid #c03a3a; }
+
+/* line 20, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+label.control-label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 0;
+  margin-right: 15px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+/* line 31, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.standard-check[type=checkbox] {
+  display: none;
+  margin-left: 15px; }
+
+/* line 35, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.standard-check[type=checkbox] + label {
+  background: url("../../images_/check-box-idle.svg") no-repeat 0 0;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  padding: 0 0 0 0px;
+  vertical-align: middle;
+  margin-left: 15px;
+  font-size: 11px; }
+
+/* line 46, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input[type=checkbox]:checked + label {
+  background: url("../../images_/check-box-checked.svg") no-repeat 0 0; }
+
+/* line 52, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input[type=radio] {
+  display: none;
+  margin-left: 15px; }
+
+/* line 57, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input[type=radio] + label {
+  background: url("../../images_/radio-idle.svg") no-repeat 0 0;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  padding: 0 0 0 0px; }
+
+/* line 65, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input[type=radio]:checked + label {
+  background: url("../../images_/radio-checked.svg") no-repeat 0 0;
+  background-size: 24px;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  padding: 0 0 0 0px; }
+
+/* line 74, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.multi-select-box, .multi-select-box-gray {
+  border: solid 1px #dad6d2;
+  padding: 8px 0;
+  margin: 5px 5px;
+  width: 100%;
+  background: white;
+  cursor: pointer; }
+
+/* line 84, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.multi-select-box.disabled {
+  border: solid 1px rgba(218, 214, 210, 0.3);
+  background-color: #f5f5f5; }
+
+/* line 88, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.multi-select-box.disabled a {
+  cursor: default !important; }
+
+/* line 91, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.multi-select-box.disabled label {
+  color: rgba(46, 46, 46, 0.3); }
+
+/* line 94, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.multi-select-box-gray {
+  background: #f5f5f5; }
+
+/* line 97, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.multiselect-radio[type=radio] {
+  display: none;
+  margin-left: 15px; }
+
+/* line 105, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.multiselect-check[type=checkbox]:checked + label[for="Scalp masking lotions or creams (Couvre, Great Hair Day)"] {
+  height: 40px; }
+
+/* line 108, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+form#historyTreatmentForm {
+  font-size: 14px;
+  line-height: 15px; }
+
+@media (min-width: 270px) {
+  /* line 113, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+  input.multiselect-check[type=checkbox]:checked + label[for="Scalp masking lotions or creams (Couvre, Great Hair Day)"] {
+    height: 60px; }
+  /* line 116, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+  form#historyTreatmentForm {
+    font-size: 12px;
+    line-height: 13px; } }
+
+@media (min-width: 768px) {
+  /* line 122, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+  form#historyTreatmentForm {
+    font-size: 16px;
+    line-height: 18px; } }
+
+/* line 129, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.multiselect-radio[type=radio] + label, input.multiselect-check[type=checkbox] + label {
+  background: url("../../images_/radio-idle.svg") no-repeat 0 0;
+  cursor: pointer;
+  background-size: 24px;
+  padding: 0 5px 0 45px;
+  width: 95%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 0 15px;
+  font-weight: normal !important;
+  height: 24px; }
+
+/* line 141, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+textarea.radio-comment, textarea.text-box {
+  margin: 0 0 0 5px;
+  width: 100%;
+  resize: none; }
+
+/* line 146, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.multiselect-radio[type=radio]:checked + label {
+  background: url("../../images_/radio-checked.svg") no-repeat 0 0; }
+
+/* line 150, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.multiselect-check[type=checkbox] {
+  display: none;
+  margin-left: 15px; }
+
+/* line 154, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.multiselect-check[type=checkbox] + label {
+  background: url("../../images_/check-box-idle.svg") no-repeat 0 0; }
+
+/* line 158, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+input.multiselect-check[type=checkbox]:checked + label {
+  background: url("../../images_/check-box-checked.svg") no-repeat 0 0; }
+
+/* line 161, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.form-control {
+  border-radius: 0px !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  height: 40px; }
+
+/* line 167, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.measure {
+  width: 100% !important;
+  margin-bottom: 40px; }
+
+/* line 172, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.form-control:focus {
+  border: solid 1px #30578B; }
+
+/* line 175, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+select#select-override {
+  border-radius: 0px !important; }
+
+/* line 178, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+select.form-control {
+  overflow: hidden;
+  border: none;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 0px !important; }
+
+/* line 185, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+select.form-control option {
+  width: 100%;
+  height: auto;
+  border: 1px solid #2E2E2E;
+  background-color: #F3F3F3;
+  display: inline-block;
+  float: left;
+  padding: 10px 0px 10px 30px;
+  margin-bottom: 7px; }
+
+/* line 195, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+select.form-control span {
+  display: inline-block;
+  margin-left: 10px; }
+
+/* line 199, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+label {
+  font-weight: bold !important; }
+
+/* line 202, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.checkbox-label {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 10px; }
+
+/* line 207, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.form-notes {
+  padding: 0;
+  margin-top: 10px; }
+
+/* line 211, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.controls.form-inline {
+  margin-left: -15px; }
+
+/* line 214, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+span.form-control-feedback.glyphicon {
+  position: relative; }
+
+/* line 218, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.has-feedback .form-control-feedback {
+  position: relative;
+  float: right;
+  top: -40px !important; }
+
+/* line 223, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.glyphicon-remove {
+  color: #a94442; }
+
+/* line 226, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.glyphicon-ok {
+  color: #3c763d; }
+
+/* line 229, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.form-horizontal .has-feedback .form-control-feedback {
+  height: 0; }
+
+/* line 232, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.onload-hide {
+  display: none; }
+
+/* enable absolute positioning */
+/* line 237, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.inner-addon {
+  position: relative; }
+
+/* style icon */
+/* line 241, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none; }
+
+/* line 246, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+textarea.radio-comment, textarea.text-box {
+  margin: 0 0 0 5px;
+  width: 100%;
+  resize: none; }
+
+/* line 251, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.form-group-adjust-bottom {
+  margin-bottom: 0; }
+
+/* line 252, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.form-group {
+  margin-right: 20px; }
+
+@media (min-width: 768px) {
+  /* line 254, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+  .form-group {
+    margin-right: 0px; } }
+
+@media (min-width: 768px) {
+  /* line 257, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+  .col-align-right {
+    padding-right: 0px; }
+  /* line 260, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+  .col-align-right .multi-select-box, .col-align-right .multi-select-box-gray {
+    margin: 5px 15px; }
+  /* line 263, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+  .form-horizontal .control-label {
+    text-align: left; }
+  /* line 266, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+  .col-align-right {
+    padding-right: 0px; }
+  /* line 269, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+  .col-align-right .multi-select-box, .col-align-right .multi-select-box-gray {
+    margin: 5px 15px; } }
+
+/* line 274, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.selectContainer select {
+  height: 40px;
+  padding: 5px 5px 5px 15px;
+  font-size: 16px;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #F3F3F3;
+  overflow: hidden;
+  position: relative;
+  display: block; }
+
+/* line 288, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.selectContainer select::-ms-expand {
+  display: none; }
+
+/* line 289, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.selectContainer i.fa-chevron-down {
+  float: right;
+  margin-top: -35px;
+  margin-right: 6px;
+  pointer-events: none;
+  background-color: transparent;
+  color: #DAD6D2 !important;
+  padding-right: 5px;
+  z-index: 999;
+  position: relative;
+  font-size: 20px; }
+
+/* line 301, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+#repContactForm .form-group {
+  margin-right: 40px; }
+
+/* line 303, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+#repContactForm input, #repContactForm label {
+  width: 100%; }
+
+/* line 306, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.contact-form-wrapper {
+  -moz-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 20px;
+  margin: 10px auto 20px auto; }
+
+/* line 312, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.sm-space-above {
+  margin-top: 25px; }
+
+/* line 315, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.sm-space-below {
+  margin-bottom: 20px !important; }
+
+/*zero height for glyphicon-ok*/
+/* line 319, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+span.form-control-feedback.glyphicon.glyphicon-ok {
+  height: 0; }
+
+/* line 323, C:/nginx/html/public/stylesheets/sass/_forms.scss */
+.form-inline input.form-control {
+  margin-bottom: 15px; }
+
+/* line 1, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+html, body {
+  min-height: 100%;
+  overflow: visible; }
+
+/* line 6, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+body {
+  background-color: #F3F3F3; }
+
+/* line 9, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#content {
+  margin-top: 65px;
+  height: auto !important;
+  min-height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+/* line 17, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.white {
+  color: white; }
+
+/* line 18, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.hide-mobile {
+  display: none; }
+
+@media (min-width: 992px) {
+  /* line 23, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .container {
+    width: 960px; } }
+
+/* HEADER STYLES
+-------------------------------------------------- */
+/* line 29, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.navbar-dark {
+  background-color: #1E1E1E;
+  border-color: #1E1E1E;
+  height: 30px; }
+
+/* line 34, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.navbar-white {
+  background-color: white;
+  height: 35px;
+  -webkit-box-shadow: 0 4px 3px -2px #DAD6D2;
+  -moz-box-shadow: 0 4px 3px -2px #DAD6D2;
+  box-shadow: 0 4px 3px -2px #DAD6D2; }
+
+/* line 41, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.login-holder:hover {
+  background-color: #2B6D5E; }
+
+/* line 45, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.login-holder {
+  background-color: #397664;
+  width: 100%;
+  min-width: 200px;
+  height: 30px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  line-height: 30px;
+  vertical-align: middle;
+  padding-left: 20px;
+  padding-right: 20px; }
+  /* line 58, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .login-holder .signout {
+    float: right;
+    margin-left: 10px;
+    padding-left: 5px; }
+    /* line 63, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .login-holder .signout:before {
+      content: '';
+      border-left: solid 2px white;
+      line-height: 10px;
+      padding-right: 10px; }
+  /* line 70, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .login-holder .username {
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 250px;
+    overflow: hidden; }
+
+/* line 78, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.login-holder:hover {
+  background-color: #2B6D5E; }
+
+/* line 81, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.login-icon:before {
+  content: url("../../images_/user-icon.svg");
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  width: 15px;
+  height: 18px;
+  line-height: 30px;
+  vertical-align: middle; }
+
+/* line 90, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.gather-link, span.gather-link-mobile {
+  font-style: italic;
+  line-height: 35px;
+  font-size: 12px;
+  margin-left: 5px; }
+
+/* line 96, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.gather-link a, span.gather-link-mobile a {
+  color: white !important; }
+
+@media (min-width: 320px) {
+  /* line 100, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  span.gather-link-mobile {
+    display: inline-block; }
+  /* line 101, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  span.gather-link {
+    display: none; } }
+
+@media (min-width: 768px) {
+  /* line 105, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  span.gather-link-mobile {
+    display: none; }
+  /* line 106, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  span.gather-link {
+    display: inline-block;
+    line-height: 50px;
+    font-size: 14px;
+    margin-left: 0; } }
+
+/* line 112, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#navbar-inter-2 {
+  top: 30px; }
+
+/* line 119, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.container > .navbar-header {
+  display: inline-block; }
+
+/* line 122, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.progress-label {
+  display: none; }
+
+/* line 125, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#progress-bar {
+  width: 100%;
+  height: auto;
+  display: inline;
+  padding-left: 2%;
+  padding-right: 3%; }
+
+/* line 132, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.nav-expander .nav-open {
+  color: #397664;
+  padding: 10px 0;
+  width: 65px;
+  height: 55px;
+  display: inline; }
+
+@media (min-width: 768px) {
+  /* line 141, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .nav-expander .nav-open {
+    padding: 30px 0; } }
+
+/* line 145, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.progress {
+  background-color: #DAD6D2;
+  margin-top: 1%; }
+
+/* line 149, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.navbar-brand img {
+  height: 25px;
+  width: auto;
+  margin-top: 10px; }
+
+/* line 154, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.navbar-brand {
+  height: 36px !important;
+  width: 92px !important;
+  padding: 0 !important;
+  margin-top: 4px;
+  margin-left: 5px !important; }
+
+/* line 161, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.nav-expander {
+  margin-top: 0; }
+
+@media (min-width: 768px) {
+  /* line 165, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  #content {
+    margin-top: 125px;
+    background-color: #F3F3F3;
+    min-height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px; }
+  /* line 172, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .navbar-brand {
+    height: 60px !important;
+    width: 92px !important;
+    padding: 0 !important;
+    margin-top: 18px;
+    margin-left: 0 !important; }
+  /* line 179, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .navbar-dark {
+    height: 48px; }
+  /* line 182, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .login-holder {
+    height: 48px;
+    font-size: 14px;
+    line-height: 50px; }
+  /* line 187, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  span.login-icon:before {
+    line-height: 48px; }
+  /* line 190, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .navbar-white {
+    height: 92px;
+    -webkit-box-shadow: 0 8px 6px -3px #DAD6D2;
+    -moz-box-shadow: 0 8px 6px -3px #DAD6D2;
+    box-shadow: 0 8px 6px -3px #DAD6D2; }
+  /* line 196, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  #navbar-inter-2 {
+    top: 48px; }
+  /* line 199, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .navbar-brand img {
+    height: 60px;
+    width: auto;
+    margin-top: 0; }
+  /* line 204, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .progress-label {
+    text-align: right;
+    font-weight: bold;
+    width: 100%;
+    display: block; }
+  /* line 210, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .progress {
+    margin-top: 1%; }
+  /* line 213, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .nav-expander .nav-open {
+    border: 1px solid #DAD6D2;
+    padding: 10px 7px;
+    display: block; }
+  /* line 218, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .nav-expander {
+    margin-top: 10px; }
+  /* line 221, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .hide-mobile {
+    display: block; } }
+
+/* line 224, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.progress, .progress-bar {
+  height: 7px; }
+
+/* line 227, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.progress-bar {
+  background-color: #008dbd;
+  height: 7px; }
+
+/* line 232, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#landing-page .navbar-white {
+  box-shadow: none; }
+
+/* line 233, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#nav-close {
+  color: white;
+  background-color: #397664;
+  font-size: 12px;
+  border: 1px solid #397664;
+  font-weight: bold;
+  padding: 10px 7px;
+  width: 65px;
+  height: 55px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-right: 15px; }
+
+/* line 248, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.nav-close:before {
+  content: url("../../images_/close-icon.svg");
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  width: 15px;
+  height: 18px;
+  vertical-align: middle; }
+
+/* line 256, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+a.nav-expander {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 12;
+  padding-top: 0;
+  margin-right: 0; }
+
+@media (min-width: 768px) {
+  /* line 269, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  a.nav-expander {
+    padding-top: 10px;
+    margin-right: 15px; } }
+
+/* line 276, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+a.nav-expander:hover {
+  cursor: pointer; }
+
+/* line 279, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.row.navbar-dark .container {
+  padding-right: 0; }
+
+@media (min-width: 768px) {
+  /* line 283, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .row.navbar-dark .container {
+    padding-right: 15px; }
+  /* line 286, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .navbar-white .container {
+    padding-right: 0px; }
+  /* line 289, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  a.nav-expander {
+    padding-top: 14px; } }
+
+/* FOOTER STYLES
+-------------------------------------------------- */
+/* line 296, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+footer p {
+  font-size: .875em;
+  line-height: 1.4em; }
+
+/* line 300, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+footer .help {
+  background-color: #DAD6D2;
+  padding-top: 15px;
+  font-weight: bold; }
+
+/* line 305, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+footer .note {
+  background-color: #1E1E1E;
+  padding-top: 25px;
+  padding-bottom: 25px; }
+
+/* line 310, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+footer .note p {
+  color: #DAD6D2; }
+
+/* line 313, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+footer .note a {
+  color: #DAD6D2; }
+
+/* line 316, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+footer .note a:hover {
+  color: #DAD6D2; }
+
+@media (min-width: 992px) {
+  /* line 320, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .note .container {
+    width: 45%; } }
+
+/* line 324, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.note .container {
+  width: 80%; }
+
+/* line 327, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.internal .note {
+  width: 100%; }
+
+/* LANDING PAGE/GET STARTED STYLES
+-------------------------------------------------- */
+/* line 332, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.container-fluid.get-started-bkgrd {
+  margin-top: -25px; }
+
+/* line 335, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-bkgrd {
+  background-image: url("../../images_/color-bg-short.jpg");
+  min-height: 500px;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative; }
+
+/* MAIN BANNER */
+/* line 343, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.main-banner {
+  padding-top: 75px;
+  padding-left: 40px; }
+  /* line 346, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .main-banner h1 {
+    color: white;
+    font-size: 3.125em;
+    font-weight: 400; }
+  /* line 347, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .main-banner h2 {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 600; }
+  /* line 348, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .main-banner h3#banner {
+    color: white; }
+  /* line 349, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .main-banner p {
+    color: white;
+    font-size: 1.125em; }
+  /* line 350, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .main-banner .banner-btn {
+    background: white;
+    border: 2px solid white;
+    color: #1E1E1E;
+    width: 150px;
+    margin: 20px 20px 20px 0px; }
+  /* line 357, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .main-banner .banner-btn:hover {
+    background: #2B6D5E;
+    border: #2B6D5E;
+    color: white; }
+  /* line 362, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .main-banner .banner-btn2 {
+    background: none;
+    color: white;
+    border: white 2px solid;
+    width: 150px; }
+  /* line 368, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .main-banner .banner-btn2:hover {
+    background: #2B6D5E;
+    border: #2B6D5E 2px solid;
+    color: white; }
+
+/* line 374, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.overlay {
+  background-color: rgba(46, 46, 46, 0.5);
+  padding: 0;
+  margin: 0;
+  min-height: 500px;
+  z-index: 999999;
+  margin: 0 -15px; }
+
+/* line 388, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.standard-ul, ol.standard-ol, ul.checked, ul.unchecked, ul.numbered-list {
+  margin: 20px 0px 15px -30px; }
+
+@media (min-width: 768px) {
+  /* line 392, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  ul.standard-ul, ol.standard-ol, ul.checked, ul.unchecked, ul.numbered-list {
+    margin: 30px 0px; } }
+
+/* line 397, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.standard-sub-ul {
+  margin: 10px 0 10px -40px; }
+
+/* line 399, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.indent {
+  margin: 0 30px 15px 0; }
+
+/* line 403, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.checked li:before, ul.unchecked li:before, ul.standard-ul li:before {
+  content: '';
+  background-image: url(../../images_/ul-check-icon.svg);
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 0; }
+
+/* line 412, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.checked.big-list li {
+  margin-bottom: 40px; }
+
+/* line 415, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.checked.big-list li ul li {
+  margin-bottom: 0; }
+
+/* line 419, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.standard-ul li:before {
+  background-image: url(../../images_/ul-disc-icon.svg);
+  width: 7px;
+  height: 7px;
+  top: 7px; }
+
+/* line 426, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.standard-sub-ul li:before {
+  background-image: url(../../images_/ul-disc-icon.svg);
+  width: 7px;
+  height: 7px;
+  top: 7px; }
+
+/* line 432, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul {
+  margin: 15px 30px 60px 0px; }
+
+/* line 436, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li {
+  margin-bottom: 20px; }
+
+/* line 440, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li {
+  list-style: none; }
+
+/* line 443, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li:before {
+  content: '';
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 0;
+  background-repeat: no-repeat; }
+
+/* line 451, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle1:before {
+  background-image: url(../../images_/ul-number-1-icon.svg); }
+
+/* line 454, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle2:before {
+  background-image: url(../../images_/ul-number-2-icon.svg); }
+
+/* line 457, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle3:before {
+  background-image: url(../../images_/ul-number-3-icon.svg); }
+
+/* line 460, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle4:before {
+  background-image: url(../../images_/ul-number-4-icon.svg); }
+
+/* line 463, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle5:before {
+  background-image: url(../../images_/ul-number-5-icon.svg); }
+
+/* line 466, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle6:before {
+  background-image: url(../../images_/ul-number-6-icon.svg); }
+
+/* line 469, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle7:before {
+  background-image: url(../../images_/ul-number-7-icon.svg); }
+
+/* line 472, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle8:before {
+  background-image: url(../../images_/ul-number-8-icon.svg); }
+
+/* line 475, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle9:before {
+  background-image: url(../../images_/ul-number-9-icon.svg); }
+
+/* line 478, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numcir-ul li.circle10:before {
+  background-image: url(../../images_/ul-number-10-icon.svg); }
+
+/* line 483, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.unchecked li:before {
+  background-image: url(../../images_/ul-unchecked-icon.svg); }
+
+/* line 487, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.standard-ul li, ol.standard-ol li, ul.checked li, ul.unchecked li {
+  position: relative;
+  list-style: none;
+  padding-left: 30px;
+  margin: 10px 0; }
+
+/* line 494, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.standard-ul li {
+  padding-left: 15px; }
+
+/* line 498, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ol.standard-ol li {
+  list-style: decimal;
+  color: #397664;
+  font-weight: bold;
+  padding-left: 5px;
+  list-style-position: inside; }
+  /* line 505, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  ol.standard-ol li span {
+    color: #2E2E2E;
+    font-weight: normal; }
+
+/* line 511, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numbered-list {
+  list-style: none; }
+
+/* line 515, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+ul.numbered-list li {
+  min-height: 100px;
+  background-image: url(../../images_/ul-number-1-icon.svg);
+  background-position: left top;
+  background-repeat: no-repeat;
+  padding-left: 60px;
+  margin-bottom: 20px;
+  list-style: none; }
+
+@media (min-width: 768px) {
+  /* line 527, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .get-started-bkgrd {
+    background-image: url("../../images_/gather-hero.jpg"); } }
+
+/* line 531, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-message h1, .get-started-message h3, .get-started-message p {
+  color: white; }
+
+/* line 534, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-message h1 {
+  margin-bottom: 0; }
+
+/* line 537, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-message p {
+  max-width: 425px; }
+
+/* line 540, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-message p {
+  margin-top: 15px;
+  font-size: 18px;
+  line-height: 22px; }
+
+/* line 545, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-message sup {
+  top: -1.75em;
+  font-size: 30%; }
+
+/* line 549, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-message button {
+  border: white;
+  background-color: white;
+  border-radius: none !important;
+  color: #30578B;
+  margin: 20px 0; }
+
+/* line 556, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-how {
+  padding-top: 50px;
+  background-color: #F3F3F3; }
+
+/* line 560, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-how h2 {
+  width: 100%;
+  text-align: center;
+  border-bottom: none;
+  line-height: 1.25em;
+  margin: 0; }
+
+/* line 567, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-how h2 span {
+  background: none;
+  padding: 0; }
+
+@media (min-width: 768px) {
+  /* line 572, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .get-started-how h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #DAD6D2;
+    line-height: 0.1em;
+    margin: 10px 0 20px; }
+  /* line 579, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .get-started-how h2 span {
+    background: #F3F3F3;
+    padding: 0 25px; } }
+
+/* line 584, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-how ul {
+  margin-top: 20px; }
+
+/* line 587, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.get-started-how li {
+  min-height: 100px;
+  background-image: url(../../images_/ul-value-icon.svg);
+  background-position: left top;
+  background-repeat: no-repeat;
+  padding-left: 60px;
+  margin-bottom: 20px; }
+
+/* line 596, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#dimmer {
+  position: fixed;
+  top: 138px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(46, 46, 46, 0.9);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: none;
+  transition: top 0.4s ease-in-out 0s;
+  -webkit-transition: top 0.4s ease-in-out 0s;
+  -moz-transition: top 0.4s ease-in-out 0s;
+  -o-transition: top 0.4s ease-in-out 0s; }
+
+/* line 612, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+div.container.internal {
+  padding: 0 30px; }
+
+/* line 616, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.location-id {
+  font-size: 1em;
+  font-weight: 700;
+  color: #2E2E2E; }
+
+/* line 621, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.steps {
+  float: none;
+  margin-bottom: 10px;
+  margin-right: 30px; }
+
+/* line 626, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.steps-next {
+  float: right; }
+
+/* line 629, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.steps-previous, .steps-next {
+  color: #397664;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800; }
+
+/* line 635, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.steps-previous.disabled, span.steps-next.disabled {
+  color: rgba(57, 118, 100, 0.3); }
+
+/* line 638, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.next-inactive {
+  pointer-events: none;
+  cursor: default; }
+
+/* line 643, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.next-active {
+  pointer-events: inherit;
+  cursor: pointer; }
+
+/* line 647, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.steps-previous {
+  padding-right: 20px; }
+
+/* line 650, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.steps-previous, .steps-next, .location-id {
+  display: inline-block;
+  height: 25px; }
+
+/* line 654, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.steps-previous:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 16px;
+  content: '\f104';
+  text-transform: none;
+  margin-right: 5px; }
+
+/* line 664, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.steps-next:after {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 16px;
+  content: '\f105';
+  text-transform: none;
+  margin-left: 5px; }
+
+/* line 674, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.title-bar {
+  padding-top: 10px; }
+
+/* line 678, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+  border: 0;
+  border-top: 1px solid #DAD6D2; }
+
+/* line 688, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.multi-select-wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto 40px; }
+
+@media (min-width: 992px) {
+  /* line 694, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .multi-select-wrapper {
+    width: 98%; } }
+
+/* line 700, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.shadow-box, .hairloss-box {
+  position: relative;
+  display: inline-block;
+  margin: 10px 5px;
+  cursor: pointer;
+  background-color: white;
+  -moz-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1); }
+  /* line 708, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box .image-upload, .hairloss-box .image-upload {
+    float: left; }
+  /* line 711, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box .image-name, .hairloss-box .image-name {
+    display: none; }
+  /* line 714, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box .image-upload, .hairloss-box .image-upload {
+    width: 143px;
+    height: 114px;
+    margin-right: 10px;
+    overflow: hidden; }
+  /* line 720, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box img.hairloss-img, .hairloss-box img.hairloss-img {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-right: 2px; }
+  /* line 727, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box .color-swatch-thumb, .hairloss-box .color-swatch-thumb {
+    display: table;
+    position: relative;
+    width: 143px;
+    height: 114px;
+    vertical-align: middle;
+    text-align: center; }
+  /* line 735, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box span.color-swatch-text, .hairloss-box span.color-swatch-text {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px; }
+  /* line 743, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box span.color-swatch-selected, .hairloss-box span.color-swatch-selected {
+    background-image: url(../../images_/corner-check.svg);
+    position: absolute;
+    width: 49px;
+    height: 49px;
+    z-index: 10;
+    top: 0;
+    right: 0px; }
+  /* line 752, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box span.hairloss-selected, .hairloss-box span.hairloss-selected {
+    background-image: url(../../images_/corner-check.svg);
+    position: absolute;
+    width: 49px;
+    height: 49px;
+    z-index: 10;
+    top: 0;
+    right: 0px; }
+  /* line 761, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box .hairloss-overlay, .hairloss-box .hairloss-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.6); }
+  /* line 773, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box .hairloss-overlay:hover, .hairloss-box .hairloss-overlay:hover {
+    opacity: 0; }
+  /* line 776, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box span.close-item, .hairloss-box span.close-item {
+    background-image: url(../../images_/trash-icon.svg);
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    z-index: 10;
+    top: 5px;
+    right: 5px;
+    background-repeat: no-repeat;
+    background-color: white; }
+
+@media (min-width: 992px) {
+  /* line 789, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .shadow-box, .hairloss-box {
+    position: relative;
+    display: inline-block;
+    margin: 10px 5px;
+    cursor: pointer;
+    background-color: white;
+    -moz-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1); }
+    /* line 796, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box .image-upload, .shadow-box .image-name, .hairloss-box .image-upload, .hairloss-box .image-name {
+      float: left; }
+    /* line 799, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box .image-name, .hairloss-box .image-name {
+      margin: 50px 40px 0px 0;
+      display: inline-block; }
+    /* line 803, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box .image-name p, .hairloss-box .image-name p {
+      width: 200px;
+      overflow: hidden;
+      font-size: 16px; }
+    /* line 808, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box .image-upload, .hairloss-box .image-upload {
+      width: 143px;
+      height: 114px;
+      margin-right: 10px;
+      overflow: hidden; }
+    /* line 814, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box img.hairloss-img, .hairloss-box img.hairloss-img {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin-right: 2px; }
+    /* line 822, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box .color-swatch-thumb, .hairloss-box .color-swatch-thumb {
+      display: table;
+      position: relative;
+      width: 143px;
+      height: 114px;
+      vertical-align: middle;
+      text-align: center; }
+    /* line 830, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box span.color-swatch-text, .hairloss-box span.color-swatch-text {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 16px;
+      font-weight: bold;
+      padding-left: 20px;
+      padding-right: 20px; }
+    /* line 838, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box span.color-swatch-selected, .hairloss-box span.color-swatch-selected {
+      background-image: url(../../images_/corner-check.svg);
+      position: absolute;
+      width: 49px;
+      height: 49px;
+      z-index: 10;
+      top: 0;
+      right: 0px; }
+    /* line 847, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box span.hairloss-selected, .hairloss-box span.hairloss-selected {
+      background-image: url(../../images_/corner-check.svg);
+      position: absolute;
+      width: 49px;
+      height: 49px;
+      z-index: 10;
+      top: 0;
+      right: 0px; }
+    /* line 856, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box .hairloss-overlay, .hairloss-box .hairloss-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 1;
+      transition: .5s ease;
+      background-color: rgba(0, 0, 0, 0.6); }
+    /* line 868, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box .hairloss-overlay:hover, .hairloss-box .hairloss-overlay:hover {
+      opacity: 0; }
+    /* line 871, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+    .shadow-box span.close-item, .hairloss-box span.close-item {
+      background-image: url(../../images_/trash-icon.svg);
+      position: absolute;
+      width: 20px;
+      height: 30px;
+      z-index: 10;
+      top: 50px;
+      right: 15px;
+      background-repeat: no-repeat; } }
+
+/* line 885, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#searchResults .hairloss-box {
+  width: 100%;
+  height: 200px;
+  overflow: hidden; }
+
+@media (min-width: 992px) {
+  /* line 891, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  #searchResults .hairloss-box {
+    width: 100%;
+    height: 400px; } }
+
+/* line 898, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.hairstyle-shadow-box {
+  position: relative;
+  display: inline-block;
+  margin: 10px 5px;
+  cursor: pointer;
+  width: 143px; }
+
+/* line 907, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.shadow-box .image-upload .fillwidth {
+  width: auto;
+  height: 152px; }
+
+/* line 911, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.shadow-box .image-upload .fillheight {
+  width: auto;
+  height: 152px; }
+
+/* line 916, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.fillwidth {
+  margin: -10% -25%; }
+
+/* line 917, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.fillheight {
+  margin: -10% 0%; }
+
+/* line 922, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+img.hairstyle-img {
+  width: 143px;
+  /* height will follow within image ratio */
+  height: auto;
+  /* to overrride attribute height set in tag */ }
+
+/* line 926, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.hairstyle-img-holder {
+  display: block;
+  height: 143px;
+  /*set an height */
+  line-height: 113px;
+  /* set the baseline at 100px from top*/
+  overflow: hidden;
+  /* crops/cut off */ }
+
+/* line 932, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.close-item {
+  background-image: url(../../images_/trash-icon.svg);
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  z-index: 10;
+  top: 45px;
+  right: 16px;
+  background-repeat: no-repeat; }
+
+/* line 942, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.hs-close-item {
+  background-image: url(../../images_/trash-icon.svg);
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  z-index: 10;
+  top: 5px;
+  right: 5px;
+  background-color: white;
+  background-repeat: no-repeat; }
+
+/* line 953, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.video-shadow-box .video-name {
+  width: 280px;
+  margin: 15px 30px; }
+
+/* line 958, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.video-shadow-box {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  margin: 10px 0;
+  cursor: pointer;
+  background-color: white;
+  -moz-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1); }
+
+/* line 967, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.video-shadow-box span.close-item {
+  top: 15px !important; }
+
+/* line 970, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.video-name p {
+  width: 280px;
+  overflow: hidden; }
+
+/* line 974, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.video-progress {
+  background-color: #DAD6D2;
+  height: 12px; }
+
+/* line 978, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.progress-bar-success {
+  background-color: #397664;
+  height: 12px;
+  line-height: 12px;
+  font-size: 10px; }
+
+/* line 984, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.progress-holder {
+  width: 100%;
+  height: 48px;
+  background-color: white;
+  border: solid 1px #DAD6D2;
+  padding: 10px 20px 0 20px;
+  margin: 20px 0px 20px 0px !important; }
+
+@media (min-width: 992px) {
+  /* line 993, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .progress-holder {
+    padding: 5px 20px 0 20px; } }
+
+/* line 997, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.hairloss-box {
+  width: 100%; }
+
+/* line 1000, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.hairloss-box:nth-child(2n+1) {
+  margin-left: 0 !important; }
+
+@media (min-width: 992px) {
+  /* line 1004, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .hairloss-box {
+    width: 453px; } }
+
+/* line 1011, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.hairstyle-box {
+  height: 450px; }
+
+/* line 1015, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.color-swatch-box {
+  height: auto;
+  margin-top: 25px;
+  margin-left: 5px;
+  line-height: 240px;
+  padding-right: 30px; }
+
+/* line 1023, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.color-swatch-box img {
+  vertical-align: center; }
+
+/* line 1032, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.video-wrapper {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding: 28%;
+  margin-bottom: 15px; }
+
+/* line 1050, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+@media (min-width: 768px) {
+  /* line 1102, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  div.video-time {
+    padding: 5px 25px;
+    height: 38px; }
+  /* line 1108, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  div.video-time p {
+    font-size: 1.125em; } }
+
+@media (min-width: 768px) {
+  /* line 1120, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .title-bar {
+    padding-top: 0; }
+  /* line 1123, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .steps {
+    float: right;
+    margin-bottom: 0;
+    margin-right: 30px; }
+  /* line 1128, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .internal h2 {
+    margin-bottom: 20px; }
+  /* line 1131, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  hr {
+    margin-bottom: 20px; }
+  /* line 1134, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .steps-previous, .steps-next, .location-id {
+    height: 1px; } }
+
+/* line 1138, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+p.note {
+  font-size: .875em;
+  line-height: 1.5em; }
+
+/* line 1139, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+p.dev-note {
+  text-align: center;
+  font-weight: bold;
+  color: red; }
+
+/* line 1140, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.varCopy {
+  font-weight: bold; }
+
+/* line 1142, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.help-block.has-error {
+  color: #a94442;
+  width: 275px;
+  text-align: right; }
+
+/* line 1147, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.help-block-onecol.has-error {
+  color: #a94442;
+  width: 275px;
+  text-align: left !important; }
+
+/* line 1152, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.help-block-2col.has-error {
+  color: #a94442;
+  width: 100%;
+  text-align: right; }
+
+/* line 1158, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+p.cont-note {
+  margin-top: 20px; }
+
+@media (min-width: 768px) {
+  /* line 1162, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  p.cont-note {
+    width: 90%; } }
+
+@media (min-width: 992px) {
+  /* line 1167, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  p.cont-note {
+    width: 100%; } }
+
+/* line 1171, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.row.space {
+  margin-bottom: 50px; }
+
+/* line 1174, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.space {
+  margin-bottom: 50px; }
+
+/* line 1177, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+figcaption {
+  margin: 0 20px 0 5px; }
+
+/* line 1178, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.caption-right {
+  display: block;
+  float: left;
+  width: 100%; }
+
+@media (min-width: 992px) {
+  /* line 1184, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  .caption-right {
+    float: right;
+    display: inline-block;
+    width: auto; } }
+
+/* line 1190, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#callout {
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 40px; }
+
+/* line 1196, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#callout img {
+  display: block;
+  margin: 0 auto; }
+
+/* line 1201, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+#callout span {
+  display: block; }
+
+@media (min-width: 768px) {
+  /* line 1207, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  #callout img {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    /* = image height div 2 */ }
+  /* line 1212, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+  #callout span {
+    margin-left: 60px;
+    display: inline-block; } }
+
+/* line 1218, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.space-left {
+  margin-left: 10px; }
+
+/* line 1222, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.uploaded-image button.browse {
+  margin: 0; }
+
+/* line 1225, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.uploaded-image .shadow-box {
+  margin: 0; }
+
+/* line 1228, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.center {
+  text-align: center; }
+
+/* line 1230, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.uploaded-image {
+  margin-bottom: 40px; }
+
+/* line 1235, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.cal-date-unavail {
+  color: #DAD6D2;
+  opacity: 1; }
+
+/* line 1237, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.contact-shadow-box {
+  position: relative;
+  display: inline-block;
+  margin: 10px 5px;
+  cursor: pointer;
+  background-color: white;
+  -moz-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  margin-left: -3px;
+  width: 100%;
+  margin: 1px 5px 10px 5px !important; }
+
+/* line 1243, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.contact-info {
+  margin: 20px 20px 20px 20px;
+  padding: 10px 0 0 0; }
+
+/* line 1248, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.contact-info p {
+  margin: 0 !important; }
+
+/* line 1249, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.half-width {
+  width: 45%;
+  display: inline-block;
+  float: left; }
+
+/* line 1254, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.half-width-right {
+  width: 45%;
+  display: inline-block;
+  float: right; }
+
+/* line 1259, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.contact-info-name {
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+  margin-bottom: 10px; }
+
+/* line 1265, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.contact-check-item {
+  background-image: url(../../images_/ul-value-icon.svg);
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  z-index: 10;
+  top: 20px;
+  right: 20px; }
+
+/* line 1274, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.contact-check-item.selected {
+  background-image: url(../../images_/ul-value-icon-selected.svg); }
+
+/* line 1277, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+span.contact-edit {
+  position: absolute;
+  width: 42px;
+  height: 41px;
+  z-index: 10;
+  top: 20px;
+  left: 10px; }
+
+/* line 1285, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.consultConfirm {
+  position: relative;
+  display: inline-block;
+  margin: 10px 5px;
+  cursor: pointer;
+  background-color: white;
+  -moz-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+  margin-right: 20px; }
+
+/* line 1290, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+div.cal-links {
+  background-color: #397664;
+  margin-top: 15px;
+  padding: 10px;
+  width: 170px;
+  height: 140px;
+  display: inline-block;
+  float: right;
+  clear: right; }
+
+/* line 1300, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.cal-links p, .cal-links a {
+  color: white; }
+
+/* line 1303, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.hint {
+  color: #969696;
+  margin: 10px 0 0 5px;
+  display: inline-block; }
+
+/* line 1308, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+.gallery img.hairloss-img {
+  width: 194px;
+  height: auto; }
+
+/* line 1313, C:/nginx/html/public/stylesheets/sass/_layout.scss */
+form#schConsultationContactForm {
+  margin-top: 50px; }
+
+/* line 1, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.bkgrd-brandblue {
+  background-color: #30578B; }
+
+/* line 2, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.bkgrd-darkblue {
+  background-color: #30578B;
+  border-right: 1px solid #F3F3F3; }
+
+/* line 3, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.bkgrd-green {
+  background-color: #397664;
+  border-right: 1px solid #F3F3F3; }
+
+/* line 4, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.bkgrd-yellow {
+  background-color: #fdb109;
+  border-right: 1px solid #F3F3F3; }
+
+/* line 5, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.bkgrd-darkgray {
+  background-color: #1E1E1E;
+  border-right: 1px solid #F3F3F3; }
+
+/* line 6, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.bkgrd-mdgray {
+  background-color: #2E2E2E;
+  border-right: 1px solid #F3F3F3; }
+
+/* line 7, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.bkgrd-gray {
+  background-color: #DAD6D2;
+  border-right: 1px solid #F3F3F3; }
+
+/* line 8, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.bkgrd-lightgray {
+  background-color: #F3F3F3;
+  border-right: 1px solid #F3F3F3; }
+
+/* line 9, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.bkgrd-white {
+  background-color: white;
+  border-right: 1px solid #F3F3F3; }
+
+/* line 12, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.color-swatch {
+  padding: 30px 10px;
+  width: 153px;
+  height: 153px;
+  font-weight: bold;
+  display: block;
+  text-align: center; }
+
+/* line 20, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.style-guide .row {
+  margin-bottom: 40px; }
+
+/* line 23, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.style-guide {
+  padding-top: 150px;
+  padding-bottom: 0; }
+
+/* line 27, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.color-note {
+  font-size: 8pt;
+  font-weight: 400; }
+
+/* line 31, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+li.sidebar-brand {
+  background-color: #DAD6D2; }
+
+/* line 34, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.nav-header {
+  background-color: #F3F3F3;
+  min-height: 150px;
+  padding: 20px 0 0 30px; }
+
+/* line 39, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.navbar-brand {
+  width: 250px; }
+
+/* line 42, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.styleguide-header {
+  padding-top: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 100px; }
+
+/* line 48, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.sg-section-title {
+  color: white;
+  font-weight: bold;
+  font-size: 18pt;
+  text-transform: uppercase;
+  height: auto; }
+
+/* line 55, C:/nginx/html/public/stylesheets/sass/_style-guide.scss */
+.style-guide .col-sm-2 {
+  margin-bottom: 40px; }
+
+/* line 1, C:/nginx/html/public/stylesheets/sass/_type.scss */
+* {
+  font-family: 'Open Sans', sans-serif; }
+
+/* line 5, C:/nginx/html/public/stylesheets/sass/_type.scss */
+h1, h2, h3, h4, h5, h6, p, label {
+  color: #2E2E2E; }
+
+/* line 6, C:/nginx/html/public/stylesheets/sass/_type.scss */
+body {
+  color: #2E2E2E; }
+
+/* line 7, C:/nginx/html/public/stylesheets/sass/_type.scss */
+h1, h2 {
+  margin-bottom: 20px; }
+
+/* line 8, C:/nginx/html/public/stylesheets/sass/_type.scss */
+h3, h4, h5, h6, p {
+  margin-bottom: 10px; }
+
+/* line 10, C:/nginx/html/public/stylesheets/sass/_type.scss */
+a {
+  color: #397664;
+  text-decoration: none; }
+
+/* line 11, C:/nginx/html/public/stylesheets/sass/_type.scss */
+a:hover {
+  color: #2B6D5E;
+  text-decoration: underline; }
+
+/* line 17, C:/nginx/html/public/stylesheets/sass/_type.scss */
+h1 {
+  font-size: 2em;
+  line-height: 1.25em;
+  font-weight: 400; }
+
+/* line 18, C:/nginx/html/public/stylesheets/sass/_type.scss */
+h2 {
+  font-size: 1.625em;
+  line-height: 1.15em;
+  font-weight: 700; }
+
+/* line 19, C:/nginx/html/public/stylesheets/sass/_type.scss */
+h3 {
+  font-size: 1.375em;
+  line-height: 1.375em; }
+
+/* line 20, C:/nginx/html/public/stylesheets/sass/_type.scss */
+h4 {
+  font-size: 1.125;
+  line-height: 1.11em; }
+
+/* line 21, C:/nginx/html/public/stylesheets/sass/_type.scss */
+h5 {
+  font-size: 1em;
+  line-height: 1.05em; }
+
+/* line 22, C:/nginx/html/public/stylesheets/sass/_type.scss */
+p {
+  font-size: 16px;
+  line-height: 22px; }
+
+/* line 23, C:/nginx/html/public/stylesheets/sass/_type.scss */
+p.intro-subtitle {
+  font-size: 1.35em;
+  line-height: 1.35em;
+  margin-bottom: 40px; }
+
+/* line 24, C:/nginx/html/public/stylesheets/sass/_type.scss */
+p.intro {
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 40px;
+  margin-right: 30px; }
+
+/* line 25, C:/nginx/html/public/stylesheets/sass/_type.scss */
+p.question {
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 10px;
+  font-weight: bold; }
+
+/* line 26, C:/nginx/html/public/stylesheets/sass/_type.scss */
+p.green {
+  color: #397664; }
+
+@media (min-width: 768px) {
+  /* line 29, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h1 {
+    font-size: 2.25em;
+    line-height: 1.25em;
+    font-weight: 400; }
+  /* line 30, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h2 {
+    font-size: 2em;
+    line-height: 1.25em;
+    font-weight: 700; }
+  /* line 31, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h3 {
+    font-size: 1.5em;
+    line-height: 1.25em; }
+  /* line 32, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h4 {
+    font-size: 1.125em;
+    line-height: 1.25em; }
+  /* line 33, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h5 {
+    font-size: 1em;
+    line-height: 1.05em; }
+  /* line 35, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  p.intro {
+    display: inline-block; } }
+
+@media (min-width: 992px) {
+  /* line 39, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h1 {
+    font-size: 2.45em;
+    line-height: 1.05em;
+    font-weight: 400; }
+  /* line 40, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h2 {
+    font-size: 2.15em;
+    line-height: 1.25em;
+    font-weight: 700; }
+  /* line 41, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h3 {
+    font-size: 1.75em;
+    line-height: 1.25em; }
+  /* line 42, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h4 {
+    font-size: 1.5em;
+    line-height: 1.2em; }
+  /* line 43, C:/nginx/html/public/stylesheets/sass/_type.scss */
+  h5 {
+    font-size: 1em;
+    line-height: 1.05em; } }
+
+/* line 4, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+div.dropdown {
+  display: inline-block; }
+
+/* line 10, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+nav.dropdown-menu {
+  overflow: visible !important;
+  top: 90px;
+  z-index: 9999999;
+  right: 15px;
+  padding: 0px !important;
+  background: none !important; }
+
+/* line 18, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+nav#navmain {
+  box-shadow: none !important;
+  border: none !important; }
+
+/* line 23, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+nav.dropdown-menu.dropdown-menu-right {
+  overflow-x: hidden;
+  overflow-y: scroll !important;
+  margin-bottom: -90px; }
+
+/* line 36, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+nav.dropdown-menu.dropdown-menu-right::-webkit-scrollbar {
+  display: none; }
+
+/* line 39, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+nav.dropdown-menu.dropdown-menu-right {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none; }
+
+/* line 46, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.dropdown-menu {
+  border-radius: 0; }
+
+/* line 49, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+nav {
+  display: block;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  font-size: 14px;
+  top: 0;
+  width: 24em;
+  transition: top 0.3s ease-in-out 0s;
+  -webkit-transition: top 0.3s ease-in-out 0s;
+  -moz-transition: top 0.3s ease-in-out 0s;
+  -o-transition: top 0.3s ease-in-out 0s; }
+
+/* line 64, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+ul.list-unstyled.main-menu, ul.list-unstyled.top-nav {
+  margin-bottom: 0; }
+
+/* line 67, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.main-menu li {
+  font-weight: bold;
+  font-size: 15px;
+  border-bottom: 1px solid #DAD6D2;
+  background-color: #F3F3F3; }
+
+/* line 73, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.parentMenuName {
+  text-transform: uppercase; }
+
+/* line 74, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.subMenuItem {
+  text-transform: normal !important; }
+
+/* line 76, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.main-menu li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 12px 12px 12px 20px; }
+
+/* line 86, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.main-menu li:not(.nav-close) a:hover {
+  background-color: white; }
+
+/* line 89, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.main-menu li:not(.nav-close):hover {
+  background-color: white; }
+
+/* line 92, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.main-menu li:not(.nav-close) a:active {
+  background-color: white; }
+
+/* line 95, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.main-menu li:not(.nav-close):active {
+  background-color: white; }
+
+/* line 98, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.main-menu li .sub-nav {
+  border-bottom: 0px;
+  padding: 4px; }
+
+/* line 102, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.main-menu li.sub-nav {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 20px; }
+
+/* line 108, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.icon:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  content: '\f105';
+  line-height: 1;
+  text-transform: none;
+  margin: 0.1em 0.8em -0.1em 0;
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+/* line 123, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.icon-open:before {
+  content: '\f107';
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+/* line 130, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.icon-closed:before {
+  content: '\f105';
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+/* line 139, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.sub-nav a::after {
+  float: right;
+  content: url("../../images_/menu-check-gray.svg");
+  width: 19px;
+  height: 19px;
+  vertical-align: middle; }
+
+/* line 146, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.sub-nav.complete a::after {
+  content: url("../../images_/menu-check-green.svg"); }
+
+/* line 149, C:/nginx/html/public/stylesheets/sass/_navigation.scss */
+.sub-nav.inprogress a::after {
+  content: url("../../images_/menu-check-yellow.svg"); }
+
+/*# sourceMappingURL=main.css.map */

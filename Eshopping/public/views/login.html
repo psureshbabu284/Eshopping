@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+#logo a {
+	background-image: url('/public/images/hd_header.png');
+	min-height: 0;
+	height: 111px;
+}
+
+.bs-wizard {
+	margin-top: 40px;
+}
+
+/*Form Wizard*/
+.bs-wizard {
+	border-bottom: solid 1px #e0e0e0;
+	padding: 0 0 10px 0;
+}
+
+.bs-wizard>.bs-wizard-step {
+	padding: 0;
+	position: relative;
+}
+
+.bs-wizard>.bs-wizard-step+.bs-wizard-step {
+	
+}
+
+.bs-wizard>.bs-wizard-step .bs-wizard-stepnum {
+	color: #595959;
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+.bs-wizard>.bs-wizard-step .bs-wizard-info {
+	color: #999;
+	font-size: 14px;
+}
+
+.bs-wizard>.bs-wizard-step>.bs-wizard-dot {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	display: block;
+	background: #fbe8aa;
+	top: 45px;
+	left: 50%;
+	margin-top: -15px;
+	margin-left: -15px;
+	border-radius: 50%;
+}
+
+.bs-wizard>.bs-wizard-step>.bs-wizard-dot:after {
+	content: ' ';
+	width: 14px;
+	height: 14px;
+	background: #fbbd19;
+	border-radius: 50px;
+	position: absolute;
+	top: 8px;
+	left: 8px;
+}
+
+.bs-wizard>.bs-wizard-step>.progress {
+	position: relative;
+	border-radius: 0px;
+	height: 8px;
+	box-shadow: none;
+	margin: 20px 0;
+}
+
+.bs-wizard>.bs-wizard-step>.progress>.progress-bar {
+	width: 0px;
+	box-shadow: none;
+	background: #fbe8aa;
+}
+
+.bs-wizard>.bs-wizard-step.complete>.progress>.progress-bar {
+	width: 100%;
+}
+
+.bs-wizard>.bs-wizard-step.active>.progress>.progress-bar {
+	width: 50%;
+}
+
+.bs-wizard>.bs-wizard-step:first-child.active>.progress>.progress-bar {
+	width: 0%;
+}
+
+.bs-wizard>.bs-wizard-step:last-child.active>.progress>.progress-bar {
+	width: 100%;
+}
+
+.bs-wizard>.bs-wizard-step.disabled>.bs-wizard-dot {
+	background-color: #f5f5f5;
+}
+
+.bs-wizard>.bs-wizard-step.disabled>.bs-wizard-dot:after {
+	opacity: 0;
+}
+
+.bs-wizard>.bs-wizard-step:first-child>.progress {
+	left: 50%;
+	width: 50%;
+}
+
+.bs-wizard>.bs-wizard-step:last-child>.progress {
+	width: 50%;
+}
+
+.bs-wizard>.bs-wizard-step.disabled a.bs-wizard-dot {
+	pointer-events: none;
+}
+/*END Form Wizard*/
+.center {
+	margin: 0 auto;
+	width: 80%;
+}
+</style>
+<!-- ========= -->
+<!-- Libraries -->
+<!-- ========= -->
+<link rel="stylesheet" type="text/css"
+	href="/public/views/css/bootstrap/3.1.1/bootstrap.min.css">
+
+<script src="/public/script/lib/jquery/1.7.2/jquery.min.js"
+	type="text/javascript"></script>
+
+<!-- Angular js -->
+<script src="/public/script/lib/angularjs/1.5.6/angular.min.js"></script>
+
+<script src="/public/script/controllers/logincontroller.js"></script>
+<script type="text/javascript"
+	src="/public/script/services/LocalStorageService.js"></script>
+<script src="/public/script/services/loginService.js"></script>
+<script type="text/javascript"
+	src="/public/script/services/commondataservice.js"></script>
+<script src="/public/script/servercredentials.js"></script>
+
+<body class="login" ng-app="ofkapp" ng-controller="loginController">
+
+	<div class="container-fluid" ng-init="init()">
+
+
+
+		<!-- Login row -->
+		<div class="row" ng-show="!forgotPasswordForm">
+
+			<!-- Login form -->
+			<form class="form-vertical login-form col-xs-8 col-md-3 col-lg-3"
+				name="loginForm" style="margin: 0 auto; float: none;">
+
+				<!-- Logo -->
+				<span ng-show="loginForm.loginId.$invalid">Email is required.</span>
+				<div id="logo">
+					<img style="margin-left: auto; margin-right: auto; display: block;"
+						ng-src="{{hd_logo}}" alt="logo" />
+				</div>
+				<!-- /Logo -->
+
+				<!-- Title -->
+				<h3 class="form-title">Sign In to your Account</h3>
+
+
+
+				<!-- Input Fields -->
+				<div class="form-group">
+					<!--<label for="username">Username:</label>-->
+					<label for="loginId">Username/Email</label> <input type="text"
+						name="loginId" ng-model="loginModel.loginId" class="form-control"
+						placeholder="Username/Email" autofocus="autofocus" required />
+					<div>
+						<input type="button" style="width: 100%; text-align: right;"
+							class="btn btn-link pull-right" value="Forgot Password"
+							ng-click="enableForgotPasswordForm(forgotPasswordForm,loginModel)" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="password">Password:</label> <input type="password"
+						name="password" ng-model="loginModel.password"
+						class="form-control" placeholder="Password" required />
+
+				</div>
+				<!-- /Input Fields -->
+
+				<!-- Form Actions -->
+				<div class="form-actions  pull-right" style="margin-bottom: 10px;">
+					<input type="button" id="signinbtn" name="signinbtn"
+						value="Sign In" ng-click="userLoginValidation(loginModel);"
+						class="btn btn-primary" /> 
+				<input type="button"
+						id="gettingstartedbtn" ng-click="redirectToSignUp();"
+						name="gettingstartedbtn" value="Getting Started"
+						class="btn btn-primary " />
+
+				</div>
+			</form>
+			<!-- /Login Formular -->
+		</div>
+		<!-- End of row -->
+
+
+		<!-- Forgot Password Form -->
+		<div class="row" ng-show="forgotPasswordForm">
+
+			<!-- Forgot Password Formular -->
+			<form name="loginForm"
+				class="form-vertical forgot-password-form  col-xs-8 col-md-3 col-lg-3"
+				style="margin: 0 auto; float: none;">
+
+				<!-- Logo -->
+				<div id="logo">
+					<img style="margin-left: auto; margin-right: auto; display: block;"
+						ng-src="{{hd_logo}}" alt="logo" />
+				</div>
+				<!-- /Logo -->
+
+				<!-- Title -->
+				<h3 class="form-title" style="text-align: center;">Forgot
+					Password</h3>
+
+				<!-- Input Fields -->
+				<div class="form-group">
+					<label for="email">Email:</label>
+					<div class="input-icon">
+						<input type="email" name="email" class="form-control"
+							ng-model="loginModel.email" placeholder="Enter email address"
+							ng-required="true" ng-email="true" />
+					</div>
+				</div>
+				<!-- /Input Fields -->
+
+				<!-- Form Actions -->
+				<div class="form-actions  pull-right" style="margin-bottom: 10px;">
+
+					<input type="button" id="cancel"
+						ng-click="enableForgotPasswordForm(forgotPasswordForm,loginModel)"
+						name="cancel" value="cancel" class="btn btn-primary" /> <input
+						type="button" id="frgtpwdbtn" name="frgtpwdbtn"
+						value="Reset Your password" ng-click="resetPassword(loginModel);"
+						class="btn btn-primary" />
+
+
+				</div>
+			</form>
+			<!-- /Forgot Password Formular -->
+
+		</div>
+		<!-- End of row -->
+
+
+
+
+		<!-- Error Message -->
+		<div class="alert fade in alert-danger col-xs-8 col-md-3 col-lg-3"
+			style="margin: 0 auto; float: none;" ng-show="onError">
+			<!-- the required message is displayed first... -->
+			{{serviceMessage}}
+		</div>
+
+
+		<!-- Success Message -->
+		<div class="alert fade in alert-success col-xs-8 col-md-3 col-lg-3"
+			style="margin: 0 auto; float: none;" ng-show="onSuccess">
+			<!-- the required message is displayed first... -->
+			{{serviceMessage}}
+		</div>
+
+
+	</div>
+	<!--conatiner -->
+
+	<!-- Footer -->
+	<!-- <div class="footer">
+		Create an account /<a href="register.html" class="sign-up"> <strong>Sign Up</strong></a>
+	</div> -->
+	<!-- /Footer -->
+
+</body>
+
+
+</html>

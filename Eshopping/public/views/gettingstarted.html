@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <META NAME="robots" CONTENT="noindex,nofollow">
+<head>
+ 
+   <title>E Shop</title>
+</head>
+
+ <!-- Cascading style sheets -->
+	<!-- Bootstrap  v3 -->
+	<link rel="stylesheet" type="text/css" href="/public/views/css/bootstrap/3.1.1/bootstrap.min.css">
+	
+<!-- ICONS  -->
+		<link rel="apple-touch-icon" sizes="57x57" href="../images_/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="../images_/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../images_/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="../images_/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../images_/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="../images_/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../images_/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="../images_/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="../images_/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="../images_/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../images_/favicon-32x32.png">
+		<link rel="manifest" href="../images_/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="../images_/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+<!--	<link rel="icon" href="../images_/hd_favicon.ico?v=2" type="image/x-icon" />-->
+		
+ <!-- Bootstrap  v3 -->
+ <!-- 	 <link rel="stylesheet" type="text/css" href="htpts://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+    
+    <!-- Bootstrap  v3 downloaded from link above and un-minified then edited -->
+	<!-- <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css">-->
+      <!-- Bootstrap  v3 -->
+    <link rel="stylesheet" type="text/css" href="../stylesheets/css/bootstrap.min.css">
+    <!-- Font Awesome -->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<!-- FormValidation CSS file -->
+	<link rel="stylesheet" href="/public/script/vendor/formvalidation/dist/css/formValidation.min.css">
+	<link href="../stylesheets/css/simple-sidebar.css" rel="stylesheet">
+	<link href="../stylesheets/css/main.css" rel="stylesheet" type="text/css">
+ <!-- Cascading style sheets -->	
+ 
+	<!-- Third Party Plugins/Scripts -->	
+		<!-- HD -->	
+			<!-- jQuery v1.9.1 or higher -->
+			<script src="../script/vendor/jquery/jquery.min.js"></script>
+
+			<!-- jQuery Datepicker-->	
+			<script src="../script/vendor/jquery/jquery-ui.js"></script>
+
+			<!-- FormValidation plugin and the class supports validating Bootstrap form -->
+			<script src="../script/vendor/formvalidation/formValidation.min.js"></script>
+			
+			<!-- Bootstrap JS provided by FormValidation & needed in addition to BS framework above-->
+			<script src="/public/script/vendor/bootstrap/js/bootstrap.min.js"></script>
+			
+		
+		<!-- HD -->
+	
+		<script src="/public/script/lib/jquery/1.7.2/jquery.min.js"	type="text/javascript"></script>
+
+	<!-- Angular js -->
+	<script type="text/javascript"
+		src="/public/script/lib/angularjs/1.5.6/angular.min.js"></script>
+
+	<!--  <script  type="text/javascript" src="/public/script/lib/angularjs/angular-local-storage/0.5.0/angular-local-storage.min.js"></script>-->
+	<script type="text/javascript"
+		src="/public/script/lib/angularjs/route/1.2.25/angular-route.min.js"></script>
+		
+		<!-- Third Party Plugins/Scripts -->	
+
+		<!-- HD Devloped Plugins/Scripts -->
+		<script>
+			/**
+			 * Angular APP context intialization
+			 */
+			var ofkapp = angular.module("ofkapp", ['ngRoute']);
+
+
+		</script>
+		<!-- AngularJS Controller -->
+		<script type="text/javascript"
+			src="/public/script/controllers/logincontroller.js"></script>
+
+		<!-- AngularJS Service-->
+		<script type="text/javascript"
+			src="/public/script/directives/agevalidation.js"></script>
+
+		<!-- AngularJS Service-->
+		<script type="text/javascript"
+			src="/public/script/services/loginService.js"></script>
+		<script type="text/javascript"
+			src="/public/script/services/LocalStorageService.js"></script>
+		<script type="text/javascript"
+			src="/public/script/services/gettingstartedservice.js"></script>
+		<script type="text/javascript"
+			src="/public/script/services/commondataservice.js"></script>
+
+		<!-- AngularJS Constants-->
+		<script type="text/javascript"
+		src="/public/script/constants/validationmessages.js"></script>
+		
+		<!-- AngularJS Directives-->
+		<script type="text/javascript"
+		src="/public/script/directives/passwordValidation.js"></script>
+
+		<!-- Router -->
+		<script type="text/javascript" src="/public/script/routes/mainRoute.js"></script>
+
+		<!-- Server Info-->
+		<script src="/public/script/servercredentials.js"></script>
+
+
+	<body ng-app="ofkapp" id="getting-started-page">
+	
+	
+
+	<div ng-controller="loginController">
+
+		<!-- #header -->
+			<div ng-include="'/public/views/header.html'"></div>
+		<!-- #header -->
+		
+
+		<!-- Content -->  
+		<div id="content" class="ng-view">
+			<!-- Body Page 
+			<div ng-hide="!layout.loading" class="loader"></div>
+			<div ng-view ng-hide="layout.loading"></div>
+			<div id="divider" class="resizeable"></div>
+		-->
+		</div>
+		<!-- Content --> 
+
+		<!-- #footer -->
+			<div ng-include="'/public/views/footer.html'"></div>
+		<!-- #footer -->
+	
+		<!--  <div id="dimmer" ng-style="navEnabled ? { 'display':'block'} : { 'display': 'none' }" ng-click="SlideMenu(navEnabled);"></div>  -->	
+	</div>
+
+	<!-- end of container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- run before login -->
+	<script src="/public/script/js/flush-footer.js"></script>
+	<!-- main dropdown menu -->
+	<!-- <script src="/public/script/js/off-canvas-left.js"></script>-->
+	<script src="/public/script/js/navigation.js"></script>
+</body>
+
+</html>
+

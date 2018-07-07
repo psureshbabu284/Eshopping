@@ -1,0 +1,9 @@
+.bkgrd-get-started {
+  background: url(images/collage.jpg) no-repeat;
+  max-width: 100%;
+  height: 944px;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  z-index: -99999;
+}

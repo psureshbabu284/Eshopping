@@ -1,0 +1,387 @@
+html {
+ 	height: 100%;
+	overflow: auto;
+	overflow-y: scroll;
+}
+body {
+ 	height: 100%;
+	overflow: auto;
+	overflow-y: scroll;
+}
+a {
+	color: $green;	
+}
+a:hover {
+	color: $green-hover;	
+}
+#content { 
+	padding-top: 20px;
+	background-color: $lightgray;
+    height: 100%;
+	overflow-y: scroll;
+	overflow: auto;
+//	height: -webkit-calc(100vh - 350px);
+//	height: -moz-calc(100vh - 350px);
+//	height: calc(100vh - 350px);
+	height: 100vh;
+//	height: -moz-calc(100vh - 350px);
+//	height: calc(100vh - 350px);
+}
+
+.white { color: white; }
+.hide-mobile { display: none; }
+//LAYOUT
+//Changing default width of container to match Mockups
+@include desktop {
+	.container {
+		width: 960px;
+	}
+}
+/* HEADER STYLES
+-------------------------------------------------- */
+.navbar-white {
+	background-color: white;
+	height: 103px;
+	-webkit-box-shadow: 0 8px 6px -3px $gray;
+	-moz-box-shadow: 0 8px 6px -3px $gray;
+	box-shadow: 0 8px 6px -3px $gray;
+}
+.navbar-dark { 
+ 	background-color: $darkgray;
+	border-color: $darkgray;
+	height: 50px;
+}
+.navbar-brand {
+	//width: 100px;
+	height: 94px;
+	float: left;
+}
+
+#navbar-inter-2 { 
+	top: 50px;
+}
+.navbar-inter-2 {
+	padding: 7px 0;
+//	height: 94px;
+}
+.container>.navbar-header { 
+	display: inline-block;
+}
+.progress-label { 
+	display: none;
+	//font-size: .875em;
+}
+#progress-bar {
+	width: 100%;
+	height: auto;
+	display: inline;
+	padding-left: 2%;
+	padding-right: 3%;
+	padding-top: 40px;
+}
+.nav-expander .nav-open {
+	color: $green;
+	padding: 30px 0;
+	width: 65px;
+	height: 55px;
+	display: inline;
+}
+
+.progress {
+	background-color: $gray;
+	margin-top: 15px; 
+}
+@include phone {
+	.navbar-brand img {
+		width: 47px;
+		height: auto;	
+	}
+}
+@include tablet {
+	.navbar-brand img {
+		width: 95px;
+		height: auto;	
+	}
+	.progress-label { 
+		text-align: right; 
+		font-weight: bold;
+		width: 100%;
+		display: block;
+	}
+	.progress {
+		margin-top: 0;
+	}
+	.nav-expander .nav-open {
+		border: 1px solid $gray;
+		padding: 10px 7px;
+		display: block;	
+	}
+	.hide-mobile { display: block; }
+}
+@include desktop {
+	.navbar-brand {
+		//width: 125px;
+	}
+}
+// over-ride bs default to adjust progress bar height
+.progress, .progress-bar {
+	height: 7px;
+}
+.progress-bar {
+	background-color: $lightblue;
+	height: 7px;
+}
+#nav-close { 
+	color: white;
+	background-color: $green;
+	font-size: 12px;
+	border: 1px solid $green;
+  	font-weight: bold;
+	padding: 10px 7px;
+	width: 65px;
+	height: 55px;
+	display: block;
+	text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+	margin-right: 15px;
+}
+span.nav-close:before {
+	content: url('../../images_/close-icon.svg');
+	background-repeat: no-repeat;
+	margin-right: 10px;
+	width: 15px;
+	height: 18px;
+	vertical-align: middle;		
+}
+a.nav-expander {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 12;
+  padding-top: 14px;
+  margin-right: 15px;
+}
+a.nav-expander:hover {
+  cursor: pointer;
+}
+.login-holder {
+	background-color: $green;
+	width: 100%;
+	min-width: 200px;
+	height: 50px;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 50px;
+	vertical-align: middle;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+span.login-icon:before {
+	content: url('../../images_/user-icon.svg');
+	background-repeat: no-repeat;
+	margin-right: 10px;
+	width: 15px;
+	height: 18px;
+	line-height: 50px;
+	vertical-align: middle;
+}
+
+
+/* FOOTER STYLES
+-------------------------------------------------- */
+
+footer {
+
+}
+footer a { 
+	text-decoration: underline;
+}
+footer p {  
+	font-size: .875em; 
+	line-height: 1.4em; 
+}
+footer .help {
+	background-color: $gray;	
+	padding-top: 15px;
+	font-weight: bold;
+}
+footer .note {
+	background-color: $darkgray;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+footer .note p {
+	color: $gray;
+}
+footer .note a {
+	color: $gray;
+}
+footer .note a:hover {
+	color: $gray;
+}
+@include desktop {
+	.note .container {
+		width: 45%;
+	}
+}
+.note .container {
+	width: 80%;
+}
+
+/* LANDING PAGE/GET STARTED STYLES
+-------------------------------------------------- */
+
+.get-started-bkgrd { 
+	background-image: url('../../images_/color-bg-short.jpg');
+	min-height: 500px;
+	background-size: cover;
+	background-position: 50% 50%;
+	position: relative;
+	z-index: -99999;
+}
+@include tablet {
+	.get-started-bkgrd { 
+		background-image: url('../../images_/fpo-hero2.jpg'); 
+	}
+}
+.get-started-message {
+	max-width: 600px;
+	padding: 5px 20px;
+	margin-top: 50px;
+	//background-color: rgba(0, 0, 0, 0.3);
+}
+.get-started-message h1, .get-started-message h3, .get-started-message p {
+	color: white;
+}
+.get-started-message h1 {
+	margin-bottom: 0;
+}
+.get-started-message p {
+	max-width: 425px;
+}
+.get-started-message p {
+    margin-top: 15px;
+    font-size: 18px;
+	line-height: 22px;
+}
+.get-started-message sup {
+    top: -1.75em;
+}
+.get-started-message sup {
+    font-size: 30%;
+}
+.get-started-message button { 
+	border: white; 
+	background-color: white; 
+	border-radius: none !important;
+	color: $darkblue;
+	margin: 20px 0;
+}
+.get-started-how {
+	padding-top: 40px;
+	background-color: $lightgray;
+}
+.get-started-how h3 {
+   font-weight: bold;
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid $mdgray; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+} 
+.get-started-how h3 span { 
+    background: $lightgray; 
+    padding:0 25px; 
+}
+@include xsmall { 
+	.get-started-how h3 {
+		border: 0;
+		line-height: 1em;
+	}
+	.get-started-how h3 span { 
+		background: none !important; 
+		padding:0; 
+	}
+}
+.get-started-how ul {
+	margin-top: 20px;
+}
+@include desktop {
+	.get-started-how li {
+		min-height: 110px;
+		background-image: url('../../images_/fpo-check-circle2.png');
+		background-position: left top;
+		background-repeat: no-repeat;
+		padding-left: 50px;
+	}
+}
+.get-started-how li {
+		min-height: 75px;
+		background-image: url('../../images_/fpo-check-circle2.png');
+		background-position: left top;
+		background-repeat: no-repeat;
+		padding-left: 50px;
+}
+
+// to apply black background when menu is open
+#dimmer {
+	position:fixed; 
+	top:153px; 
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba($mdgray,0.9); 
+	width:100%; 
+	height:100%;
+	z-index:9999;
+	display:none; 
+    transition: top 0.4s ease-in-out 0s;
+    -webkit-transition: top 0.4s ease-in-out 0s;
+    -moz-transition: top 0.4s ease-in-out 0s;
+    -o-transition: top 0.4s ease-in-out 0s;
+}
+// internal page design
+.heading-internal { 
+	border-bottom: 1px solid $mdgray;
+	margin-bottom: 20px;
+}
+.steps { 
+	float: right; 
+}
+.steps a:hover { 
+	text-decoration: none; 
+}
+.steps-previous, .steps-next {
+	color: $green;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+	padding-right: 20px; 
+	line-height: 8em;
+}
+.steps-previous:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  content: '\f104';
+  line-height: 1;
+  text-transform: none;
+  margin-right: 5px;	
+}
+.steps-next:after {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  content: '\f105';
+  line-height: 1;
+  text-transform: none;
+  margin-left: 5px;
+}

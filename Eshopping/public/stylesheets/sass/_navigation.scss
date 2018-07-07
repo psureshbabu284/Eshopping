@@ -1,0 +1,151 @@
+//MAIN NAVIGATION -- SLIDE OUT NAV
+//adapted from http://blog.themearmada.com/off-canvas-slide-menu-for-bootstrap
+//Hide top nav items by default and then show with navigation.js when needed
+div.dropdown  { 
+	display: inline-block; 
+//    position: fixed;
+//	  this is causing menu to mis-align too far to the right
+// 	  may have been an update from menu tweaks task
+}
+nav.dropdown-menu {
+	overflow: visible !important;	
+    top: 90px;
+	z-index: 9999999;
+	right: 15px;
+	padding: 0px !important;
+	background: none !important;
+}
+nav#navmain {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+nav.dropdown-menu.dropdown-menu-right {
+//	height: 800px !important;
+//  max-height: 800px !important;
+	overflow-x: hidden;
+    overflow-y: scroll !important;
+	margin-bottom: -90px;
+}
+//.dropdown-menu {
+//    border-top: 1px solid white;
+//	border-right: 1px solid rgba(0,0,0,.15);
+//	border-bottom: 1px solid rgba(0,0,0,.15);
+//	border-right: 1px solid rgba(0,0,0,.15);
+//}
+nav.dropdown-menu.dropdown-menu-right::-webkit-scrollbar {
+  	display: none;
+}
+nav.dropdown-menu.dropdown-menu-right {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+	-ms-overflow-style: none;
+	overflow: -moz-scrollbars-none;
+//	-moz-appearance: menuimage;
+}
+
+.dropdown-menu {
+	border-radius: 0;	
+}
+nav {
+//  background: $lightgray;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  font-size: 14px;
+  top: 0;
+  width: 24em;
+  transition: top 0.3s ease-in-out 0s;
+  -webkit-transition: top 0.3s ease-in-out 0s;
+  -moz-transition: top 0.3s ease-in-out 0s;
+  -o-transition: top 0.3s ease-in-out 0s;
+}
+
+ul.list-unstyled.main-menu, ul.list-unstyled.top-nav { 
+	margin-bottom: 0;
+}
+.main-menu li {
+  font-weight: bold;
+  font-size: 15px;
+  border-bottom: 1px solid $gray;
+  background-color: $lightgray;
+}
+.parentMenuName { text-transform: uppercase; }
+.subMenuItem { text-transform: normal !important; }
+
+.main-menu li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  top:0px;
+  right:0px;
+  width:100%;
+  height:100%;
+  padding: 12px 12px 12px 20px;
+}
+.main-menu li:not(.nav-close) a:hover {
+	background-color: white;
+}
+.main-menu li:not(.nav-close):hover {
+	background-color: white;
+}
+.main-menu li:not(.nav-close) a:active {
+	background-color: white;
+}
+.main-menu li:not(.nav-close):active {
+	background-color: white;
+}
+.main-menu li .sub-nav {
+  border-bottom: 0px;
+  padding: 4px;
+}
+.main-menu li.sub-nav {
+	font-weight: normal;
+	font-size: 15px;
+	padding-left: 20px;
+}
+//level 1 arrows
+.icon:before {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  content: '\f105';
+  line-height: 1;
+  text-transform: none;
+  margin: 0.1em 0.8em -0.1em 0;
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.icon-open:before {
+  content: '\f107';
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.icon-closed:before {
+  content: '\f105';
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+//Progress Indicators
+.sub-nav a::after {
+  float: right;
+  content: url('../../images_/menu-check-gray.svg');
+  width: 19px;
+  height: 19px;
+  vertical-align: middle;
+}
+.sub-nav.complete a::after { 
+	content: url('../../images_/menu-check-green.svg');
+}
+.sub-nav.inprogress a::after {
+	content: url('../../images_/menu-check-yellow.svg');
+}

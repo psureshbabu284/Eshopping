@@ -1,0 +1,202 @@
+<div class="container-fluid" ng-init="onCreateaccountModelFormSubmit = false">
+	<div class="container internal">
+<div class="row">
+		<div class="row title-bar">
+			 </div>
+			 <div class="row">
+			 <div class="col-sm-6 col-sm-offset-3"><h2>Create an accountModel</h2>
+			   <hr>
+			  </div>
+      		<div class="col-sm-6 col-sm-offset-3">
+       			<p class="intro">Create an accountModel so all the information you provide is saved and we can personalize your experience.</p>
+			</div>
+        </div>
+<div class="row">
+<div class="col-sm-12">				
+<form id="createaccountModelform" name="createaccountModelform" class="form-horizontal">	
+
+<!-- accountModel Type -->
+<div class="form-group col-sm-12 has-feedback" 
+			ng-class="{ 'has-success' : createaccountModelform.accountModelType.$valid, 
+			'has-error' : (onCreateaccountModelFormSubmit && !createaccountModelform.accountModelType.$valid)}">
+		<div class="col-sm-6 col-sm-offset-3">
+		<label class="control-label">account Type</label>
+		
+		<select ng-model="accountModel.accountType" name="accountModeltype" 
+				ng-required="true" 
+				placeholder="Select accountModel type"
+				class="form-control" id="accountType">
+					 <option value="">Select account</option>
+					 <option value="Vendor">Vendor</option>
+					 <option value="Customer">Customer</option>
+			</select>
+				
+			
+</div>
+</div>
+<!-- End -->
+
+
+
+
+<!-- first name -->
+<div class="form-group col-sm-12 has-feedback"
+     ng-class="{ 'has-success' : createaccountModelform.firstName.$valid, 
+				'has-error' : onCreateaccountModelFormSubmit && !createaccountModelform.firstName.$valid}">
+	<div class="col-sm-6 col-sm-offset-3">
+		<label class="control-label" for="firstName">First Name</label>
+		<input type="text" class="form-control" ng-model="accountModel.firstName"  
+		ng-required="true"
+		name="firstName" placeholder="Enter first name" />
+		<span ng-show="createaccountModelform.firstName.$valid" 
+			class="form-control-feedback glyphicon glyphicon-ok"/> 
+		<span ng-show="onCreateaccountModelFormSubmit && !createaccountModelform.firstName.$valid" 
+			class="form-control-feedback glyphicon glyphicon-remove" />
+	<div class="small-error-holder">
+		<small  ng-show="onCreateaccountModelFormSubmit && !createaccountModelform.firstName.$valid"
+		class="help-block">{{createaccountModelValidationMessages.firstNameMessageNotEmpty}}
+		</small>
+	</div>
+	</div>
+</div>	
+<!-- first name -->
+
+<!-- last name -->
+<div class="form-group col-sm-12 has-feedback"
+ng-class="{ 'has-success' : createaccountModelform.lastName.$valid, 
+			'has-error' : onCreateaccountModelFormSubmit && !createaccountModelform.lastName.$valid}">	
+	<div class="col-sm-6 col-sm-offset-3">
+		<label class="control-label" for="lastName">Last Name</label>
+		<input type="text" class="form-control"  ng-model="accountModel.lastName"  
+		ng-required="true"
+		name="lastName" placeholder="Enter last name" />
+		<span ng-show="createaccountModelform.lastName.$valid" 
+			class="form-control-feedback glyphicon glyphicon-ok"/> 
+		<span ng-show="onCreateaccountModelFormSubmit && !createaccountModelform.lastName.$valid" 
+			class="form-control-feedback glyphicon glyphicon-remove" />
+	<div class="small-error-holder">
+		<small  ng-show='onCreateaccountModelFormSubmit && !createaccountModelform.lastName.$valid' class="help-block ">	{{createaccountModelValidationMessages.lastNameMessageNotEmpty}}
+		</small>
+	</div>
+	</div>
+</div>
+<!-- last name -->
+<!-- email -->
+<div class="form-group col-sm-12 has-feedback"
+ng-class="{ 'has-success' : createaccountModelform.email.$valid, 
+			'has-error' : (onCreateaccountModelFormSubmit && !createaccountModelform.email.$valid) || createaccountModelform.email.$error.email}">
+	<div class="col-sm-6 col-sm-offset-3">
+		<label class="control-label" for="email">Email</label>
+		<input type="email" class="form-control" ng-model="accountModel.email" 
+		ng-required="true" ng-maxlength="80"
+		name="email" placeholder="Enter email" />
+	<div class="small-error-holder">
+		<small ng-show="createaccountModelform.email.$error.maxlength" class="help-block">
+			{{createaccountModelValidationMessages.mailTooBig}}
+		</small>
+		<span ng-show="createaccountModelform.email.$valid" 
+			class="form-control-feedback glyphicon glyphicon-ok"/> 
+			
+		<span ng-show="onCreateaccountModelFormSubmit || createaccountModelform.email.$error.email" 
+			class="form-control-feedback glyphicon glyphicon-remove" />
+			
+		<small ng-show='onCreateaccountModelFormSubmit && createaccountModelform.email.$error.required' class="help-block">	{{createaccountModelValidationMessages.emailRequiredMessageNotEmpty}}
+			</small>
+		<small ng-show="createaccountModelform.email.$error.email" class="help-block ">	{{createaccountModelValidationMessages.emailMessageValid}}
+		</small>
+	</div>
+	</div>
+</div>	
+<!-- email -->
+<div class="form-group col-sm-12 has-feedback" 
+ng-class="{ 'has-success' : createaccountModelform.password.$valid, 
+			'has-error' : (onCreateaccountModelFormSubmit && !createaccountModelform.password.$valid) || createaccountModelform.password.$error.minlength}">
+		<div class="col-sm-6 col-sm-offset-3">
+			<label class="control-label">Password</label>
+			<input type="password" class="form-control" ng-model="accountModel.password" 
+			ng-minlength="6" ng-required="true" 
+			name="password" placeholder="Create a secure password" />
+			<span ng-show="createaccountModelform.password.$valid" 
+			class="form-control-feedback glyphicon glyphicon-ok"/> 
+			
+		   <span ng-show="onCreateaccountModelFormSubmit && (createaccountModelform.password.$error.required || createaccountModelform.password.$error.minlength)" 
+			class="form-control-feedback glyphicon glyphicon-remove" />
+		<div class="small-error-holder">
+			<small  ng-show='onCreateaccountModelFormSubmit && createaccountModelform.password.$error.required' class="help-block ">	{{createaccountModelValidationMessages.pwdlRequiredMessage}}
+			</small>
+			<small  ng-show='createaccountModelform.password.$error.minlength' class="help-block ">	{{createaccountModelValidationMessages.passwordMinMaxValidationMessage}}
+			</small>
+		</div>	
+		</div>
+</div>	
+
+
+
+
+<!-- Gender -->
+<div class="form-group col-sm-12 has-feedback" 
+			ng-class="{ 'has-success' : createaccountModelform.gender.$valid, 
+			'has-error' : (onCreateaccountModelFormSubmit && !createaccountModelform.gender.$valid)}">
+		<div class="col-sm-6 col-sm-offset-3">
+		<label class="control-label">GENDER</label>
+		<select ng-model="accountModel.gender" name="gender" 
+		ng-required="true" 
+		placeholder="Select gender"
+		class="form-control" id="gender">
+			 <option value="">Select gender</option>
+			 <option value="male">Male</option>
+			 <option value="female">Female</option>
+	</select>
+			
+</div>
+</div>
+<!-- End -->
+
+
+<!-- Dob -->
+<div class="form-group col-sm-12 has-feedback" 
+ng-class="{ 'has-success' : createaccountModelform.dateOfBirth.$valid, 
+			'has-error' : (onCreateaccountModelFormSubmit && !createaccountModelform.dateOfBirth.$valid)}">
+		<div class="col-sm-6 col-sm-offset-3">
+			<label class="control-label">Date Of Birth </label>
+			<input type="text" class="form-control" ng-model="accountModel.dateOfBirth" 
+			ng-required="true" 
+			name="dateOfBirth" placeholder="Enter your Date Of Birth DD/MM/YYYY" />
+			<span ng-show="createaccountModelform.dateOfBirth.$valid" 
+			class="form-control-feedback glyphicon glyphicon-ok"/> 
+			
+		   <span ng-show="onCreateaccountModelFormSubmit && (createaccountModelform.dateOfBirth.$error.required)" 
+			class="form-control-feedback glyphicon glyphicon-remove" />
+		<div class="small-error-holder">
+			<small  ng-show='onCreateaccountModelFormSubmit && createaccountModelform.dateOfBirth.$error.required' class="help-block ">	{{createaccountModelValidationMessages.pwdlRequiredMessage}}
+			</small>
+		</div>	
+		</div>
+</div>
+
+<div class="form-group col-sm-12">
+	<div class="col-sm-6 col-sm-offset-3">
+		<small class="help-block has-error" ng-show="onError">{{serviceMessage}}</small>		
+		
+		<button type="submit" 
+				class="btn-wide" 
+				ng-click="userRegistration(accountModel);"
+				ng-class="{ 'disabled' : disableCreateAccButton}"
+				ng-disabled="disableCreateAccButton">Create account</button>
+	
+	</div>
+</div>
+<div class="form-group col-sm-12"> 
+	<div class="col-sm-6 col-sm-offset-3">   
+	<p>I already have an accountModel. <a href="#/signin">Sign In</a></p>
+	</div>
+</div>
+</form>	
+</div><!-- col-sm-12 -->
+</div><!-- row -->
+</div>
+<!-- row -->
+</div>
+<!-- container -->
+</div>
+<!-- container-fluid -->

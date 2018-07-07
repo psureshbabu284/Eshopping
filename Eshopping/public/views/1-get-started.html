@@ -1,0 +1,21 @@
+<div class="container-fluid get-started-bkgrd" ng-init="initGettingStartedView()">
+	<div class="overlay">
+	<div class="container main-banner">
+	<div class="row">
+		<div class="col-sm-10 col-md-6">
+			<h1>Welcome to Eshopping</h1>
+        <h2>Best Online Shopping site</h2>
+        <p>The purpose of <em>EShop</em> is to provide you best products from best vendors collect with best price. Also you can sell your products Through Eshop!!</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-10 col-md-6">
+				<button type="button" class="banner-btn" 
+				ng-click="redirectToView('createaccount');">Get Started</button> 
+				<button ng-hide="ofkModel.userId" type="button" ng-click="redirectToView('signin');" 
+					class="banner-btn2">Sign In</button>
+			</div>
+	</div>
+	</div>
+	</div>
+	</div>
