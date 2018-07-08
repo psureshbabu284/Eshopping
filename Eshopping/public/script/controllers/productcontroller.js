@@ -361,6 +361,8 @@ ofkapp.controller("productController", ["$scope", "$http","$location","$timeout"
 		$scope.serviceSuccess = false;
 	}
 
+	
+
 	$scope.updateProduct = function(productobject){
 		console.log("Product Delete Model", JSON.stringify(productobject));
 		var requestObject = productobject;

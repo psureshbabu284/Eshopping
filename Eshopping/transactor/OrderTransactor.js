@@ -12,9 +12,8 @@ var sps = config.dbConfig.SP;
 
 
 var mandatoryToCreate = {
-    prodId : true,
-    customerId : true,
-    quantity : true
+    transId : true,
+    cartId : true
 };
 
 var mandatoryToRead = {
@@ -26,18 +25,19 @@ var mandatoryToDelete = {
 }
 
 var mandatoryToUpdate = {
-    Id : true
+    Id : true,
+    OrderConfirmed : true
 }
 
 /**
- * @method ShopProductTransactor
+ * @method OrderTransactor
  * @description: is a class that can handle all the http verb operations under
  * this route
  */
-function ShopProductTransactor() {}
+function OrderTransactor() {}
 
 /**
- * @class ShopProductTransactor
+ * @class OrderTransactor
  * @method CREATE
  * @description: it can handle http verb POST operations
  * @param req is a request object
@@ -45,30 +45,27 @@ function ShopProductTransactor() {}
  * @param next is a next function that will execute after this
  * @returns either it will throw an error or suitable response
  */
-ShopProductTransactor.prototype.CREATE = function ShopProductTransactorCreate(
+OrderTransactor.prototype.CREATE = function OrderTransactorCreate(
         req, res, next) {
-		
-    var cartModel = req.body;
+	
 	var dbResponse = {};
     var objUser = new Dal.Users();
-	var accountId = req.headers.customerid;
-    
-	var	input = {
-        prodId : cartModel.id,
-        customerId : accountId,
-        quantity : cartModel.selectedQuantity
-		
-	};
+	
+	var	input = {};
+    input.cartId= req.body.cartId
 	
         async.waterfall([
+            function(callback){
+                input.transId = '22222';
+                callback();
+            },
             //Customer is not exists create customer in Gather
             function(callback){
-                logger.info('input ShopProductTransactor Create- ' + JSON.stringify(input));
+                logger.info('input OrderTransactor Create- ' + JSON.stringify(input));
                 logger.info('input req.req.body READ- ' + JSON.stringify(req.body));
-                logger.info('input req.req.headers READ- ' + JSON.stringify(req.headers.customerid));
 				//get db instance
 				//execute procedure
-				objUser.ExecuteProcedure(sps.cartInsert, mandatoryToCreate,
+				objUser.ExecuteProcedure(sps.orderInsert, mandatoryToCreate,
                         [ input ], function(err, response) {
 						logger.info('DB err '+ err);
 					//if error is thrown
@@ -78,30 +75,27 @@ ShopProductTransactor.prototype.CREATE = function ShopProductTransactorCreate(
                     }
 					//get record
 					dbResponse = response.Record; 
-					logger.info('Record ShopProductTransactor Read- ' + JSON.stringify(dbResponse));
+					logger.info('Record OrderTransactor Read- ' + JSON.stringify(dbResponse));
 					callback(null, dbResponse);
 					
                 });
             },
         ],function(err, info, response) {
-            
             //Calling HD service to insert user details
-                if(!err){
-                    
-                    
-                } //end of if loop
+            if(!err){
+                
+                
+            } //end of if loop
             //Calling HD service to insert user details
             return res.end(JSON.stringify(dbResponse));
-       
-	
-            });
+       });
 	
 };
 
 
 
 /**
- * @class ShopProductTransactor
+ * @class OrderTransactor
  * @method UPDATE
  * @description: it can handle http verb PUT operations
  * @param req is a request object
@@ -109,27 +103,27 @@ ShopProductTransactor.prototype.CREATE = function ShopProductTransactorCreate(
  * @param next is a next function that will execute after this
  * @returns either it will throw an error or suitable response
  */
-ShopProductTransactor.prototype.UPDATE = function ShopProductTransactorUpdate(
+OrderTransactor.prototype.UPDATE = function OrderTransactorUpdate(
         req, res, next) {
 	//input body to be sent to db
     var user = req.body.inputBody;
-	
-	var sfInput = req.body.sfInput;
 	logger.info('user - ' +JSON.stringify(user));
 
 	
     var input = {
-        Id : req.body.id
+        Id : req.body.prodid,
+        OrderConfirmed : req.body.OrderConfirmed
     }
 	logger.info('req.headers.userId - ' +JSON.stringify(input));
-	
+    
+    logger.info('req.req.body.userId - ' +JSON.stringify(req.body));
     var objUser = new Dal.Users();
 	
     async.waterfall([
            
             function(callback) { 
 				
-				 objUser.ExecuteProcedure(sps.DeleteProduct, mandatoryToUpdate,
+				 objUser.ExecuteProcedure(sps.orderDelete, mandatoryToUpdate,
                         [ input ], function(err, dbResponse) {
 						logger.info('err - ' + JSON.stringify(err));
 						logger.info('dbResponse - ' + JSON.stringify(dbResponse));
@@ -158,7 +152,7 @@ ShopProductTransactor.prototype.UPDATE = function ShopProductTransactorUpdate(
 };
 
 /**
- * @class ShopProductTransactor
+ * @class OrderTransactor
  * @method READ
  * @description: it can handle http verb GET operations
  * @param req is a request object
@@ -166,42 +160,42 @@ ShopProductTransactor.prototype.UPDATE = function ShopProductTransactorUpdate(
  * @param next is a next function that will execute after this
  * @returns either it will throw an error or suitable response
  */
-ShopProductTransactor.prototype.READ = function ShopProductTransactorRead(req,
+OrderTransactor.prototype.READ = function OrderTransactorRead(req,
         res, next) {
     var objUser = new Dal.Users();
     var input = {
-        userId : req.query.ProductId
+        userId : req.headers.cartid
     };
-	logger.info(' ShopProductTransactor READ ----####------- ' + JSON.stringify(req.query));
+    logger.info(' OrderTransactor READ ----####------- ' + JSON.stringify(input));
+    logger.info(' OrderTransactor READ ----req.headers####------- ' + JSON.stringify(req.headers));
 	//Executing procedure 
-    objUser.ExecuteProcedure(sps.productsInfo, mandatoryToRead, [input],
+    objUser.ExecuteProcedure(sps.orderDetails, mandatoryToRead, [input],
             function(err, responseObj) {
         var responseData = {};
-        logger.info(' ShopProductTransactor------- ' + JSON.stringify(err));
-                logger.info(' ShopProductTransactor Response Object------- ' +   JSON.stringify(responseObj));
+        logger.info(' OrderTransactor------- ' + JSON.stringify(err));
+                logger.info(' OrderTransactor Response Object------- ' +   JSON.stringify(responseObj));
         responseData.productCategories = responseObj.Tables[0];
         responseData.isSuccess = 1;
-        responseData.products = responseObj.Tables[1];
-
+        
         return res.end(JSON.stringify(responseData));
     });
 };
 
-ShopProductTransactor.prototype.DELETE = function ShopProductTransactorRead(req,
+OrderTransactor.prototype.DELETE = function OrderTransactorRead(req,
     res, next) {
     var objUser = new Dal.Users();
     var input = {
-        id : req.body.id
+        id : req.body.orderid
     };
-    logger.info(' ShopProductTransactor Delete------- ' + JSON.stringify(req.body));
+    logger.info(' OrderTransactor Delete------- ' + JSON.stringify(req.body));
     //Executing procedure 
-    objUser.ExecuteProcedure(sps.productDelete, mandatoryToDelete, [input],
+    objUser.ExecuteProcedure(sps.orderDelete, mandatoryToDelete, [input],
             function(err, responseObj) {
         var responseData = {};
-        logger.info(' ShopProductTransactor------- ' + JSON.stringify(err));
-        logger.info(' ShopProductTransactor Response Object------- ' +   JSON.stringify(responseObj));
+        logger.info(' OrderTransactor------- ' + JSON.stringify(err));
+        logger.info(' OrderTransactor Response Object------- ' +   JSON.stringify(responseObj));
         return res.end(JSON.stringify(responseData));
     });
 };
 
-module.exports = ShopProductTransactor;
+module.exports = OrderTransactor;

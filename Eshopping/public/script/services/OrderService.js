@@ -1,4 +1,4 @@
-ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
+ofkapp.service('OrderService', ['$q', '$http',  function($q, $http){
 
     //common service url endpoint
     var apiUrl = BuildURL.getServiceURL();
@@ -6,12 +6,12 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
     
      //list of service url's
      var ServiceURLs = {
-         getShopProductsURL : apiUrl + "/user/shopproducts"
+         getOrdersURL : apiUrl + "/user/order"
      };
     
      
-     // instantiate our initial shopProductService object
-     var shopProductService = function(ProductModel) {
+     // instantiate our initial OrderService object
+     var OrderService = function(ProductModel) {
      
          if(!(angular.isUndefined(ProductModel) || ProductModel === null)){
          
@@ -31,14 +31,18 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
      
  
      // define the getProfile method which will fetch data
-     shopProductService.prototype.getCartDetails = function(ProductId) {
+     OrderService.prototype.getOrderDetails = function(cartId,authToken) {
  
          // We make use of Angular's $q library to create the deferred instance
          var deferred = $q.defer();
          
          $http({
            method: 'GET',
-           url: ServiceURLs.getShopProductsURL,
+           url: ServiceURLs.getOrdersURL,
+           headers: {
+            'authtoken': authToken,
+            'cartId':cartId
+          },
          }).then(function successCallback(response) {
               // The promise is resolved once the HTTP call is successful.
                deferred.resolve(response);
@@ -53,19 +57,19 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
  
      
      // register the Product
-     shopProductService.prototype.saveCart = function(customerId,authToken, cartModel) {
+     OrderService.prototype.placeOrder = function(cartId,authToken, OrderModel) {
  
          // We make use of Angular's $q library to create the deferred instance
          var deferred = $q.defer();
-         console.log("cartobjectmodels - "+JSON.stringify(cartModel));
+         console.log("ordermodels - "+JSON.stringify(OrderModel));
          $http({
            method: 'POST',
-           data: JSON.stringify(cartModel),
+           data: JSON.stringify(OrderModel),
            headers: {
              'authtoken': authToken,
-             'customerId':customerId
+             'cartId':cartId
            },
-           url: ServiceURLs.getShopProductsURL, 
+           url: ServiceURLs.getOrdersURL, 
            dataType:"json",
            contentType: 'application/json'
          }).then(function successCallback(response) {
@@ -80,19 +84,19 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
      };
      
      // update the Product
-     shopProductService.prototype.deleteCart  = function(customerId,authToken, cartModel) {
+     OrderService.prototype.deleteOrder  = function(orderId,authToken, OrderModel) {
  
          // We make use of Angular's $q library to create the deferred instance
          var deferred = $q.defer();
-         console.log("requestObj - "+JSON.stringify(cartModel));
+         console.log("requestObj - "+JSON.stringify(OrderModel));
          $http({
-           method: 'PUT',
-           data: JSON.stringify(cartModel),
+           method: 'DELETE',
+           data: JSON.stringify(OrderModel),
            headers: {
              'authtoken': authToken,
-             'customerId':customerId
+             'orderId':orderId
            },
-           url: ServiceURLs.getShopProductsURL, 
+           url: ServiceURLs.getOrdersURL, 
            dataType:"json",
            contentType: 'application/json'
          }).then(function successCallback(response) {
@@ -109,18 +113,18 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
      };
  
      // update the Product
-     shopProductService.prototype.updateCart  = function(customerId,authToken, cartModel) {
+     OrderService.prototype.updateOrder  = function(cartId,authToken, OrderModel) {
       // We make use of Angular's $q library to create the deferred instance
           var deferred = $q.defer();
-      console.log("requestObj - "+JSON.stringify(cartModel));
+      console.log("requestObj - "+JSON.stringify(OrderModel));
           $http({
         method: 'PUT',
-        data: JSON.stringify(cartModel),
+        data: JSON.stringify(OrderModel),
         headers: {
         'authtoken': authToken,
-        'customerId':customerId
+        'cartId':cartId
         },
-        url: ServiceURLs.getShopProductsURL, 
+        url: ServiceURLs.getOrdersURL, 
         dataType:"json",
         contentType: 'application/json'
       }).then(function successCallback(response) {
@@ -136,6 +140,6 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
               return deferred.promise;
     };
  
-     return shopProductService;
+     return OrderService;
  }]);
  

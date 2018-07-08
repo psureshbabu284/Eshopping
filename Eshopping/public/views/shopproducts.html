@@ -26,11 +26,13 @@
 					
 					<div class="col-sm-6" ng-show="enablediv">
 					<h1 style="white-space: nowrap;">choose Number of Products</h1>
+					<p>Product Name  : {{CartModel.prodCategeory}}</p>
+					<p>Total Price : {{totalPrice}}</p>
 
 					<div class="col-sm-6 col-sm-offset-3" style="position: absolute;left: 320px;top:160px;">
 							<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
-							<button id="signinbtn" name="signinbtn" type="submit" class="">Place Order</button>
-							<small class="help-block has-error" ng-show="serviceSuccess">{{serviceMessage}}</small>
+							<button id="signinbtn" name="signinbtn" type="submit" class="" ng-click="placeOrder(item);">Place Order</button>
+							
 						</div>
 
 				<div class="col-sm-6 col-sm-offset-3">
@@ -42,10 +44,11 @@
 			
 			<label class="control-label" style="white-space: nowrap;">Product Quantity</label>
 			
-			<select ng-model="ProductModel.prodCatId" name="ProductModeltype" 
+			<select ng-model="CartModel.selectedQuantity" name="CartModel" 
 					ng-required="true" 
 					placeholder="Select Product type"
 					class="form-control" id="accountType" 
+					ng-change="onQuantityChange(CartModel)"
 					ng-options="quantity as quantity for quantity in quantityList" >
 					<option value="">choose  Quantity</option>
 				</select>
@@ -59,7 +62,7 @@
 	<div class="col-sm-6 col-sm-offset-3">
 		<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
 		<button id="signinbtn" name="signinbtn" type="submit"  
-		ng-click="!ProductModel.id ? saveProduct(ProductModel) : updateProduct(ProductModel)"
+		ng-click="saveCart(CartModel)"
 		class="">Add to Cart</button>
 		<small class="help-block has-error" ng-show="serviceSuccess">{{serviceMessage}}</small>
 	</div>

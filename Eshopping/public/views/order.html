@@ -1,0 +1,42 @@
+<div class="container-fluid" ng-init="initialize();" ng-controller="orderController" >
+	<div class="container internal" >
+		
+	<div class="row-group" style="position: relative;left: 25%;">
+		<div class="col-sm-12">
+		<h1>Your Order</h1>
+		
+			<table border="1" >
+					<tr>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Product Categeory</th>
+						<th>Price</th>
+						<th>Confirm</th>
+						<th>Remove Order</th>
+					</tr>
+					<tr ng-repeat="item in OrderModel.productCategories">
+						<td>{{item.price}}</td>
+						<td>{{item.quantity}}</td>
+						<td>{{item.prodCategeory}}</td>
+						<td>{{item.quantity * item.price}}</td>
+						<td><button 
+							ng-click="!item.prodid ? placeOrder(item) : updateOrder(item, 1)"
+
+							style="width:150px;height: 36px;"
+							ng-class="{ 'disabled' : item.orderConfirmed}"
+							ng-disabled="item.orderConfirmed"
+							>Review And Confirm</button></td>
+						<td ><button ng-click="updateOrder(item, 0);" 
+							style="width:150px;height: 36px;"
+							ng-class="{ 'disabled' :item.orderRemoved}"
+							ng-disabled="item.orderRemoved"
+								>Remove Order</button></td>
+					</tr>
+				</table>
+				
+				</div>
+				
+				<small class="help-block has-error" ng-show="serviceSuccess" style="position: relative;right:57%;font-weight:bold;font-size:20px;">{{serviceMessage}}</small>
+
+	</div><!-- container -->
+</div><!-- container-fluid --> 

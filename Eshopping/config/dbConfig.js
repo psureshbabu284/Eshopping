@@ -22,7 +22,11 @@ var dbConfig = {
         'DeleteProduct' : 'call usp_products_delete(?)',
         'Login' : 'call usp_authtokens_insert(?)',
         'productUpdate' : 'call usp_products_update(?)',
-        'productsInfo' : 'call usp_products_details(?)'
+        'productsInfo' : 'call usp_products_details(?)',
+        'cartInsert' : 'call usp_cart_insert(?)',
+        'orderDetails' : 'call usp_order_Details(?)',
+        'orderInsert' : 'call usp_order_insert(?)',
+        'orderDelete' : 'call usp_order_delete(?)'
     }
 };
 

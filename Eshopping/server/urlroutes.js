@@ -186,6 +186,20 @@ var apis = {
         Validator: validator.ShopProductValidator,
         Enforcer: enforcer.ShopProductEnforcer,
         Transactor: transacter.ShopProductTransactor
+    },
+    '/ofk/user/order': {
+        methods: {
+            UPDATE: true,
+            READ:true,
+            CREATE : true,
+            DELETE : true
+        },
+        description: {
+            UPDATE: 'is a HTTP UPDATE route, to change the user password or user email'
+        },
+        Validator: validator.OrderValidator,
+        Enforcer: enforcer.OrderEnforcer,
+        Transactor: transacter.OrderTransactor
     }
 };
 
