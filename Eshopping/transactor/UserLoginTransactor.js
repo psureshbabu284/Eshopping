@@ -52,8 +52,6 @@ UserLoginTransactor.prototype.CREATE =
 
 	
 	async.waterfall([
-		//Check Google Folder Exisists for the Account or not
-		
 		function(callback) { 
 			
 			var loginId = req.body.loginId;
@@ -66,18 +64,46 @@ UserLoginTransactor.prototype.CREATE =
 			
 			logger.info('input loginId User Login Transactor---=- ' + JSON.stringify(input));
 			
-			return objUser.ExecuteProcedure(sps.Login, mandatoryToCreate, [input],
+			return objUser.ExecuteProcedure(sps.Login, mandatoryToCreate, input,
 					function(err, responseObj) {
 				
-				responseObj = responseObj.Record;
-				logger.info('User Login Transactor User details - ' + JSON.stringify(responseObj));
+				responseData = responseObj.Record;
+				logger.info('User Login Transactor User details - ' + JSON.stringify(responseData));
 				
 				return callback(null, responseData);
 		});
 
-	}], function(err,result){
+	},function(responseData, callback){
+		//var isPasswordvalid = corelibs.ComparePasswordWithDBPassword(req.body.password,responseObj.passwordHash);
+		logger.info('passwordhash UserLoginTransactorCreate- ' + responseData.passwordHash);
+		var passwordHash = responseData.passwordHash;
+		var salt = corelibs.GetSalt(passwordHash.toString());
+		var passHashStr = passwordHash.toString();
+		var dbPassword = passHashStr.split('.')[1];
+		var password = req.body.password;
+		logger.info('salt - ' + salt);
+		logger.info('passwordHash.toString() - ' + passwordHash.toString());
+		return corelibs.EncryptPasswordBySalt(password,salt, function(err, pwd) {
+			
+			if(pwd == dbPassword){
+				logger.info('Password Same  - ' + pwd);
+				//encrypt auth token
+				var authToken = encodeURIComponent(corelibs.EncryptAES128(constants.EncryptionKey + responseData.accountId,responseData.tokenId));
+				responseData.IsSuccess = 1;
+				//set headers to be accessible on client
+				res.setHeader('AuthToken', authToken);
+				res.setHeader('userId', responseData.accountId);
+
+				callback(null,responseData);
+			}else{
+				responseData.IsSuccess = 0;
+				callback(null,responseData);
+			}
+			
+		});
+	},], function(err,result){
 		//console.log(result);
-		return res.end(JSON.stringify(result));
+		return res.end(JSON.stringify(responseData));
 	});
 };
 

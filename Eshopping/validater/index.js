@@ -8,7 +8,7 @@ var UserDetailsValidator = require('./UserDetailsValidator');
 var AuthTokenValidator = require('./AuthTokenValidator');
 var ProductValidator = require('./ProductValidator');
 var UserLoginValidator = require('./UserLoginValidator');
-
+var ShopProductValidator = require('./ShopProductValidator');
 
 
 exports.UserProfileValidator = UserProfileValidator;
@@ -16,3 +16,4 @@ exports.UserDetailsValidator = UserDetailsValidator;
 exports.AuthTokenValidator = AuthTokenValidator;
 exports.ProductValidator = ProductValidator;
 exports.UserLoginValidator = UserLoginValidator;
+exports.ShopProductValidator = ShopProductValidator;

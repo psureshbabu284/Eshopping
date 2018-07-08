@@ -27,22 +27,18 @@ var mandatoryToDelete = {
 }
 
 var mandatoryToUpdate = {
-    Id : true,
-    Quantity: true, 
-    Price : true,
-    ProdCatId : true,
-    IsActive : true
+    Id : true
 }
 
 /**
- * @method ProductTransactor
+ * @method ShopProductTransactor
  * @description: is a class that can handle all the http verb operations under
  * this route
  */
-function ProductTransactor() {}
+function ShopProductTransactor() {}
 
 /**
- * @class ProductTransactor
+ * @class ShopProductTransactor
  * @method CREATE
  * @description: it can handle http verb POST operations
  * @param req is a request object
@@ -50,7 +46,7 @@ function ProductTransactor() {}
  * @param next is a next function that will execute after this
  * @returns either it will throw an error or suitable response
  */
-ProductTransactor.prototype.CREATE = function ProductTransactorCreate(
+ShopProductTransactor.prototype.CREATE = function ShopProductTransactorCreate(
         req, res, next) {
 		
     var productModel = req.body;
@@ -69,7 +65,7 @@ ProductTransactor.prototype.CREATE = function ProductTransactorCreate(
         async.waterfall([
             //Customer is not exists create customer in Gather
             function(callback){
-                logger.info('input ProductTransactor READ- ' + JSON.stringify(input));
+                logger.info('input ShopProductTransactor READ- ' + JSON.stringify(input));
                 logger.info('input req.headers READ- ' + JSON.stringify(req.headers));
 				//get db instance
 				//execute procedure
@@ -106,7 +102,7 @@ ProductTransactor.prototype.CREATE = function ProductTransactorCreate(
 
 
 /**
- * @class ProductTransactor
+ * @class ShopProductTransactor
  * @method UPDATE
  * @description: it can handle http verb PUT operations
  * @param req is a request object
@@ -114,19 +110,17 @@ ProductTransactor.prototype.CREATE = function ProductTransactorCreate(
  * @param next is a next function that will execute after this
  * @returns either it will throw an error or suitable response
  */
-ProductTransactor.prototype.UPDATE = function ProductTransactorUpdate(
+ShopProductTransactor.prototype.UPDATE = function ShopProductTransactorUpdate(
         req, res, next) {
 	//input body to be sent to db
     var user = req.body.inputBody;
+	
+	var sfInput = req.body.sfInput;
 	logger.info('user - ' +JSON.stringify(user));
 
 	
     var input = {
-        Id : req.body.id,
-        Quantity: req.body.quantity, 
-        Price : req.body.price,
-        ProdCatId : req.body.prodCatId,
-        IsActive : req.body.isActive
+        Id : req.body.id
     }
 	logger.info('req.headers.userId - ' +JSON.stringify(input));
 	
@@ -136,7 +130,7 @@ ProductTransactor.prototype.UPDATE = function ProductTransactorUpdate(
            
             function(callback) { 
 				
-				 objUser.ExecuteProcedure(sps.productUpdate, mandatoryToUpdate,
+				 objUser.ExecuteProcedure(sps.DeleteProduct, mandatoryToUpdate,
                         [ input ], function(err, dbResponse) {
 						logger.info('err - ' + JSON.stringify(err));
 						logger.info('dbResponse - ' + JSON.stringify(dbResponse));
@@ -165,7 +159,7 @@ ProductTransactor.prototype.UPDATE = function ProductTransactorUpdate(
 };
 
 /**
- * @class ProductTransactor
+ * @class ShopProductTransactor
  * @method READ
  * @description: it can handle http verb GET operations
  * @param req is a request object
@@ -173,19 +167,19 @@ ProductTransactor.prototype.UPDATE = function ProductTransactorUpdate(
  * @param next is a next function that will execute after this
  * @returns either it will throw an error or suitable response
  */
-ProductTransactor.prototype.READ = function ProductTransactorRead(req,
+ShopProductTransactor.prototype.READ = function ShopProductTransactorRead(req,
         res, next) {
     var objUser = new Dal.Users();
     var input = {
         userId : req.query.ProductId
     };
-	logger.info(' ProductTransactor READ ----####------- ' + JSON.stringify(req.query));
+	logger.info(' ShopProductTransactor READ ----####------- ' + JSON.stringify(req.query));
 	//Executing procedure 
     objUser.ExecuteProcedure(sps.productsDetails, mandatoryToRead, [input],
             function(err, responseObj) {
         var responseData = {};
-        logger.info(' ProductTransactor------- ' + JSON.stringify(err));
-                logger.info(' ProductTransactor Response Object------- ' +   JSON.stringify(responseObj));
+        logger.info(' ShopProductTransactor------- ' + JSON.stringify(err));
+                logger.info(' ShopProductTransactor Response Object------- ' +   JSON.stringify(responseObj));
         responseData.productCategories = responseObj.Tables[0];
         responseData.isSuccess = 1;
         responseData.products = responseObj.Tables[1];
@@ -194,21 +188,21 @@ ProductTransactor.prototype.READ = function ProductTransactorRead(req,
     });
 };
 
-ProductTransactor.prototype.DELETE = function ProductTransactorRead(req,
+ShopProductTransactor.prototype.DELETE = function ShopProductTransactorRead(req,
     res, next) {
     var objUser = new Dal.Users();
     var input = {
         id : req.body.id
     };
-    logger.info(' ProductTransactor Delete------- ' + JSON.stringify(req.body));
+    logger.info(' ShopProductTransactor Delete------- ' + JSON.stringify(req.body));
     //Executing procedure 
     objUser.ExecuteProcedure(sps.productDelete, mandatoryToDelete, [input],
             function(err, responseObj) {
         var responseData = {};
-        logger.info(' ProductTransactor------- ' + JSON.stringify(err));
-        logger.info(' ProductTransactor Response Object------- ' +   JSON.stringify(responseObj));
+        logger.info(' ShopProductTransactor------- ' + JSON.stringify(err));
+        logger.info(' ShopProductTransactor Response Object------- ' +   JSON.stringify(responseObj));
         return res.end(JSON.stringify(responseData));
     });
 };
 
-module.exports = ProductTransactor;
+module.exports = ShopProductTransactor;

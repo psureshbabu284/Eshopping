@@ -55,7 +55,7 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
 	
 	// register the Product
     Product.prototype.saveProduct = function(ProductId,authToken, productObjectModel) {
-
+			
 		// We make use of Angular's $q library to create the deferred instance
         var deferred = $q.defer();
 		console.log("productObjectModels - "+JSON.stringify(productObjectModel));
@@ -81,8 +81,7 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
 	};
 	
 	// update the Product
-    Product.prototype.deleteProduct  = function(ProductId,authToken, productModel) {
-
+    Product.prototype.updateProduct  = function(ProductId,authToken, productModel) {
 		// We make use of Angular's $q library to create the deferred instance
         var deferred = $q.defer();
 		console.log("requestObj - "+JSON.stringify(productModel));

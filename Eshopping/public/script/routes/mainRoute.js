@@ -19,7 +19,10 @@ ofkapp.config(function($routeProvider) {
 	        controller  : 'loginController'
 		}).when('/products', {
 	        templateUrl : '/public/views/products.html',
-	        controller  : 'loginController'
+	        controller  : 'productController'
+		}).when('/shopproducts', {
+	        templateUrl : '/public/views/shopproducts.html',
+	        controller  : 'shopProductController'
 		}).otherwise({redirectTo:'/gettingstarted'});
 		
 		

@@ -453,8 +453,10 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 	  * @description Conditional check for the path to direct where user left off
 	  */
 	var decisionPath =  function(userData){
-		
-		return 'products';
+		if(userData.isCustomer)
+			return 'shopproducts';
+		else
+			return 'products';
 	};// end of function
 		
 	

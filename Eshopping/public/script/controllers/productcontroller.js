@@ -321,17 +321,78 @@ ofkapp.controller("productController", ["$scope", "$http","$location","$timeout"
 	
 	$scope.saveProduct = function(productobjectmodel){
 		console.log("Product Object Model", JSON.stringify(productobjectmodel));
+		$scope.enablediv=true;
+		if(!productobjectmodel) return;
+		$scope.serviceSuccess = false;
 		productService.saveProduct(commonDataServiceInit.userId,commonDataServiceInit.authToken, productobjectmodel).then(function(response) {
-			console.log(response.data)
-		});
+			var serviceResponse = response.data;
+			if(serviceResponse.IsSuccess){
+				$scope.enablediv=true;
+				$scope.serviceSuccess = true;
+				$scope.serviceMessage = serviceResponse.serviceMessage;
+			}else{
+					$scope.serviceSuccess = false;
+					$scope.onError = !(serviceResponse.IsSuccess);
+					$scope.serviceMessage = serviceResponse.serviceMessage;
+			}
+			
+		}).catch(function(error) {
+			// This is set in the event of an error.
+			errorHandling(error);
+		});;
 	}
 	
+	$scope.editItem = function(item){
+		$scope.enablediv=true;
+		$scope.ProductModel = item;
+		$scope.serviceSuccess = false;
+	}
+
+	$scope.updateProduct = function(productobject){
+		console.log("Product Delete Model", JSON.stringify(productobject));
+		var requestObject = productobject;
+		requestObject.isActive = 1;
+		
+		productService.updateProduct(commonDataServiceInit.userId,commonDataServiceInit.authToken, requestObject).then(function(response) {
+			var serviceResponse = response.data;
+			if(serviceResponse.IsSuccess){
+				$scope.enablediv=true;
+				$scope.serviceSuccess = true;
+				$scope.serviceMessage = serviceResponse.serviceMessage;
+			}else{
+				$scope.serviceSuccess = false;
+					$scope.onError = !(serviceResponse.IsSuccess);
+					$scope.serviceMessage = serviceResponse.serviceMessage;
+			}
+			
+		}).catch(function(error) {
+			// This is set in the event of an error.
+			errorHandling(error);
+		});;
+	}
+
 	$scope.deleteProduct = function(productobject){
 		console.log("Product Delete Model", JSON.stringify(productobject));
-		productService.deleteProduct(commonDataServiceInit.userId,commonDataServiceInit.authToken, productobject).then(function(response) {
-			console.log(response.data)
-		})
+		var requestObject = productobject;
+		requestObject.isActive = 0;
+		$scope.serviceSuccess = false;
+		productService.updateProduct(commonDataServiceInit.userId,commonDataServiceInit.authToken, requestObject).then(function(response) {
+			var serviceResponse = response.data;
+			if(serviceResponse.IsSuccess){
+				$scope.serviceSuccess = true;
+				$scope.serviceMessage = serviceResponse.serviceMessage;
+			}else{
+				$scope.serviceSuccess = false;
+					$scope.onError = !(serviceResponse.IsSuccess);
+					$scope.serviceMessage = serviceResponse.serviceMessage;
+			}
+			
+		}).catch(function(error) {
+			// This is set in the event of an error.
+			errorHandling(error);
+		});;
 	}
+
 	
 	/**
 	  * @function fadeOut

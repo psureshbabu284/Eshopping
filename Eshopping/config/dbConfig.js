@@ -21,7 +21,8 @@ var dbConfig = {
         'productInsert' : 'call usp_products_insert(?)',
         'productDelete' : 'call usp_products_delete(?)',
         'DeleteProduct' : 'call usp_products_delete(?)',
-        'Login' : 'call usp_authtokens_insert(?)'
+        'Login' : 'call usp_authtokens_insert(?)',
+        'productUpdate' : 'call usp_products_update(?)'
     }
 };
 

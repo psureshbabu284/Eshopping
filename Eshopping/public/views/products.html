@@ -1,9 +1,14 @@
-<div class="container-fluid" ng-init="initialize();" ng-controller="productController">
-		<div class="container internal">
+<div class="container-fluid" ng-init="initialize();" ng-controller="productController" >
+		<div class="container internal" >
 			
-			
+		<div class="row-group">
+			<div class="col-sm-6">
 			<h1>Your Products</h1>
-				<table border="1" width="80%">
+			<div class="col-sm-6 col-sm-offset-3" ng-show="!enablediv" style="position: absolute;left:400px;top: -14px!important;">
+					<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
+					<button id="signinbtn" name="signinbtn" type="submit"  ng-click="saveProduct(ProductModel);" class="">Add Product</button>
+				</div>
+				<table border="1">
 						<tr>
 							<th>Id</th>
 							<th>Price</th>
@@ -17,11 +22,15 @@
 							<td>{{item.price}}</td>
 							<td>{{item.quantity}}</td>
 							<td>{{item.prodCategeory}}</td>
-							<td><button ng-click="editProduct(item);">Edit</button></td>
-							<td><button ng-click="deleteProduct(item);">Delete</button></td>
+							<td><button ng-click="editItem(item);" style="width:135px;height: 36px;">Edit</button></td>
+							<td><button ng-click="deleteProduct(item);"style="width:135px;height: 36px;">Delete</button></td>
 						</tr>
 					</table>
-					<h1>Enter Product Details to Sell</h1>
+					
+					</div>
+					
+					<div class="col-sm-6" ng-show="enablediv">
+					<h1 style="white-space: nowrap;">Add or Update Product Details to Sell</h1>
 				<div class="col-sm-6 col-sm-offset-3">
 	
 	
@@ -29,7 +38,7 @@
 								
 	
 			
-			<label class="control-label">Product categeory</label>
+			<label class="control-label" style="white-space: nowrap;">Product categeory</label>
 			
 			<select ng-model="ProductModel.prodCatId" name="ProductModeltype" 
 					ng-required="true" 
@@ -38,9 +47,11 @@
 					ng-options="value.id as value.categeory for value in productobjectmodel.productCategories" >
 					<option value="">please choose  categeory</option>
 				</select>
+
+				</div>
 					
 				
-	</div>
+	
 	
 	<!-- End -->
 	
@@ -61,22 +72,16 @@
 	<!-- last name -->
 	<div class="form-group col-sm-12 has-feedback">
 		<div class="col-sm-6 col-sm-offset-3">
-			<label class="control-label" for="firstName">Product Quantity</label>
-			<input type="text" class="form-control" ng-model="ProductModel.productQuantiry"  
+			<label class="control-label" for="firstName" style="white-space: nowrap;">Product Quantity</label>
+			<input type="text" class="form-control" ng-model="ProductModel.quantity"  
 			ng-required="true"
 			name="firstName" placeholder="Product price" />
 		</div>
 	</div>
 	<!-- last name -->
 	<!-- email -->
-	<div class="form-group col-sm-12 has-feedback">
-		<div class="col-sm-6 col-sm-offset-3">
-			<label class="control-label" for="firstName">Product Model</label>
-			<input type="text" class="form-control" ng-model="ProductModel.productVersion"  
-			ng-required="true"
-			name="firstName" placeholder="Product price" />
-		</div>
-	</div>	
+	
+	
 	<!-- email -->
 	
 	
@@ -89,9 +94,13 @@
 	<!-- Dob -->
 	<div class="col-sm-6 col-sm-offset-3">
 		<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
-		<button id="signinbtn" name="signinbtn" type="submit"  ng-click="saveProduct(ProductModel);" class="">Submit</button>
+		<button id="signinbtn" name="signinbtn" type="submit"  
+		ng-click="!ProductModel.id ? saveProduct(ProductModel) : updateProduct(ProductModel)"
+		class="">Submit</button>
+		<small class="help-block has-error" ng-show="serviceSuccess">{{serviceMessage}}</small>
 	</div>
-	
+</div>
+
 	
 			</div><!-- row 1 -->
 		</div><!-- container -->
