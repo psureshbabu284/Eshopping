@@ -1,0 +1,71 @@
+<div class="container-fluid" ng-init="initialize();" ng-controller="shopProductController" >
+		<div class="container internal" >
+			
+		<div class="row-group">
+			<div class="col-sm-6">
+			<h1>Your Products</h1>
+			
+				<table border="1" >
+						<tr>
+							<th>Id</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Product Categeory</th>
+							<th>Add to Cart</th>
+						</tr>
+						<tr ng-repeat="item in cartobjectmodel.productCategories">
+							<td>{{item.id}}</td>
+							<td>{{item.price}}</td>
+							<td>{{item.quantity}}</td>
+							<td>{{item.prodCategeory}}</td>
+							<td><button ng-click="addToCart(item);" style="width:150px;height: 36px;">Select Product</button></td>
+						</tr>
+					</table>
+					
+					</div>
+					
+					<div class="col-sm-6" ng-show="enablediv">
+					<h1 style="white-space: nowrap;">choose Number of Products</h1>
+
+					<div class="col-sm-6 col-sm-offset-3" style="position: absolute;left: 320px;top:160px;">
+							<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
+							<button id="signinbtn" name="signinbtn" type="submit" class="">Place Order</button>
+							<small class="help-block has-error" ng-show="serviceSuccess">{{serviceMessage}}</small>
+						</div>
+
+				<div class="col-sm-6 col-sm-offset-3">
+	
+	                       
+					
+								
+	
+			
+			<label class="control-label" style="white-space: nowrap;">Product Quantity</label>
+			
+			<select ng-model="ProductModel.prodCatId" name="ProductModeltype" 
+					ng-required="true" 
+					placeholder="Select Product type"
+					class="form-control" id="accountType" 
+					ng-options="quantity as quantity for quantity in quantityList" >
+					<option value="">choose  Quantity</option>
+				</select>
+
+				</div>
+					
+				
+	
+	
+	<!-- Dob -->
+	<div class="col-sm-6 col-sm-offset-3">
+		<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
+		<button id="signinbtn" name="signinbtn" type="submit"  
+		ng-click="!ProductModel.id ? saveProduct(ProductModel) : updateProduct(ProductModel)"
+		class="">Add to Cart</button>
+		<small class="help-block has-error" ng-show="serviceSuccess">{{serviceMessage}}</small>
+	</div>
+</div>
+
+	
+			</div><!-- row 1 -->
+		</div><!-- container -->
+	</div><!-- container-fluid --> 

@@ -9,6 +9,7 @@ var UserDetailsEnforcer = require('./UserDetailsEnforcer');
 var AuthTokenEnforcer = require('./AuthTokenEnforcer');
 var ProductEnforcer = require('./ProductEnforcer');
 var UserLoginEnforcer = require('./UserLoginEnforcer');
+var ShopProductEnforcer = require('./ShopProductEnforcer');
 
 
 exports.UserProfileEnforcer = UserProfileEnforcer;
@@ -16,3 +17,4 @@ exports.UserDetailsEnforcer = UserDetailsEnforcer;
 exports.AuthTokenEnforcer = AuthTokenEnforcer;
 exports.ProductEnforcer = ProductEnforcer;
 exports.UserLoginEnforcer = UserLoginEnforcer;
+exports.ShopProductEnforcer = ShopProductEnforcer;

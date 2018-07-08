@@ -5,12 +5,12 @@
  * @author gopal.atla@appshark.com>
  * @copyright 2016 Appshark Ltd. All rights reserved.
  */
-ofkapp.controller("shopProductController", ["$scope", "$http","$location","$timeout","localStorage","GettingStartedService","ProductService", "CommonDataService","ageValidationMessages", "userRoleValidationMessages","menuConstants","createAccountValidationMessages",
-	function($scope,$http,$location,$timeout,localStorage,GettingStartedService,ProductService,CommonDataService,ageValidationMessages,userRoleValidationMessages,menuConstants,createAccountValidationMessages) {
+ofkapp.controller("shopProductController", ["$scope", "$http","$location","$timeout","localStorage","GettingStartedService","shopProductService", "CommonDataService","ageValidationMessages", "userRoleValidationMessages","menuConstants","createAccountValidationMessages",
+	function($scope,$http,$location,$timeout,localStorage,GettingStartedService,shopProductService,CommonDataService,ageValidationMessages,userRoleValidationMessages,menuConstants,createAccountValidationMessages) {
 	
 	//common angular service to fetch common data like userId,session and so on
 	var commonDataServiceInit = new CommonDataService();
-	var productService = new ProductService();
+	var shopProductService = new shopProductService();
 	var staticURL;
 	
     /**
@@ -52,29 +52,35 @@ ofkapp.controller("shopProductController", ["$scope", "$http","$location","$time
 	  * @description Initialize user model
 	  */
 	$scope.initialize = function(){
-		 var userId = localStorage.getData("userId");
-		 if(!userId) return;
-		 productService.getProduceDetails(userId).then(function(response) {
-			$scope.productobjectmodel = response.data;
-			console.log($scope.productobjectmodel)
+		 shopProductService.getCartDetails(commonDataServiceInit.userId).then(function(response) {
+			$scope.cartobjectmodel = response.data;
+			console.log($scope.cartobjectmodel)
 		})
 
 		
 	};
 	
 	
-	$scope.saveProduct = function(productobjectmodel){
-		console.log("Product Object Model", JSON.stringify(productobjectmodel));
-		productService.saveProduct(commonDataServiceInit.userId,commonDataServiceInit.authToken, productobjectmodel).then(function(response) {
+	$scope.saveCart = function(cartobjectmodel){
+		console.log("Product Object Model", JSON.stringify(cartobjectmodel));
+		shopProductService.saveCart(commonDataServiceInit.userId,commonDataServiceInit.authToken, cartobjectmodel).then(function(response) {
 			console.log(response.data)
 		});
 	}
 	
-	$scope.deleteProduct = function(productobject){
+	$scope.deleteCart = function(productobject){
 		console.log("Product Delete Model", JSON.stringify(productobject));
-		productService.deleteProduct(commonDataServiceInit.userId,commonDataServiceInit.authToken, productobject).then(function(response) {
+		shopProductService.deleteCart(commonDataServiceInit.userId,commonDataServiceInit.authToken, productobject).then(function(response) {
 			console.log(response.data)
 		})
+    }
+    
+    $scope.addToCart = function(cartItem){
+        var quantityList = [];
+        for(var i=1 ; i <= cartItem.quantity; i++)
+                quantityList.push(i);
+        $scope.quantityList = quantityList;
+		$scope.enablediv = true;
 	}
 	
 	/**

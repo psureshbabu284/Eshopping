@@ -36,10 +36,7 @@ UserDetailsTransactor.prototype.READ =
 	var userObj ={};
 	userObj.userId = req.headers.userid;
 
-	corelibs.DecryptAES128(constants.EncryptionKey,decodeURIComponent(userObj.userId),function(err, resp){
-		logger.info(' DecryptAES128 ERR - ' + JSON.stringify(err));
-		logger.info(' DecryptAES128 responseObj - ' + JSON.stringify(resp));
-	});
+	
 
 	logger.info(' UserDetailsTransactor userObj - ' + JSON.stringify(userObj));
 	

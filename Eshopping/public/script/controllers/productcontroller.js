@@ -310,10 +310,23 @@ ofkapp.controller("productController", ["$scope", "$http","$location","$timeout"
 	$scope.initialize = function(){
 		 var userId = localStorage.getData("userId");
 		 if(!userId) return;
+		 $scope.productsExists = false;
 		 productService.getProduceDetails(userId).then(function(response) {
 			$scope.productobjectmodel = response.data;
-			console.log($scope.productobjectmodel)
-		})
+			var serviceResponse = $scope.productobjectmodel;
+			if(serviceResponse.isSuccess){
+				if((serviceResponse.products).length > 0)
+					$scope.productsExists = true;
+
+			}else{
+					$scope.onError = !(serviceResponse.isSuccess);
+					$scope.serviceMessage = serviceResponse.serviceMessage;
+			}
+			
+		}).catch(function(error) {
+			// This is set in the event of an error.
+			errorHandling(error);
+		});;
 
 		
 	};

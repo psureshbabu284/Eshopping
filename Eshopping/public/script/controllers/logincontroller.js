@@ -412,7 +412,7 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 					var headers = response.headers();
 					var responseObj = response.data;
 					$scope.$parent.disableSiginInButton = false;
-					if(responseObj.IsSuccess){
+					if(responseObj.isSuccess){
 						$scope.$parent.onFormSubmit = false;
 						localStorage.setData("authToken", headers['authtoken']);
 						localStorage.setData("userId", headers['userid']);
@@ -431,7 +431,7 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 							window.location.href = staticURL+ "views/main.html#/" + viewToBeLoaded ;
 					}else{
 						var isUserValid = responseObj.isUserValid;
-						$scope.onError = !(responseObj.IsSuccess);
+						$scope.onError = !(responseObj.isSuccess);
 						if(isUserValid){
 							$scope.serviceMessage = responseObj.Message;
 						}else{

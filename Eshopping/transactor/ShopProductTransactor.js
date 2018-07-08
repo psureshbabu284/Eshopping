@@ -175,7 +175,7 @@ ShopProductTransactor.prototype.READ = function ShopProductTransactorRead(req,
     };
 	logger.info(' ShopProductTransactor READ ----####------- ' + JSON.stringify(req.query));
 	//Executing procedure 
-    objUser.ExecuteProcedure(sps.productsDetails, mandatoryToRead, [input],
+    objUser.ExecuteProcedure(sps.productsInfo, mandatoryToRead, [input],
             function(err, responseObj) {
         var responseData = {};
         logger.info(' ShopProductTransactor------- ' + JSON.stringify(err));

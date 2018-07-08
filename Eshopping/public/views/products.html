@@ -8,7 +8,7 @@
 					<small class="help-block-onecol has-error ng-binding ng-hide" ng-show="onError"></small>
 					<button id="signinbtn" name="signinbtn" type="submit"  ng-click="saveProduct(ProductModel);" class="">Add Product</button>
 				</div>
-				<table border="1">
+				<table border="1" ng-show="productsExists">
 						<tr>
 							<th>Id</th>
 							<th>Price</th>

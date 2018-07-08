@@ -68,39 +68,49 @@ UserLoginTransactor.prototype.CREATE =
 					function(err, responseObj) {
 				
 				responseData = responseObj.Record;
-				logger.info('User Login Transactor User details - ' + JSON.stringify(responseData));
+				logger.info('User Login Transactor User details - ' + JSON.stringify(responseObj));
+				if(responseObj.isSuccess){
+					return callback(null, responseData);
+				}else{
+					responseData = responseObj;
+					return callback(null, responseData);
+				}
 				
-				return callback(null, responseData);
 		});
 
 	},function(responseData, callback){
-		//var isPasswordvalid = corelibs.ComparePasswordWithDBPassword(req.body.password,responseObj.passwordHash);
-		logger.info('passwordhash UserLoginTransactorCreate- ' + responseData.passwordHash);
-		var passwordHash = responseData.passwordHash;
-		var salt = corelibs.GetSalt(passwordHash.toString());
-		var passHashStr = passwordHash.toString();
-		var dbPassword = passHashStr.split('.')[1];
-		var password = req.body.password;
-		logger.info('salt - ' + salt);
-		logger.info('passwordHash.toString() - ' + passwordHash.toString());
-		return corelibs.EncryptPasswordBySalt(password,salt, function(err, pwd) {
-			
-			if(pwd == dbPassword){
-				logger.info('Password Same  - ' + pwd);
-				//encrypt auth token
-				var authToken = encodeURIComponent(corelibs.EncryptAES128(constants.EncryptionKey + responseData.accountId,responseData.tokenId));
-				responseData.IsSuccess = 1;
-				//set headers to be accessible on client
-				res.setHeader('AuthToken', authToken);
-				res.setHeader('userId', responseData.accountId);
+		if(responseData.isSuccess){
+			//var isPasswordvalid = corelibs.ComparePasswordWithDBPassword(req.body.password,responseObj.passwordHash);
+			logger.info('passwordhash UserLoginTransactorCreate- ' + responseData.passwordHash);
+			var passwordHash = responseData.passwordHash;
+			var salt = corelibs.GetSalt(passwordHash.toString());
+			var passHashStr = passwordHash.toString();
+			var dbPassword = passHashStr.split('.')[1];
+			var password = req.body.password;
+			logger.info('salt - ' + salt);
+			logger.info('passwordHash.toString() - ' + passwordHash.toString());
+			return corelibs.EncryptPasswordBySalt(password,salt, function(err, pwd) {
+				
+				if(pwd == dbPassword){
+					logger.info('Password Same  - ' + pwd);
+					//encrypt auth token
+					var authToken = encodeURIComponent(corelibs.EncryptAES128(constants.EncryptionKey + responseData.accountId,responseData.tokenId));
+					responseData.IsSuccess = 1;
+					//set headers to be accessible on client
+					res.setHeader('AuthToken', authToken);
+					res.setHeader('userId', responseData.accountId);
 
-				callback(null,responseData);
-			}else{
-				responseData.IsSuccess = 0;
-				callback(null,responseData);
-			}
-			
-		});
+					callback(null,responseData);
+				}else{
+					responseData.IsSuccess = 0;
+					callback(null,responseData);
+				}
+				
+			});
+		}else{
+			callback(null,responseData);
+		}
+		
 	},], function(err,result){
 		//console.log(result);
 		return res.end(JSON.stringify(responseData));

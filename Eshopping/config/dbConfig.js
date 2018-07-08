@@ -14,7 +14,6 @@ var dbConfig = {
     'User' : build.Environment[build.Type].DB.UserName,
     'SP' : {
         'RegisterUser' : 'call usp_accounts_insert(?)',
-        'UserDetailsBySFID' : 'call usp_UserDetailsBySFID_Users_Select(?)',
         'ValidateAuthToken' : 'call usp_authtokens_Select(?)',
         'UserDetails' : 'call usp_accounts_Details(?)',
         'productsDetails' : 'call usp_products_select(?)',
@@ -22,7 +21,8 @@ var dbConfig = {
         'productDelete' : 'call usp_products_delete(?)',
         'DeleteProduct' : 'call usp_products_delete(?)',
         'Login' : 'call usp_authtokens_insert(?)',
-        'productUpdate' : 'call usp_products_update(?)'
+        'productUpdate' : 'call usp_products_update(?)',
+        'productsInfo' : 'call usp_products_details(?)'
     }
 };
 

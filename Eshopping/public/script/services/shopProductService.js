@@ -11,7 +11,7 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
     
      
      // instantiate our initial shopProductService object
-     var shopProduct = function(ProductModel) {
+     var shopProductService = function(ProductModel) {
      
          if(!(angular.isUndefined(ProductModel) || ProductModel === null)){
          
@@ -31,7 +31,7 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
      
  
      // define the getProfile method which will fetch data
-     Product.prototype.getProduceDetails = function(ProductId) {
+     shopProductService.prototype.getCartDetails = function(ProductId) {
  
          // We make use of Angular's $q library to create the deferred instance
          var deferred = $q.defer();
@@ -53,14 +53,14 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
  
      
      // register the Product
-     Product.prototype.saveProduct = function(ProductId,authToken, productObjectModel) {
+     shopProductService.prototype.saveCart = function(ProductId,authToken, cartobjectmodel) {
  
          // We make use of Angular's $q library to create the deferred instance
          var deferred = $q.defer();
-         console.log("productObjectModels - "+JSON.stringify(productObjectModel));
+         console.log("cartobjectmodels - "+JSON.stringify(cartobjectmodel));
          $http({
            method: 'POST',
-           data: JSON.stringify(productObjectModel),
+           data: JSON.stringify(cartobjectmodel),
            headers: {
              'authtoken': authToken,
              'ProductId':ProductId
@@ -80,7 +80,7 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
      };
      
      // update the Product
-     Product.prototype.deleteProduct  = function(ProductId,authToken, productModel) {
+     shopProductService.prototype.deleteCart  = function(ProductId,authToken, productModel) {
  
          // We make use of Angular's $q library to create the deferred instance
          var deferred = $q.defer();
@@ -110,6 +110,6 @@ ofkapp.service('shopProductService', ['$q', '$http',  function($q, $http){
  
      
  
-     return shopProduct;
+     return shopProductService;
  }]);
  
