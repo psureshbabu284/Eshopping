@@ -697,7 +697,6 @@ body {
 
 /* line 81, C:/nginx/html/public/stylesheets/sass/_layout.scss */
 span.login-icon:before {
-  content: url("../../images_/user-icon.svg");
   background-repeat: no-repeat;
   margin-right: 10px;
   width: 15px;
@@ -1192,9 +1191,7 @@ ul.numbered-list li {
 
 @media (min-width: 768px) {
   /* line 527, C:/nginx/html/public/stylesheets/sass/_layout.scss */
-  .get-started-bkgrd {
-    background-image: url("../../images_/gather-hero.jpg"); } }
-
+  
 /* line 531, C:/nginx/html/public/stylesheets/sass/_layout.scss */
 .get-started-message h1, .get-started-message h3, .get-started-message p {
   color: white; }

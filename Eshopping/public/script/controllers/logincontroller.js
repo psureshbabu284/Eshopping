@@ -5,51 +5,21 @@
  * @copyright 2016 Appshark Ltd. All rights reserved.
  * @Description Login Controller to be used to validate login,reset the password and    * Sign Up related functions 
  */
-ofkapp.controller('loginController',  ['$scope','$timeout' , '$location','LoginService','CommonDataService','localStorage','loginValidationMessages','GettingStartedService','userRoleValidationMessages','createAccountValidationMessages',
-function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,loginValidationMessages,GettingStartedService,userRoleValidationMessages,createAccountValidationMessages) {
+ofkapp.controller('loginController',  ['$scope','$timeout' , '$location','LoginService','CommonDataService','localStorage','GettingStartedService',
+function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,GettingStartedService) {
 
-		var staticURL;
+		var staticURL = BuildURL.getStaticURL();
 		$scope.$parent.representerType;
 		$scope.$parent.accountModel = {};
 		//common angular service to fetch common data like userId,session and so on
 		var commonDataServiceInit = new CommonDataService();
-		$scope.loginValidationMessages = loginValidationMessages;
-		$scope.userRoleValidationMessages = userRoleValidationMessages;
-		$scope.createAccountValidationMessages = createAccountValidationMessages;
-
+		
 		//Null and empty checks
 		angular.isUndefinedOrNull = function(val) {
 			return angular.isUndefined(val) || val === null || val === "";
 		};
 		
 
-	/**
-	  * @function initialize
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description Initialize accountModel
-	 */
-	var initialize = function(){
-	
-		//model object 
-		if(!$scope.$parent.accountModel){
-			var userObj = {};
-			userObj.firstName = "";
-			userObj.lastName = "";
-			userObj.email = "";
-			userObj.password = "";
-			userObj.country = "";
-			userObj.userType = -1;
-			userObj.isAccountYours = -1;
-			userObj.isHairSystemExists = 0;
-			userObj.isHairSystemExistsForRepresentative = 0;
-			userObj.representerType = -1;
-			userObj.isFromOtherSource = 0;
-			$scope.$parent.accountModel = userObj;
-			
-		}
-	};
-	
 	
 	/**
 	  * @function getParams
@@ -94,26 +64,6 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 	
 	
 	
-	/**
-	  * @function Init
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  init the load variables to be used
-	  */
-	$scope.init = function(){
-	
-		staticURL = BuildURL.getStaticURL();
-		$scope.$parent.enableProgressBar = false;
-		
-		$scope.$parent.disableUserroleContButton = false;
-		$scope.$parent.disableCreateAccButton = false;
-		
-		initialize();
-		$scope.$parent.onFormSubmit = false;
-		$scope.onError = false;
-		$scope.onSuccess = false;
-		
-	};
 	
 
 	/**
@@ -190,144 +140,6 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 				 errorHandling(error);
 					
             });
-	};
-
-	/**
-	  * @function redirectToSignIn
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  redirect to the view mentioned as per the angular route
-	  */
-	$scope.redirectToSignIn = function(view){
-		var  staticURL = BuildURL.getStaticURL();
-		window.location.href = staticURL+ "views/gettingstarted.html#/" + view;
-	};
-	
-	/**
-	  * @function goToUserAccountTypeView
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  redirect to the view based on type of user select
-	  */
-	$scope.goToUserAccountTypeView = function(accountModel){
-	
-		//console.log("staticURL - "+ staticURL);
-		//if undefined
-		if(!accountModel) 
-			return false;
-		$scope.$parent.disableUserroleContButton = true;	
-		//if self
-		if(!accountModel.userType){
-			
-			if(accountModel.isHairSystemExists == 0){//if nothing selected
-				$scope.onError = true;
-				return false;
-			}
-
-			// check if authenticated from hd
-			if(accountModel.isFromOtherSource  == 0)
-				$location.path('/createaccount');
-			else if(accountModel.isFromOtherSource  == 1)
-				$scope.userUpdate(accountModel,6,false);
-
-		}else if(accountModel.userType == -1){ //if not selected any option
-			$scope.onError = true;
-			return false;
-		}else{ //if selected representer
-		
-			if($scope.$parent.representerType && ($scope.$parent.representerType != accountModel.representerType)){
-				accountModel.isHairSystemExistsForRepresentative = 0;
-				accountModel.isAccountYours = -1;
-			}
-			
-			$scope.$parent.representerType = accountModel.representerType;
-			
-			if(accountModel.representerType == 5){ //if selected spouse
-				$scope.$parent.userAccountType = "spouse";
-			}else if(accountModel.representerType == 6){ //if selected parent
-				$scope.$parent.userAccountType = "child";
-			}else if(accountModel.representerType == 7){ //if selected friend or loved one
-				$scope.$parent.userAccountType = "friend or loved one";
-			}else if(accountModel.representerType == 8){ //if selected Hair Stylist
-				$scope.$parent.userAccountType = "customer";
-				if($scope.$parent.isFromOtherSource){//if from HD prompt user about account
-					$location.path('/userroleaccttype');
-					return false;
-				}
-			}else if(accountModel.representerType == -1){ //if nothing selected
-				$scope.onError = true;
-				return false;
-			}
-			//disable error div
-			$scope.onError = false;
-			//redirect to the following view
-			$location.path('/userroleaccttypenew');
-			
-		}
-		return;
-	};
-
-
-	/**
-	  * @function goToNextView
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  redirect to the view based on type of user
-	  */
-	$scope.goToNextView = function(accountModel){
-	
-		if(!accountModel)return false;
-			
-		if(accountModel.isAccountYours == -1){
-			$scope.onError = true;
-			return false;
-		};
-		
-		if(!accountModel.isAccountYours && 
-			accountModel.isHairSystemExistsForRepresentative == 0){ // if nothing is selected
-			$scope.onError = true;
-			return false;
-		}
-			
-		if(!accountModel.isAccountYours){ // if account belongs to stylist
-			//accountModel.isHairSystemExistsForRepresentative = 2;
-			$location.path('/userroleaccttypenew');
-		}else{
-			$scope.userUpdate(accountModel,6,false);
-		}
-	};
-	
-	
-	/**
-	  * @function goToCreateAccountView
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  redirect to the view based on selection of user
-	  */
-	$scope.goToCreateAccountView = function(accountModel){
-	
-		if(!accountModel)return false;
-			
-		if(!accountModel.isHairSystemExistsForRepresentative){
-			$scope.onError = true;
-			return false;
-		};
-		
-		if(accountModel.isHairSystemExistsForRepresentative == 0){ // if nothing is selected
-			$scope.onError = true;
-			return false;
-		}
-		
-			
-		if((accountModel.isAccountYours && accountModel.isAccountYours != -1) || accountModel.representerType == 8){ // if stylist option is selected
-			$location.path('/createaccountstylist');
-		}else{
-			// check if authenticated from hd
-			if(accountModel.isFromOtherSource  == 0)
-				$location.path('/createaccount');
-			else
-				$scope.userUpdate(accountModel,6,false);
-		}
 	};
 
 	/**
@@ -446,86 +258,6 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
             });
 	    };
 
-	/**
-	  * @function decisionPath
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description Conditional check for the path to direct where user left off
-	  */
-	var decisionPath =  function(userData){
-		if(userData.isCustomer)
-			return 'shopproducts';
-		else
-			return 'products';
-	};// end of function
-		
-	
-	/**
-	  * @function isDateOfBirthValid
-	  * @memberOf angular_module.ofkapp
-	  * @params val to be checked
-	  * @description get no of years using moment library & check the validity of DOB
-	  */
-	var  isDateOfBirthValid = function(dob){
-		if(!dob) return -1;
-		var years = moment().diff(dob, 'years'); 
-		
-		if(years > 100 || years <= 5) { //above age 100  & below age 5
-			return 3;
-		}else if(years < 100 && years > 18) { //between age 18 & 100
-			return  2;
-		}else if(years < 18 && years > 5) {//between age 5 & 18
-			return  1;
-		}
-	};
-	
-		
-	/**
-	  * @function userAuthentication
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  validating user details
-	  */
-	var userAuthentication = function(auth){
-	
-		staticURL = BuildURL.getStaticURL();
-		
-		if(!auth) {//please exit if form is not valid
-			return false;
-		}
-		
-		// instantiate LoginService
-		var loginService = new LoginService();
-		
-		// fetch data and publish on scope
-		loginService.validateAuthentication(auth).then(function(response) {
-				var headers = response.headers();
-				var responseObj = response.data;
-				
-				if(responseObj.IsSuccess){
-					$scope.$parent.onFormSubmit = false;
-					localStorage.setData("authToken", headers['authtoken']);
-					localStorage.setData("userId", headers['userid']);
-					localStorage.setData("isLoggedIn", true);
-					
-					window.location.href = staticURL+ "views/main.html";
-				}else{
-					var isUserValid = responseObj.isUserValid;
-					$scope.onError = !(responseObj.IsSuccess);
-					if(!isUserValid){
-						$scope.serviceMessage = loginValidationMessages.emailMessageExists;
-					}else{
-						$scope.serviceMessage = responseObj.Message;
-					}
-					
-				}
-				
-		}).catch(function(error, status) {
-			// This is set in the event of an error.
-			$scope.error = 'There has been an error: ' + error;
-		});
-	};
-		
 		
 
 	 /**
@@ -561,7 +293,7 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 					}else if(!responseData.isSuccess){ 
 						$scope.$parent.disableCreateAccButton = false;
 						$scope.onError = !(responseData.isSuccess);
-						$scope.serviceMessage = createAccountValidationMessages.emailMessageDoesExist;
+						$scope.serviceMessage = "Invalid Email"
 					}else{//to do error handling
 						$scope.$parent.disableCreateAccButton = false;
 						$scope.onError = !(responseData.isSuccess);
@@ -574,43 +306,6 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 	};//end of userRegistration
 	
 
-	/**
-	  * @function userUpdate
-	  * @memberOf angular_module.ofkapp
-	  * @params accountModel (model to be saved into salesforce)
-	  * @description  updating profile 
-	  */
-	$scope.userUpdate = function(accountModel,type, isAgeValid){
-	
-			// instantiate Getting Started Service
-			var userService = new GettingStartedService(accountModel,6);//user service
-			
-			//update data to server
-			userService.updateProfile(commonDataServiceInit.userId,commonDataServiceInit.authToken).then(function(response) {
-					
-					var responseData = response.data;
-					
-					if(responseData.isSuccess){
-					
-						if(accountModel.userType)
-							$location.path('/userroleaccttyperepinfo');
-						else
-							$location.path('/age');
-							
-					}else if(!responseData.isSuccess){ 
-						$scope.isGettingStartedFromValid = responseData.isSuccess; 
-						$scope.validationMsgCode = responseData.validationMsgCode;
-						$scope.serviceMessage = responseData.serviceMessage;
-					}else{//to do error handling
-						$scope.onError = !(responseData.IsSuccess);
-						$scope.serviceMessage = responseData.serviceMessage;
-					}
-					
-			}).catch(function(error) {
-                // This is set in the event of an error.
-                errorHandling(error);
-            });
-	};//end of userUpdate
 	
 	
 	/**
@@ -646,54 +341,8 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
             });
 	};
 	
-	/**
-	  * @function onUserTypeChange
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description on changing userType reset hair wearer and representer
-	  */
-		$scope.onUserTypeChange = function(){
-			$scope.$parent.accountModel.representerType = -1;
-			$scope.$parent.accountModel.isHairSystemExists = 0;
-			$scope.onError = false;
-		};
 	
-	/**
-	  * @function onAccountTypeChange
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description on changing radio reset hair wearer and representer
-	  */
-		$scope.onAccountTypeChange = function(){
-			$scope.$parent.accountModel.isHairSystemExistsForRepresentative = 0;
-		};	
-		
-	/**
-	  * @function enableForgotPasswordForm
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  Change the view to Forgot Password and reset the form
-	  */
-		$scope.enableForgotPasswordForm = function(value,accountModel){
-			$scope.onError = false;
-			$scope.onSuccess = false;
-			$scope.resetaccountModel(accountModel);
-			$scope.forgotPasswordForm = value ? false : true;
-		};
-		
-		/**
-	  * @function resetaccountModel
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  Reset the accountModel view
-	  */
-		$scope.resetaccountModel = function(accountModel){
-			if(!(angular.isUndefinedOrNull(accountModel))){
-				accountModel.loginId = "";
-				accountModel.password = "";
-				accountModel.email = "";
-			}
-		};
+	
 		
 		/**
 		  * @function redirectToView
@@ -749,39 +398,18 @@ function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,
 	};
 		
 		/**
-	  * @function redirectTOHD
+	  * @function decisionPath
 	  * @memberOf angular_module.ofkapp
 	  * @params 
-	  * @description  Redirect to HD
+	  * @description Conditional check for the path to direct where user left off
 	  */
-		$scope.redirectTOHD = function(){
-			var hdURL = BuildURL.getHDHOMEURL();
-			window.open(hdURL,'_blank');
-		};
+	var decisionPath =  function(userData){
+		if(userData.isCustomer)
+			return 'shopproducts';
+		else
+			return 'products';
+	};// end of function
 		
-		/**
-	  * @function redirectToSignUp
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  Redirect to main view
-	  */
-		$scope.redirectToSignUp = function(accountModel){
-			window.location.href = staticURL+ "views/main.html";
-		};
-
-			
-		/**
-	  * @function fadeOut
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  Fadeout service message after certain interval
-	  */
-		$scope.fadeOut = function(){
-			$timeout(function(){
-				$scope.onSuccess = false;
-				$scope.onError = false;
-			}, 10000);
-		};
 	
 }]);//end of controller
 

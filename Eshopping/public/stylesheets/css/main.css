@@ -260,7 +260,6 @@ body { background-color: #F3F3F3; }
 
 .login-holder:hover { background-color: #2B6D5E; }
 
-span.login-icon:before { content: url("../../images_/user-icon.svg"); background-repeat: no-repeat; margin-right: 10px; width: 15px; height: 18px; line-height: 30px; vertical-align: middle; }
 
 span.gather-link, span.gather-link-mobile { font-style: italic; line-height: 35px; font-size: 12px; margin-left: 5px; }
 
@@ -435,7 +434,6 @@ ul.numbered-list { list-style: none; }
 
 ul.numbered-list li { min-height: 100px; background-image: url(../../images_/ul-number-1-icon.svg); background-position: left top; background-repeat: no-repeat; padding-left: 60px; margin-bottom: 20px; list-style: none; }
 
-@media (min-width: 768px) { .get-started-bkgrd { background-image: url("../../images_/gather-hero.jpg"); } }
 
 .get-started-message h1, .get-started-message h3, .get-started-message p { color: white; }
 

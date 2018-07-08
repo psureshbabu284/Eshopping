@@ -1,12 +1,9 @@
 (function () {
 
     'use strict';
-/**
- * @author gopal.atla@appshark.com>
- * @copyright 2016 Appshark Ltd. All rights reserved.
- */
-ofkapp.controller("shopProductController", ["$scope", "$http","$location","$timeout","localStorage","GettingStartedService","shopProductService", "CommonDataService","ageValidationMessages", "userRoleValidationMessages","menuConstants","createAccountValidationMessages",
-	function($scope,$http,$location,$timeout,localStorage,GettingStartedService,shopProductService,CommonDataService,ageValidationMessages,userRoleValidationMessages,menuConstants,createAccountValidationMessages) {
+
+ofkapp.controller("shopProductController", ["$scope", "$location","localStorage","GettingStartedService","shopProductService", "CommonDataService",
+	function($scope,$location,localStorage,GettingStartedService,shopProductService,CommonDataService) {
 	
 	//common angular service to fetch common data like userId,session and so on
 	var commonDataServiceInit = new CommonDataService();

@@ -646,7 +646,6 @@ body {
 }
 
 span.login-icon:before {
-  content: url("../images_/user-icon.svg");
   background-repeat: no-repeat;
   margin-right: 10px;
   width: 15px;
@@ -1103,9 +1102,7 @@ ul.numbered-list li {
 }
 
 @media (min-width: 768px) {
-  .get-started-bkgrd {
-    background-image: url("../images_/gather-hero.jpg");
-  }
+  
 }
 
 .get-started-message h1, .get-started-message h3, .get-started-message p {

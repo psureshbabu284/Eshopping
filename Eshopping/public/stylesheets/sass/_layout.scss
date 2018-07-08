@@ -79,7 +79,6 @@ body {
  background-color: $green-hover;
 }
 span.login-icon:before {
- content: url('../../images_/user-icon.svg');
  background-repeat: no-repeat;
  margin-right: 10px;
  width: 15px;
@@ -524,9 +523,7 @@ ul.numcir-ul li.circle10:before {
  
 // Get Started Section
 @include tablet {
-	.get-started-bkgrd { 
-		background-image: url('../../images_/gather-hero.jpg'); 
-	}
+	
 }
 .get-started-message h1, .get-started-message h3, .get-started-message p {
 	color: white;
