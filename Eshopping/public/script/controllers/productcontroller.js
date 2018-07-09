@@ -8,7 +8,8 @@ ofkapp.controller("productController", ["$scope","$location","localStorage","Pro
 	//common angular service to fetch common data like userId,session and so on
 	var commonDataServiceInit = new CommonDataService();
 	var productService = new ProductService();
-	var staticURL;
+	var staticURL = BuildURL.getStaticURL();
+	
 	
 	
 	
@@ -92,77 +93,6 @@ ofkapp.controller("productController", ["$scope","$location","localStorage","Pro
 	};
 	
 	
-	/**
-	  * @function initGettingStartedView
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description Init method to be called on page load for initializing necessary  things
-	  */
-	$scope.initGettingStartedView = function(isReqFromHeader){
-	
-		$scope.$parent.navEnabled = false; //for slider
-		$scope.$parent.subNavEnabled = true; //for slider
-        $scope.$parent.isAtStep = 0; //for progressBar
-		$scope.isLogin = false;
-		
-		console.log("Main Controller initGettingStartedView");
-
-	//	$scope.listOfCountries = [];
-		$scope.listOfFiles = [];
-		
-		$scope.isGettingStartedFromValid = true; 
-		//$scope.validationMsgCode = -1;
-		
-		staticURL = BuildURL.getStaticURL();
-		//$scope.hd_logo = staticURL + "images/hd_header.png";
-
-		
-		
-		var returnObj = getParams();
-		
-		if(angular.isUndefinedOrNull(commonDataServiceInit.userId) && 
-			!returnObj.isFromOtherSource){
-			
-			initialize(returnObj.isFromOtherSource);
-			return false;
-			
-		}
-		$scope.$parent.isReqFromHeader = "";
-		if(isReqFromHeader){
-			$scope.$parent.isReqFromHeader = isReqFromHeader;
-			$location.path('/gettingstarted');
-		}
-
-	};
-    
-    /**
-	  * @function logout
-	  * @memberOf angular_module.ofkapp
-	  * @params 
-	  * @description  logout profile (deactivate/delete session)
-	  */
-	$scope.logout = function(){
-	
-        // instantiate CommonDataService
-        var commonDataServiceInit = new CommonDataService();
-        
-        //update data to server
-        commonDataServiceInit.logout().then(function(response) {
-                
-                var responseData = response.data;
-                
-                if(responseData.isSuccess){
-				localStorage.clearStorage();                    
-                    window.location.href = staticURL+ "views/gettingstarted.html#/gettingstarted";	
-                }else{ //todo handle logout failure
-                }
-                
-                
-        }).catch(function(error) {
-            // This is set in the event of an error.
-            errorHandling(error);
-        });
-};
     
 	/**
 	  * @function getParams
@@ -207,7 +137,7 @@ ofkapp.controller("productController", ["$scope","$location","localStorage","Pro
 		 var userId = localStorage.getData("userId");
 		 if(!userId) return;
 		 $scope.productsExists = false;
-		 productService.getProduceDetails(userId).then(function(response) {
+		 productService.getProduceDetails(commonDataServiceInit.userId,commonDataServiceInit.authToken).then(function(response) {
 			$scope.productobjectmodel = response.data;
 			var serviceResponse = $scope.productobjectmodel;
 			if(serviceResponse.isSuccess){

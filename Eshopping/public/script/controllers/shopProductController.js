@@ -8,7 +8,8 @@ ofkapp.controller("shopProductController", ["$scope", "$location","localStorage"
 	//common angular service to fetch common data like userId,session and so on
 	var commonDataServiceInit = new CommonDataService();
 	var shopProductService = new shopProductService();
-	var staticURL;
+	var staticURL = BuildURL.getStaticURL();
+
 	
     /**
 	  * @function logout
@@ -49,7 +50,7 @@ ofkapp.controller("shopProductController", ["$scope", "$location","localStorage"
 	  * @description Initialize user model
 	  */
 	$scope.initialize = function(){
-		 shopProductService.getCartDetails(commonDataServiceInit.userId).then(function(response) {
+		 shopProductService.getCartDetails(commonDataServiceInit.userId, commonDataServiceInit.authToken).then(function(response) {
 			$scope.cartobjectmodel = response.data;
 			console.log($scope.cartobjectmodel)
 		})

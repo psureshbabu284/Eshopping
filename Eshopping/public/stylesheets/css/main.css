@@ -92,7 +92,7 @@ label.control-label { display: inline-block; cursor: pointer; position: relative
 
 input.standard-check[type=checkbox] { display: none; margin-left: 15px; }
 
-input.standard-check[type=checkbox] + label { background: url("../../images_/check-box-idle.svg") no-repeat 0 0; background-size: 24px; width: 24px; height: 24px; display: inline-block; padding: 0 0 0 0px; vertical-align: middle; margin-left: 15px; font-size: 11px; }
+input.standard-check[type=checkbox] + label {  background-size: 24px; width: 24px; height: 24px; display: inline-block; padding: 0 0 0 0px; vertical-align: middle; margin-left: 15px; font-size: 11px; }
 
 input[type=checkbox]:checked + label { background: url("../../images_/check-box-checked.svg") no-repeat 0 0; }
 
@@ -134,7 +134,7 @@ input.multiselect-radio[type=radio]:checked + label { background: url("../../ima
 
 input.multiselect-check[type=checkbox] { display: none; margin-left: 15px; }
 
-input.multiselect-check[type=checkbox] + label { background: url("../../images_/check-box-idle.svg") no-repeat 0 0; }
+input.multiselect-check[type=checkbox] + label {  }
 
 input.multiselect-check[type=checkbox]:checked + label { background: url("../../images_/check-box-checked.svg") no-repeat 0 0; }
 
@@ -351,7 +351,7 @@ footer .note a:hover { color: #DAD6D2; }
 -------------------------------------------------- */
 .container-fluid.get-started-bkgrd { margin-top: -25px; }
 
-.get-started-bkgrd { background-image: url("../../images_/color-bg-short.jpg"); min-height: 500px; background-size: cover; background-position: 50% 50%; position: relative; }
+.get-started-bkgrd {  min-height: 500px; background-size: cover; background-position: 50% 50%; position: relative; }
 
 /* MAIN BANNER */
 .main-banner { padding-top: 75px; padding-left: 40px; }

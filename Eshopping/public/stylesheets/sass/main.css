@@ -278,7 +278,6 @@ input.standard-check[type=checkbox] {
 
 /* line 35, C:/nginx/html/public/stylesheets/sass/_forms.scss */
 input.standard-check[type=checkbox] + label {
-  background: url("../../images_/check-box-idle.svg") no-repeat 0 0;
   background-size: 24px;
   width: 24px;
   height: 24px;
@@ -400,7 +399,7 @@ input.multiselect-check[type=checkbox] {
 
 /* line 154, C:/nginx/html/public/stylesheets/sass/_forms.scss */
 input.multiselect-check[type=checkbox] + label {
-  background: url("../../images_/check-box-idle.svg") no-repeat 0 0; }
+   }
 
 /* line 158, C:/nginx/html/public/stylesheets/sass/_forms.scss */
 input.multiselect-check[type=checkbox]:checked + label {
@@ -978,7 +977,6 @@ footer .note a:hover {
 
 /* line 335, C:/nginx/html/public/stylesheets/sass/_layout.scss */
 .get-started-bkgrd {
-  background-image: url("../../images_/color-bg-short.jpg");
   min-height: 500px;
   background-size: cover;
   background-position: 50% 50%;

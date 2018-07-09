@@ -46,7 +46,7 @@ UserDetailsTransactor.prototype.READ =
 		logger.info(' UserDetailsTransactorRead responseObj - ' + JSON.stringify(responseObj.Record));
 
 						
-		res.setHeader('AuthToken', 'OFGbksLOSWtfJR6UJMyjqoS4NBL%2BhkZKO9fJrVhN%2BHzb0RkDTefp%2BHBoCs7sUp6p');
+		res.setHeader('AuthToken', responseObj.Record.tokenId);
 		res.setHeader('userId', responseObj.Record.Id);
 		var responseData = {};
 		responseData.isSuccess = 1;

@@ -59,7 +59,7 @@ ProductTransactor.prototype.CREATE = function ProductTransactorCreate(
 	var accountId = req.headers.productid;
     
 	var	input = {
-		quantity : productModel.productQuantiry,
+		quantity : productModel.quantity,
         price : productModel.price,
         prodCatId : productModel.prodCatId,
         vendorId : accountId

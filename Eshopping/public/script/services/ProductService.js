@@ -31,7 +31,7 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
 	
 
     // define the getProfile method which will fetch data
-    Product.prototype.getProduceDetails = function(ProductId) {
+    Product.prototype.getProduceDetails = function(ProductId, authToken) {
 
 		// We make use of Angular's $q library to create the deferred instance
         var deferred = $q.defer();
@@ -39,7 +39,11 @@ ofkapp.service('ProductService', ['$q', '$http',  function($q, $http){
         $http({
 		  method: 'GET',
           url: ServiceURLs.getProductsURL,
-          params: {'ProductId':ProductId},
+					params: {'ProductId':ProductId},
+					headers: {
+						'authtoken': authToken,
+						'ProductId':ProductId
+						},
 		}).then(function successCallback(response) {
 			 // The promise is resolved once the HTTP call is successful.
               deferred.resolve(response);

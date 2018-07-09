@@ -276,7 +276,6 @@ input.standard-check[type=checkbox] {
 }
 
 input.standard-check[type=checkbox] + label {
-  background: url("../images_/check-box-idle.svg") no-repeat 0 0;
   background-size: 24px;
   width: 24px;
   height: 24px;
@@ -366,7 +365,6 @@ input.multiselect-check[type=checkbox] {
 }
 
 input.multiselect-check[type=checkbox] + label {
-  background: url("../images_/check-box-idle.svg") no-repeat 0 0;
 }
 
 input.multiselect-check[type=checkbox]:checked + label {
@@ -896,7 +894,6 @@ footer .note a:hover {
 }
 
 .get-started-bkgrd {
-  background-image: url("../images_/color-bg-short.jpg");
   min-height: 500px;
   background-size: cover;
   background-position: 50% 50%;

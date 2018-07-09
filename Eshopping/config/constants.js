@@ -9,7 +9,7 @@ var constants = {
     UploadImagesDirectory : __dirname + '/../uploads/images/',
 	StaticDirectory : __dirname + '/../public',
     ViewsDirectory : __dirname + '/../views',
-    FavIcon : __dirname + '/../public/images_/hd_favicon.ico',
+    FavIcon : __dirname + '/../public/images_/favicon-32x32.png',
     JSONPayLoadLimit : '10kb', // JSON pay load limit
     SaltLength : 20,
     PBKDF2Iterations : 100,

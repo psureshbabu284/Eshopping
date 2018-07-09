@@ -74,7 +74,7 @@ function AuthenticateHandler(req, res, next) {
 
 		var userId = req.headers.userid;
 		var authToken = req.headers.authtoken;
-		
+		logger.info("IN req.headersreq.headers if" , req.headers);
 		//if authToken exists 
 		if (authToken){ 
 			logger.info("IN inside if");
@@ -187,10 +187,9 @@ function AuthenticateHandler(req, res, next) {
 					});
 
         } else {
-			return next();
-            /*req.ErrorMessage = req.method + ':' + req.url + ' - Un Authorized';
+            req.ErrorMessage = req.method + ':' + req.url + ' - Un Authorized';
             logger.error(req.ErrorMessage);
-            return throwError.Unauthorized(req, res, next);*/
+            return throwError.Unauthorized(req, res, next);
         }
     } else {
         logger.info(req.method + ':' + req.url +

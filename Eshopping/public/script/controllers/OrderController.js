@@ -8,7 +8,7 @@ ofkapp.controller("orderController", ["$scope", "$http","$location","$timeout","
 	//common angular service to fetch common data like userId,session and so on
 	var commonDataServiceInit = new CommonDataService();
 	var OrderService = new OrderService();
-	var staticURL;
+	var staticURL = BuildURL.getStaticURL();
 	
     /**
 	  * @function logout
