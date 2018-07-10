@@ -20,13 +20,7 @@ exports.Build = {
                 Host : '127.0.0.1',
                 Password : 'password',
                 UserName : 'root'
-            },
-			AuthorizePayment : {
-				/* Production */
-				ApiLoginKey : '',
-				TransactionKey : '',
-				paymentUrl : ''
-			}
+            }
         },
 		Staging : {
             Host : '52.207.21.34',
@@ -41,14 +35,7 @@ exports.Build = {
                 Host : '127.0.0.1',
                 Password : 'password',
                 UserName : 'root'
-            },
-			AuthorizePayment : {
-			
-				ApiLoginKey : '',
-				TransactionKey : '',
-				paymentUrl : ''
-
-			}
+            }
 		},
         Local : {
             Host : 'loclahost',
@@ -63,12 +50,7 @@ exports.Build = {
                 Host : 'localhost',
                 Password : 'password',
                 UserName : 'root'
-            },
-			AuthorizePayment : {
-				ApiLoginKey : '',
-				TransactionKey : '',
-				paymentUrl : ''
-			}
+            }
 		}
 		
     }

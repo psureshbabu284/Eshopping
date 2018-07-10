@@ -138,21 +138,7 @@ function uploadFileToGoogleDrive(folderId, parentId, file, base64data,callback) 
 	var folderId = folderId;
 	getGoogleDriveAuthInfo(function (auth) {
 		var drive = google.drive({ version: 'v3', auth: auth });
-		//var folderId = GoogleDrive.FOLDERID;//gather@hairdirect.com
 		
-		console.log("folderId folderId  uploadFileToGoogleDrive- "+ folderId);
-		//var folderId = '0B8o67I-qWFvLbG80UmM1dXNtMmc'; //hdofk@gmail.com
-			/*drive.files.create({
-				resource: {
-					mimeType: 'application/vnd.google-apps.folder',
-					title: 'Gather',
-					name : 'Gather'
-				}
-			},function(err,response){
-				logger.info('response :', JSON.stringify(response));
-					return;
-				
-			});*/
 			
 			//uploading file to driver
 			drive.files.create({resource: {

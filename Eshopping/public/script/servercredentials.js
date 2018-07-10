@@ -77,32 +77,6 @@ var BuildURL = {
 		}
 		return STATICADDRESS;
     },
-	getHDURL : function () {
-		var URL = BuildURL.Environment[BuildURL.Type].HDURL;
-		return URL;
-    },
-	getHDHOMEURL : function () {
-		var URL = BuildURL.Environment[BuildURL.Type].HDHOMEURL;
-		return URL;
-    },
-	getAcuityApiKey : function (attributes) {
-		return BuildURL.Environment['Acuity'].ACUITY_USER_ID;
-    },
-	getPCAFINDURL : function () {
-		return BuildURL.Environment[BuildURL.Type].PCAFINDURL;
-    },
-	getPCARETRIEVEURL : function () {
-		return BuildURL.Environment[BuildURL.Type].PCARETRIEVEURL;
-    },
-	getPostCodeApiKey : function (attributes) {
-		return BuildURL.Environment['PostCodeAnywhere'].POSTCODE_KEY;
-    },
-	getGoogleSearchUrl : function() {
-		/*var baseUrl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDt1g8ckj2SQtZT2Cj5KAHhj6ZdeRAspGo&cx=009927906285767011198:vfvnwhbbbhk&q=";*/
-		
-		var baseUrl = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDt1g8ckj2SQtZT2Cj5KAHhj6ZdeRAspGo&cx=003111390331253612717:ltwob2mspcy&q=";
-		
-		return baseUrl;
-	}
+	
 	
 };

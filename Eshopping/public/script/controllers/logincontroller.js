@@ -1,10 +1,6 @@
 (function () {
     'use strict';
-/**
- * @author gopal.atla@appshark.com>
- * @copyright 2016 Appshark Ltd. All rights reserved.
- * @Description Login Controller to be used to validate login,reset the password and    * Sign Up related functions 
- */
+
 ofkapp.controller('loginController',  ['$scope','$timeout' , '$location','LoginService','CommonDataService','localStorage','GettingStartedService',
 function($scope,$timeout, $location,LoginService,CommonDataService,localStorage,GettingStartedService) {
 

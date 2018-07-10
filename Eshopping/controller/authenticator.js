@@ -44,32 +44,15 @@ function AuthenticateHandler(req, res, next) {
 				logger.info(req.method + ':' + req.url + ' - Authentication(skip) done...');
 				return next();
 		}
-		if (req.url.indexOf('/gettingstarted/masterdata') >= 0) {
-				logger.info(req.method + ':' + req.url + ' - Authentication(skip) done...');
-				return next();
-		}
 		if (req.url.indexOf('/user/register') >= 0) {
 				logger.info(req.method + ':' + req.url + ' - Authentication(skip) done...');
 				return next();
 		}
 		
-		if (req.url.indexOf('/ofk/password') >= 0) {
-				logger.info(req.method + ':' + req.url + ' - Authentication(skip) done...');
-				return next();
-		}
-		/* if (req.url.indexOf('/ofk/password') >= 0) {
-				logger.info(req.method + ':' + req.url + ' - Authentication(skip) done...');
-				return next();
-		} */
 		if (req.url.indexOf('/ofk/client/verify') >= 0) {
 				logger.info(req.method + ':' + req.url + ' - Authentication(skip) done...');
 				return next();
 		}
-
-		if (req.url.indexOf('/ofk/livechatstatus') >= 0) {
-			logger.info(req.method + ':' + req.url + ' - Authentication(skip) done...');
-			return next();
-	}
 
 
 		var userId = req.headers.userid;
