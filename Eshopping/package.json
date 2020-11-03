@@ -30,7 +30,7 @@
     "moment-timezone": "^0.5.13",
     "multer": "1.2.0",
     "mysql": "2.5.3",
-    "node-uuid": "1.4.1",
+    "node-uuid": "1.4.8",
     "pkcs7": "^0.2.3",
     "request": "2.53.0",
     "serve-favicon": "2.1.6",
