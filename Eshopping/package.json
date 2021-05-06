@@ -37,7 +37,7 @@
     "stream": "0.0.2",
     "swig": "1.4.2",
     "ua-parser": "0.3.5",
-    "underscore": "1.7.0",
+    "underscore": "1.12.1",
     "validator": "3.22.1",
     "winston": "0.8.3",
     "xml2js": "^0.4.17"
