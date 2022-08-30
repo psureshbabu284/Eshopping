@@ -27,7 +27,7 @@
     "crypto": "*",
     "express": "4.10.1",
     "jshint": "2.5.10",
-    "moment-timezone": "^0.5.13",
+    "moment-timezone": "^0.5.35",
     "multer": "1.2.0",
     "mysql": "2.5.3",
     "node-uuid": "1.4.1",
