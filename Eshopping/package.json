@@ -25,7 +25,7 @@
     "connect-multiparty": "1.2.5",
     "cors": "2.8.1",
     "crypto": "*",
-    "express": "4.10.1",
+    "express": "4.17.3",
     "jshint": "2.5.10",
     "moment-timezone": "^0.5.13",
     "multer": "1.2.0",
